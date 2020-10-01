@@ -1,0 +1,14 @@
+// ================================
+// Utilities
+// ================================
+
+// get-em & get-rem functions are pulled into settings/_defaults.scss
+// both functions are needed inside other setting options
+
+@import 'get-iconfont';
+@import 'set-grid';
+@import 'set-color';
+@import 'set-font';
+@import 'set-helpers';
+@import 'set-extends';
+@import 'get-typeset';

@@ -1,0 +1,33 @@
+// ================================
+// Tools: Get em
+// ================================
+
+/// Base unit multiplyer for em conversion
+/// @group _settings
+$base-multiplyer-em: 16px !default;
+
+///
+/// Convert values into em units.
+///
+/// @param {string} $pixels - Unit value. Can only be single.
+/// @param {string} $context [$base-multiplyer-em] - Set unit base, or defaults to defined value in settings.
+///
+/// @group _tools
+///
+/// @example scss - Use with single or multiple units
+///  font-size: em(20px);
+///
+/// @example scss - Use with a base unit size
+///  font-size: em(20px, 12px);
+
+@function em($pixels, $context: $base-multiplyer-em) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1em;
+}

@@ -1,0 +1,59 @@
+// ================================
+// Utilities: Hide
+// ================================
+
+.hide {
+  display: none !important;
+}
+
+.xs\:hide {
+  @include media('<sm') {
+    display: none !important;
+  }
+}
+
+.sm\:hide {
+  @include media('>=sm', '<md') {
+    display: none !important;
+  }
+}
+
+.md\:hide {
+  @include media('>=md', '<lg') {
+    display: none !important;
+  }
+}
+
+.lg\:hide {
+  @include media('>=lg', '<xl') {
+    display: none !important;
+  }
+}
+
+.xl\:hide {
+  @include media('>=xl') {
+    display: none !important;
+  }
+}
+
+.hide-mobile {
+  @include media('<md') {
+    display: none !important;
+  }
+}
+
+.hide-tablet {
+  @include media('>=md', '<lg') {
+    display: none !important;
+  }
+}
+
+.hide-desktop {
+  @include media('>=lg') {
+    display: none !important;
+  }
+}
+
+.hide-visually {
+  @extend %visually-hidden;
+}

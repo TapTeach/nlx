@@ -1,0 +1,116 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'iconography' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Iconography</h1>
+      <ul class="mb-3">
+        <li>The iconography in the style-guide utilizes SVG sprites. By utilizing sprites, we are able to target for a specific icon.</li>
+        <li>Icon color is determined by the fill. By default the icons take on the <code>currentColor</code> of the copy.</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <h2 class="type-h4 mb-2">Available Icons</h2>
+    <div class="row items-center" id="iconography-list"></div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {#
+      - 1st value is the icon name. This field is required.
+      - 2nd value is the color. This field is optional and will default to "lg".
+      - 3rd value is the size. This field is optional and will default to "currentColor".
+    #}
+
+    {# everything filled out #}
+    {{ icon('download', 'cyan', 'xs') }}
+
+    {# just the icon-name #}
+    {{ icon('download') }}
+
+    {# just the icon-name and size #}
+    {{ icon('download', '', 'md') }}
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+  <section class="container-xl">
+    <h2 class="type-h4 mb-2">Colors</h2>
+    <div class="row">
+      <div class="col-12 md:col-6 mb-2">
+        {{ icon('social-linkedin', 'black', 'lg') }}
+        {% markdown %}
+        ```twig.line-numbers
+        {% verbatim %}
+        {# black #}
+        {{ icon('social-linkedin', 'black', 'lg') }}
+        {% endverbatim %}
+        ```
+        {% endmarkdown %}
+      </div>
+      <div class="col-12 md:col-6 mb-2">
+        {{ icon('social-linkedin', 'cyan', 'lg') }}
+        {% markdown %}
+        ```twig.line-numbers
+        {% verbatim %}
+        {# cyan #}
+        {{ icon('social-linkedin', 'cyan', 'lg') }}
+        {% endverbatim %}
+        ```
+        {% endmarkdown %}
+      </div>
+      <div class="col-12" style="color: red">
+        {{ icon('social-linkedin', 'currentColor', 'lg') }}
+        {% markdown %}
+        ```twig.line-numbers
+        {% verbatim %}
+        {#
+          currentColor
+          ------------
+          The outside container has a color value of red. Because we are using currentColor,
+          the icon is inhering what the parent is set to.
+        #}
+        {{ icon('social-linkedin', 'currentColor', 'lg') }}
+        {% endverbatim %}
+        ```
+        {% endmarkdown %}
+      </div>
+    </div>
+  </section>
+
+  <section class="container-xl">
+    <h2 class="type-h4 mb-2">Size</h2>
+    <div class="row align-center">
+      <div class="col-12 md:col-variable">
+        <div class="mb-1"><code>xs</code></div>
+        {{ icon('download', '', 'xs') }}
+      </div>
+      <div class="col-12 md:col-variable">
+        <div class="mb-1"><code>sm</code></div>
+        {{ icon('download', '', 'sm') }}
+      </div>
+      <div class="col-12 md:col-variable">
+        <div class="mb-1"><code>md</code></div>
+        {{ icon('download', '', 'md') }}
+      </div>
+      <div class="col-12 md:col-variable">
+        <div class="mb-1"><code>lg</code></div>
+        {{ icon('download', '', 'lg') }}
+      </div>
+      <div class="col-12 md:col-variable">
+        <div class="mb-1"><code>xl</code></div>
+        {{ icon('download', '', 'xl') }}
+      </div>
+    </div>
+  </section>
+{% endblock %}

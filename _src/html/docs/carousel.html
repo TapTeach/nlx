@@ -1,0 +1,589 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'carousel' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Carousel</h1>
+      <ul>
+        <li>Carousel slider to showcase your content. There are no limitations to what content can be shown, it can be media or component based.</li>
+        <li>Use carousel component <code>{% verbatim %}{% embed "_components/carousel.html" %}{% endverbatim %}</code> to pass in slide information.</li>
+        <li>Use these break points for responsive options: <code>480</code>, <code>568</code>, <code>768</code>, <code>980</code>, <code>1280</code>, <code>1450</code>.</li>
+      </ul>
+    </div>
+    <table class="sg-table">
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>tnsOptions</code></td>
+          <td class="whitespace-nowrap">Object {}</td>
+          <td>Any options from the <a href="https://ganlanyuan.github.io/tiny-slider/#options" target="_blank">tiny-slider documentation</a> can be used. The tiny-slider option <code>items</code> has the default value of 1 which is recommended for mobile. Use <code>responsive: {}</code> with breakpoints to increase the number of images being displayed in the viewport.</td>
+        </tr>
+        <tr>
+          <td><code>counter</code></td>
+          <td class="whitespace-nowrap">Object {}</td>
+          <td>Options relative to the carousel counter. See below.</td>
+        </tr>
+        <tr>
+          <td><code>counter.hide</code></td>
+          <td class="whitespace-nowrap">Boolean</td>
+          <td>
+            Default: <code>false</code><br>
+            Show/hide the counter.
+          </td>
+        </tr>
+        <tr>
+          <td><code>counter.backdrop</code></td>
+          <td class="whitespace-nowrap">Boolean</td>
+          <td>
+            Default: <code>false</code><br>
+            Add light gray background to counter.
+          </td>
+        </tr>
+        <tr>
+          <td><code>counter.inverted</code></td>
+          <td class="whitespace-nowrap">Boolean</td>
+          <td>
+            Default: <code>false</code><br>
+            Inverts text to white for dark backgrounds.
+          </td>
+        </tr>
+        <tr>
+          <td><code>controls</code></td>
+          <td class="whitespace-nowrap">Object {}</td>
+          <td>Options relative to the navigation control arrows. See below.</td>
+        </tr>
+        <tr>
+          <td><code>controls.fixed</code></td>
+          <td class="whitespace-nowrap">Boolean</td>
+          <td>
+            Default: <code>false</code><br>
+            If true, the controls are bottom right aligned opposite of the counter. Otherwise the arrows are vertically center positioned.
+          </td>
+        </tr>
+        <tr>
+          <td><code>iconLeft, iconRight</code></td>
+          <td></td>
+          <td>
+            <code>name</code>: icon name. Default is chevron-right-thin<br>
+            <code>color</code> icon color. Default is white<br>
+            <code>size</code> icon size. Default is xl<br>
+            See <a href="./iconography.html">iconography</a> for working with icons.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </header>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4 mb-1">Example using Markup</h2>
+    </div>
+    {% embed "_components/carousel.html" with {
+      "tnsOptions": {
+        autoHeight: true,
+        rewind: true,
+        controls: false,
+        responsive: {
+          568: {controls: true}
+        }
+      },
+      "counter": {
+        "hide": false,
+        "backdrop": false,
+        "inverted": false
+      },
+      "controls": {
+        "fixed": false
+      },
+      "iconLeft": {
+        "name": "chevron-left-thin",
+        "color": "cyan",
+        "size": "xl"
+      },
+      "iconRight": {
+        "name": "chevron-right-thin",
+        "color": "cyan",
+        "size": "xl"
+      }
+    } %}
+      {% block carousel %}
+        <div class="carousel__slide">
+          <img src="https://images.unsplash.com/photo-1516548734656-e5357f1f7b00?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7a1cf194c74c2282da638916b25b3020&auto=format&fit=crop&w=1440&h=800&q=80" alt="">
+        </div>
+        <div class="carousel__slide">
+          <img src="https://images.unsplash.com/photo-1531621403038-64ce9162b7fa?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=350d04bb987aa99440a89b0a7093016f&auto=format&fit=crop&w=1440&h=800&q=80" alt="">
+        </div>
+        <div class="carousel__slide">
+          <img src="https://images.unsplash.com/photo-1531732915018-de5e51b1ea18?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d351690c1e924b9c9d809ad780c919a3&auto=format&fit=crop&w=1440&h=800&q=80" alt="">
+        </div>
+      {% endblock %}
+    {% endembed %}
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {% embed "_components/carousel.html" with {
+      "tnsOptions": {
+        autoHeight: true,
+        rewind: true,
+        controls: false,
+        responsive: {
+          568: {controls: true}
+        }
+      },
+      "counter": {
+        "hide": false,
+        "backdrop": false,
+        "inverted": false
+      },
+      "controls": {
+        "fixed": false
+      },
+      "iconLeft": {
+        "name": "chevron-left-thin",
+        "color": "cyan",
+        "size": "xl"
+      },
+      "iconRight": {
+        "name": "chevron-right-thin",
+        "color": "cyan",
+        "size": "xl"
+      }
+    } %}
+      {% block carousel %}
+        <div class="carousel__slide">
+          <img src="https://images.unsplash.com/photo-1516548734656-e5357f1f7b00?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7a1cf194c74c2282da638916b25b3020&auto=format&fit=crop&w=1440&h=800&q=80" alt="">
+        </div>
+        <div class="carousel__slide">
+          <img src="https://images.unsplash.com/photo-1531621403038-64ce9162b7fa?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=350d04bb987aa99440a89b0a7093016f&auto=format&fit=crop&w=1440&h=800&q=80" alt="">
+        </div>
+        <div class="carousel__slide">
+          <img src="https://images.unsplash.com/photo-1531732915018-de5e51b1ea18?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d351690c1e924b9c9d809ad780c919a3&auto=format&fit=crop&w=1440&h=800&q=80" alt="">
+        </div>
+      {% endblock %}
+    {% endembed %}
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4 mb-1">Multiple Items</h2>
+      <ul>
+        <li>Carousel can contain multiple items.</li>
+        <li>See the spotlight component for working with <code>{% verbatim %}{% include "_components/spotlight.html" with %}{% endverbatim %}</code>.</li>
+        <li>Resize the browser to see the breakpoints change the number of images showing in the viewport.</li>
+      </ul>
+    </div>
+    {% embed "_components/carousel.html" with {
+      "tnsOptions": {
+        items: 1,
+        autoHeight: true,
+        speed: 500,
+        gutter: 20,
+        loop: false,
+        nav: true,
+        responsive: {
+          768: {
+            items: 2,
+            slideBy: 2
+          },
+          980: {
+            items: 3,
+            slideBy: 3
+          }
+        }
+      },
+      "counter": {
+        "backdrop": true,
+        "inverted": false
+      },
+      "controls": {
+        "fixed": true
+      },
+      "iconLeft": {
+        "name": "chevron-left",
+        "color": "cyan",
+        "size": "md"
+      },
+      "iconRight": {
+        "name": "chevron-right",
+        "color": "cyan",
+        "size": "md"
+      }
+    } %}
+      {% block carousel %}
+        <div class="carousel__slide">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "Digital Store",
+              "sub": "NAPA"
+            },
+            "hotspot": {
+              "url": "https://vimeo.com/260452441",
+              "icon": 'video',
+              "isVideo": true
+            },
+            "picture": {
+              "altText": "Guy using a VR device.",
+              "id": "5XuWD8eqNUuaW84E6ygwiY",
+              "placeholderSize": "600 600",
+              "height": "600",
+              "width": "600"
+            }
+          } %}
+        </div>
+        <div class="carousel__slide">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "Old Car",
+              "sub": "NAPA"
+            },
+            "hotspot": {
+              "url": "https://vimeo.com/279770632",
+              "icon": 'video',
+              "isVideo": true
+            },
+            "picture": {
+              "altText": "An old car.",
+              "id": "5QPMIbO5VuMQoisiuoC4EM",
+              "placeholderSize": "600 600",
+              "height": "600",
+              "width": "600"
+            }
+          } %}
+        </div>
+        <div class="carousel__slide">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "Global Rebrand Strategy",
+              "sub": "New Balance"
+            },
+            "hotspot": {
+              "url": "https://vimeo.com/296228239",
+              "icon": 'video',
+              "isVideo": true
+            },
+            "picture": {
+              "altText": "A billboard showcasing a New Balance ad.",
+              "id": "4cUKj3Wi5y2iusuY4SwOyQ",
+              "placeholderSize": "600 600",
+              "height": "600",
+              "width": "600"
+            }
+          } %}
+        </div>
+        <div class="carousel__slide">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "Talk Social To Me",
+              "sub": "Wendy's"
+            },
+            "hotspot": {
+              "url": "https://vimeo.com/279694769",
+              "icon": 'video',
+              "isVideo": true
+            },
+            "picture": {
+              "altText": "Illustrated graphic of Wendy's girl.",
+              "id": "7h6rJxde3mIMo0mSqGkm2U",
+              "placeholderSize": "600 600",
+              "height": "600",
+              "width": "600"
+            }
+          } %}
+        </div>
+        <div class="carousel__slide">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "Deliciously Different",
+              "sub": "Wendy's"
+            },
+            "hotspot": {
+              "url": "https://vimeo.com/290993140/79adf48e2e",
+              "icon": 'video',
+              "isVideo": true
+            },
+            "picture": {
+              "altText": "An illustrated field.",
+              "id": "5nN6kaYlbyQm8WwiYmMmgW",
+              "placeholderSize": "600 600",
+              "height": "600",
+              "width": "600"
+            }
+          } %}
+        </div>
+        <div class="carousel__slide">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "Plant Powered Music",
+              "sub": "Kashi"
+            },
+            "hotspot": {
+              "url": "https://vimeo.com/285164300",
+              "icon": 'video',
+              "isVideo": true
+            },
+            "picture": {
+              "altText": "Kashi grains in a bowl.",
+              "id": "4qPYKTAJ9YuSysa2WQaEi4",
+              "placeholderSize": "600 600",
+              "height": "600",
+              "width": "600"
+            }
+          } %}
+        </div>
+        <div class="carousel__slide">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "One Source",
+              "sub": "Absolut Vodka"
+            },
+            "hotspot": {
+              "url": "https://vimeo.com/292341167",
+              "icon": 'video',
+              "isVideo": true
+            },
+            "picture": {
+              "altText": "Man holding sticks that are on fire.",
+              "id": "5Q1CzkxA52USSOywuuOMaC",
+              "placeholderSize": "600 600",
+              "height": "600",
+              "width": "600"
+            }
+          } %}
+        </div>
+      {% endblock %}
+    {% endembed %}
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {% embed "_components/carousel.html" with {
+      "tnsOptions": {
+        items: 1,
+        autoHeight: true,
+        speed: 500,
+        gutter: 20,
+        loop: false,
+        nav: true,
+        responsive: {
+          768: {
+            items: 2,
+            slideBy: 2
+          },
+          980: {
+            items: 3,
+            slideBy: 3
+          }
+        }
+      },
+      "counter": {
+        "backdrop": true,
+        "inverted": false
+      },
+      "controls": {
+        "fixed": true
+      },
+      "iconLeft": {
+        "name": "chevron-left",
+        "color": "cyan",
+        "size": "md"
+      },
+      "iconRight": {
+        "name": "chevron-right",
+        "color": "cyan",
+        "size": "md"
+      }
+    } %}
+      {% block carousel %}
+      <div class="carousel__slide">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "Digital Store",
+              "sub": "NAPA"
+            },
+            "hotspot": {
+              "url": "https://vimeo.com/260452441",
+              "icon": 'video',
+              "isVideo": true
+            },
+            "picture": {
+              "altText": "Guy using a VR device.",
+              "id": "5XuWD8eqNUuaW84E6ygwiY",
+              "placeholderSize": "600 600",
+              "height": "600",
+              "width": "600"
+            }
+          } %}
+        </div>
+        <div class="carousel__slide"> ... </div>
+      {% endblock %}
+    {% endembed %}
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+  <section>
+    <div class="container-xl">
+       <div class="sg-comments">
+        <h2 class="type-h4 mb-1">Animated Hero Slider</h2>
+      </div>
+    </div>
+   
+
+    <div class="container carousel__hero px-0">
+      {% embed "_components/carousel.html" with {
+        "tnsOptions": {
+          autoHeight: true,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          responsive: {
+            '1024': {
+              edgePadding: 100,
+              rewind: false
+            }
+          }
+        },
+        "counter": {
+          "hide": true,
+          "backdrop": false,
+          "inverted": false
+        },
+        "controls": {
+          "fixed": false
+        },
+        "iconLeft": {
+          "name": "chevron-left-thin",
+          "color": "cyan",
+          "size": "xl"
+        },
+        "iconRight": {
+          "name": "chevron-right-thin",
+          "color": "cyan",
+          "size": "xl"
+        }
+      } %}
+        {% block carousel %}
+          <div class="carousel__slide intro">
+            <div class="intro vg-4 px-1 sm:px-0" style="background-image: url('https://images.unsplash.com/photo-1584404746700-c1909babc51a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80');">
+              <div class="intro__overlay align-center">
+                <h2 class="type-h2 color-gold align-center">Headline Text!</h2>
+                <h3 class="type-h2 color-white font-light align-center mb-3">Secondary headline text.</h3>
+
+                <hr class="hr hr__white hr__mw mb-3">
+
+                <p class="type-lg color-cyan">Sub text sentence below everything</p>
+                <a href="https://vimeo.com/296228239" class="js-modal-video link__hover">
+                  <p class="carousel__slideBoxText">
+                    <span class="va-text-top">{{ icon('video', 'white', 'sm') }}</span> <span class="uppercase">Play Video</span> </p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel__slide">
+            <img src="https://images.unsplash.com/photo-1444080748397-f442aa95c3e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2090&q=80" alt="" class="xs:hide sm:hide">
+            <img src="https://images.unsplash.com/photo-1534709333714-775101d963c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=676&q=80" alt="" class="md:hide lg:hide xl:hide">
+
+            <div class="carousel__slideBox">
+              <h1 class="carousel__slideBoxHeading font-bold mb-2">Creative Portfolio</h1>
+              <hr class="hr hr__white mb-2">
+              <a href="#" class="carousel__slideBoxHover">
+                <p class="carousel__slideBoxText">See Portfolio {{ icon('arrow-right', 'white', 'xs') }}</p>
+              </a>
+            </div>
+          </div>
+        {% endblock %}
+      {% endembed %}
+    </div>
+
+    <div class="container-xl">
+      {% markdown %}
+      ```twig.line-numbers
+      {% verbatim %}
+        <div class="container carousel__hero px-0">
+          {% embed "_components/carousel.html" with {
+            "tnsOptions": {
+              autoHeight: true,
+              autoplay: true,
+              autoplayTimeout: 5000,
+              responsive: {
+                '1024': {
+                  edgePadding: 100,
+                  rewind: false
+                }
+              }
+            },
+            "counter": {
+              "hide": true,
+              "backdrop": false,
+              "inverted": false
+            },
+            "controls": {
+              "fixed": false
+            },
+            "iconLeft": {
+              "name": "chevron-left-thin",
+              "color": "cyan",
+              "size": "xl"
+            },
+            "iconRight": {
+              "name": "chevron-right-thin",
+              "color": "cyan",
+              "size": "xl"
+            }
+          } %}
+            {% block carousel %}
+              <div class="carousel__slide intro">
+                <div class="intro vg-4 px-1 sm:px-0" style="background-image: url('https://images.unsplash.com/photo-1584404746700-c1909babc51a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80');">
+                  <div class="intro__overlay align-center">
+                    <h2 class="type-h2 color-gold align-center">Headline Text!</h2>
+                    <h3 class="type-h2 color-white font-light align-center mb-3">Secondary headline text.</h3>
+    
+                    <hr class="hr hr__white hr__mw mb-3">
+    
+                    <p class="type-lg color-cyan">Sub text sentence below everything</p>
+                    <a href="https://vimeo.com/296228239" class="js-modal-video link__hover">
+                      <p class="carousel__slideBoxText">
+                        <span class="va-text-top">{{ icon('video', 'white', 'sm') }}</span> <span class="uppercase">Play Video</span> </p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel__slide">
+                <img src="https://images.unsplash.com/photo-1444080748397-f442aa95c3e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2090&q=80" alt="" class="xs:hide sm:hide">
+                <img src="https://images.unsplash.com/photo-1534709333714-775101d963c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=676&q=80" alt="" class="md:hide lg:hide xl:hide">
+    
+                <div class="carousel__slideBox">
+                  <h1 class="carousel__slideBoxHeading font-bold mb-2">Creative Portfolio</h1>
+                  <hr class="hr hr__white mb-2">
+                  <a href="#" class="carousel__slideBoxHover">
+                    <p class="carousel__slideBoxText">See Portfolio {{ icon('arrow-right', 'white', 'xs') }}</p>
+                  </a>
+                </div>
+              </div>
+            {% endblock %}
+          {% endembed %}
+        </div>
+      {% endverbatim %}
+      ```
+      {% endmarkdown %}
+    </div>
+  </section>
+
+{% endblock %}

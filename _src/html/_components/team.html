@@ -1,0 +1,27 @@
+{% set id = random() %}
+
+<article class="team{% if not bio %} hotspotless{% endif %}">
+  <div class="team__img">
+    {% include "_components/figure.html" with { 
+        picture,
+      } %}
+
+      {% if bio %}
+        <a href="#{{id}}" class="js-modal-inline team__hotspot" data-effect="mfp-zoom-in">
+          <span class="hide-visually">View small bio summary for {{name}}</span>
+          <span class="team__icon" aria-hidden="true">{{ icon('info-outline', 'white', 'lg') }}</span>
+        </a>
+        <div id="{{id}}" class="team-modal mfp-hide wysiwyg">
+          <h2 class="type-h3">{{name}}</h2>
+          {{bio}}
+        </div>
+      {% endif %}
+  </div>
+  
+  <div class="team__meta">
+    <h2 class="team__name">{{name}}</h2>
+    <span class="team__title">{{title}}</span>
+  </div>
+
+</article>
+  

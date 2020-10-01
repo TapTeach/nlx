@@ -1,0 +1,125 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'contact' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Contact</h1>
+
+      <ul>
+        <li>Create a contact with a picture, name, title, phone number and email address.</li>
+        <li>Use the Twig <code>{% verbatim %}{% include{% endverbatim %}</code> to show the contact component, <code>components/contact.html</code>.</li>
+        <li>Fill in the parameters.</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">
+        Parameters
+      </h2>
+      <table class="sg-table">
+        <thead>
+          <tr>
+            <th>Key</th>
+            <th>Value</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>name</code></td>
+            <td>The individual's name.</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td><code>title</code></td>
+            <td>The individual's company title.</td>
+            <td>optional</td>
+          </tr>
+          <tr>
+            <td><code>phone number</code></td>
+            <td>The individual's phone number.</td>
+            <td>optional</td>
+          </tr>
+          <tr>
+            <td><code>email address</code></td>
+            <td>The individual's email address.</td>
+            <td>optional</td>
+          </tr>
+          <tr>
+            <td><code>img</code></td>
+            <td>See <a href="figure.html">picture component for parameters</a></td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td><code>imgTop</code></td>
+            <td>A boolean to set the image above the users details.</td>
+            <td>false</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container-xl">
+    <div class="sg-example">
+      <div class="row">
+        <div class="col-12 md:col-5 mb-2 md:mb-0">
+          {% include "_components/contact.html" with {
+            "img": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/project/hillary-carter.jpg",
+            "imgTop": false,
+            "name": "Hillary Carter",
+            "title": "Director, Communications",
+            "phone": "913.913.9139",
+            "email": "hillary.carter@vmlyr.com"
+          } %}
+        </div>
+        <div class="col-12 sm:col-6 md:col-3">
+          {% include "_components/contact.html" with {
+            "img": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/project/hillary-carter.jpg",
+            "imgTop": true,
+            "name": "Hillary Carter",
+            "title": "Director, Communications",
+            "phone": "913.913.9139",
+            "email": "hillary.carter@vmlyr.com"
+          } %}
+        </div>
+      </div>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# Image to the left #}
+    {% include "_components/contact.html" with {
+      "img": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/project/hillary-carter.jpg",
+      "imgTop": false,
+      "name": "Hillary Carter",
+      "title": "Director, Communications",
+      "phone": "913.913.9139",
+      "email": "hillary.carter@vmlyr.com"
+    } %}
+
+    {# Image on top #}
+    {% include "_components/contact.html" with {
+      "img": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/project/hillary-carter.jpg",
+      "imgTop": true,
+      "name": "Hillary Carter",
+      "title": "Director, Communications",
+      "phone": "913.913.9139",
+      "email": "hillary.carter@vmlyr.com"
+    } %}
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

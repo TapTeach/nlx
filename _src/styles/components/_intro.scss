@@ -1,0 +1,30 @@
+// ================================
+// Components: Intro
+// ================================
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.intro__overlay {
+  z-index: 2;
+}
+
+.particle__fg canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.particle__bg canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}

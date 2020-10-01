@@ -1,0 +1,47 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'text-alignment' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Alignment</h1>
+      <ul>
+        <li>Align non-block elements left, center, or right.</li>
+        <li>Class: <code>align-[position]</code></li>
+        <li>Responsive class: <code>[breakpoint]:align-[position]</code></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <div class="sg-example">
+      <code>.align-left</code>
+      <p class="ebox mb-3 align-left">[Content]</p>
+      <code>.align-center</code>
+      <p class="ebox mb-3 align-center">[Content]</p>
+      <code>.align-right</code>
+      <p class="ebox align-right">[Content]</p>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# Default #}
+    <p class="align-right"></p>
+    <p class="align-left"></p>
+    <p class="align-center"></p>
+
+    {# Responsive #}
+    <p class="align-left sm:align-right md:align-left lg:align-center xl:align-right"></p>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

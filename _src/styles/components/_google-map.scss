@@ -1,0 +1,16 @@
+// ================================
+// Components: Google Map
+// ================================
+
+.googleMap {
+  width: 100%;
+  height: rem(400px);
+
+  @include media('>=md') {
+    height: rem(635px);
+  }
+
+  @include media('>=lg') {
+    height: rem(500px);
+  }
+}

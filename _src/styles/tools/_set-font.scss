@@ -1,0 +1,30 @@
+// ================================
+// Set: Font
+// ================================
+
+// ex: @include setfont(font-one, 400)
+// First value is your $family and second value is your weight
+
+@mixin setfont($family: sans-serif, $weight: normal) {
+  // Default Font Stack
+  @if $family == 'default' {
+    font-family: $font-default;
+  }
+
+  // Primary Font Stack
+  @if $family == 'primary' {
+    font-family: $font-primary;
+  }
+
+  // yrthree
+  @if $family == 'yrthree' {
+    font-family: $font-yrthree;
+  }
+
+  // Mono Code
+  @if $family == 'mono' {
+    font-family: $font-mono;
+  }
+
+  font-weight: $weight;
+}

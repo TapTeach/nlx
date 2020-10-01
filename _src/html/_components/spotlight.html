@@ -1,0 +1,47 @@
+{% set hotspotModalVideo = hotspot.isVideo ?  'js-modal-video' : '' %}
+{% set hotspotTarget = hotspot.newWindow ?  '_blank' : '_self' %}
+
+
+<article class="spotlight" tabindex="1">
+  <div class="spotlight__content">
+    {% include "_components/figure.html" with { picture } %}
+
+    {% if not hotspot.disable %}
+      {% if hotspot.url %}
+        <a href="{{ hotspot.url }}" class="spotlight__hotspot {{ hotspotModalVideo }}" target="{{ hotspotTarget }}" data-effect="mfp-zoom-in">
+          <span class="hide-visually">View additional details on: {{title.primary}}</span>
+          {% if hotspot.icon %}
+            <span class="spotlight__icon {% if title.overlay %}hide{% endif %}" aria-hidden="true">{{ icon(hotspot.icon, 'currentColor', 'lg') }}</span>
+          {% endif %}
+        </a>
+      {% endif %}
+    {% endif %}
+  </div>
+
+  {% if title.primary or title.overlayText or overlayTextHover %}
+    <h3 class="spotlight__title {% if title.overlay %}spotlight__titleOverlay{% endif %}">
+      {% if title.primary %}<span class="spotlight__titlePrimary">{{title.primary}}</span>{% endif %}
+      {% if title.overlayText %}<span class="spotlight__titlePrimary spotlight__titleOverlayText">{{title.overlayText}}</span>{% endif %}
+      {% if title.overlayTextHover %}<span class="spotlight__titlePrimary spotlight__titleOverlayHoverText">{{title.overlayTextHover}}</span>{% endif %}
+      {% if hotspot.icon and title.overlay %}
+        <span class="{% if title.overlayIcon %}spotlight__titleOverlayIcon{% endif %} {% if title.overlayHoverIcon %}spotlight__titleOverlayHoverIcon{% endif %}">{{ icon(hotspot.icon, 'currentColor', 'sm') }}</span>
+      {% endif %}
+      {% if title.sub %}<span class="spotlight__titleSecondary">{{title.sub}}</span>{% endif %}
+    </h3>
+  {% endif %}
+
+  {% if extras %}
+    <ul class="spotlight__extras">
+      {% for extra in extras %}
+        <li>
+          <a
+            href="{{ extra.url }}{% if extra.version %}?v={{ package.version }}{% endif %}"
+            {% if extra.newWindow %}target="_blank"{% endif %}
+            {% if extra.video %}class="js-modal-video" data-effect="mfp-zoom-in"{% endif %}>
+            {{ extra.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</article>

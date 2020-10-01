@@ -1,0 +1,69 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'overflow' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Overflow</h1>
+      <ul>
+        <li>Utility classes for changing the overflow of content on an element</li>
+        <li>Class: <code>overflow-[value]</code></li>
+        <li>Responsive class: <code>[breakpoint]:[property]</code></li>
+        <li>Available values: <code>auto</code>, <code>hidden</code>, <code>scroll</code>, and <code>visible</code></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <div class="sg-example">
+      <code>.overflow-auto</code>
+      <div class="whitespace-nowrap overflow-auto">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+
+    <div class="sg-example">
+      <code>.overflow-hidden</code>
+      <div class="whitespace-nowrap overflow-hidden">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+
+    <div class="sg-example">
+      <code>.overflow-scroll</code>
+      <div class="whitespace-nowrap overflow-scroll">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+
+    <div class="sg-example">
+      <code>.overflow-visible</code>
+      <div class="whitespace-nowrap overflow-visible">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# Default #}
+    <div class="overflow-auto"></div>
+    <div class="overflow-hidden"></div>
+    <div class="overflow-scroll"></div>
+    <div class="overflow-visible"></div>
+
+    {# Responsive Example #}
+    <div class="overflow-auto md:overflow-hidden"></div>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+
+  </section>
+
+{% endblock %}

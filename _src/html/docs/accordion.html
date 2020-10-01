@@ -1,0 +1,198 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'accordion' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Accordion</h1>
+      <ul>
+        <li>Use the Twig <code>{% verbatim %}{% embed "_components/accordion.html" %}{% endverbatim %}</code> to show the accordion component.</li>
+        <li>Change the font and background (except the expanded area) color using the <a href="/docs/color.html">color utility</a>.</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="container-xl">
+      <div class="sg-comments">
+        <h2 class="type-h4">Parameters</h2>
+        <table class="sg-table">
+          <thead>
+            <tr>
+              <th>Key</th>
+              <th>Description</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>{% verbatim %}{% block %}{% endverbatim %}</code></td>
+              <td><code>label</code> is the text of the tab. Use divs with <code>col-</code> for desired spacing but <code>row</code> is not used since a div with class <code>faq__row</code> is already being used.<br> <code>content</code> is the content area visible when the tab is expanded. Divs with <code>row</code> and <code>col-</code> are optional but must be used together. See <a href="/docs/grid.html">Grid</a> for usage.</a></td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td><code>contentColor</code></td>
+              <td>Use the color utility to set the font and background color for the content area.</td>
+              <td>color-blue bg-gray</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </section>
+
+  <section class="container-xl">
+    <div class="sg-example">
+      <dl class="faq__list">
+        <div class="faq__row">
+          {% embed "_components/accordion.html" %}
+            {% block label %}
+              <div class="col-6">
+                <span>WiFi Access</span> 
+              </div>
+              <div class="col-6">
+                <span>Hotel</span>
+              </div>
+            {% endblock %}
+              
+            {% block content %}
+              <div class="row">
+                <div class="col-6">
+                  <h6>VMLY&amp;R Kansas City (downtown airport)</h6>
+                  <ul>
+                    <li>Connect to "Guest WiFi" network.</li>
+                    <li>Username is "Guest"/ Password is "vmlyrguest".</li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <h6>Crossroads Hotel</h6>
+                  <ul>
+                    <li>Connect to "Crossroads Conference WiFi".</li>
+                    <li>Password is "meeting2018". </li>
+                  </ul>
+                </div>
+              </div>
+            {% endblock %}
+          {% endembed %}
+
+          {% embed "_components/accordion.html" %}
+            {% block label %}
+              <div class="col-12">
+                <span>Conference Rooms</span>
+              </div>
+            {% endblock %}
+              
+            {% block content %}
+              <p>Along the "disco hallway" (ask anyone) near the Bullpen/GNM Theater, (5) small conference rooms (referred to as "fishbowls") have been reserved for quick meetings or private calls.</p>
+            {% endblock %}
+          {% endembed %}
+        </div>
+      </dl>
+    </div>
+
+    <div class="sg-example bg-blue color-white">
+      <dl class="faq__list">
+        <div class="faq__row">
+          {% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-gray' } %}
+            {% block label %}
+              <div class="col-6">
+                <span>WiFi Access</span> 
+              </div>
+              <div class="col-6">
+                <span>Hotel</span>
+              </div>
+            {% endblock %}
+            
+            {% block content %}
+              <div class="row">
+                <div class="col-6">
+                  <h6>VMLY&amp;R Kansas City (downtown airport)</h6>
+                  <ul>
+                    <li>Connect to "Guest WiFi" network.</li>
+                    <li>Username is "Guest"/ Password is "vmlyrguest".</li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <h6>Crossroads Hotel</h6>
+                  <ul>
+                    <li>Connect to "Crossroads Conference WiFi".</li>
+                    <li>Password is "meeting2018". </li>
+                  </ul>
+                </div>
+              </div>
+            {% endblock %}
+          {% endembed %}
+
+          {% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-gray' } %}
+            {% block label %}
+              <div class="col-12">
+                <span>Conference Rooms</span>
+              </div>
+            {% endblock %}
+              
+            {% block content %}
+              <p>Along the "disco hallway" (ask anyone) near the Bullpen/GNM Theater, (5) small conference rooms (referred to as "fishbowls") have been reserved for quick meetings or private calls.</p>
+            {% endblock %}
+          {% endembed %}
+        </div>
+      </dl>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    <dl class="faq__list">
+      <div class="faq__row">
+        {% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-gray' } %}
+          {% block label %}
+            <div class="col-6">
+              <span>WiFi Access</span> 
+            </div>
+            <div class="col-6">
+              <span>Hotel</span>
+            </div>
+          {% endblock %}
+          
+          {% block content %}
+            <div class="row">
+              <div class="col-6">
+                <h6>VMLY&amp;R Kansas City (downtown airport)</h6>
+                <ul>
+                  <li>Connect to "Guest WiFi" network.</li>
+                  <li>Username is "Guest"/ Password is "vmlyrguest".</li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <h6>Crossroads Hotel</h6>
+                <ul>
+                  <li>Connect to "Crossroads Conference WiFi".</li>
+                  <li>Password is "meeting2018". </li>
+                </ul>
+              </div>
+            </div>
+          {% endblock %}
+        {% endembed %}
+
+        {% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-gray' } %}
+          {% block label %}
+            <div class="col-12">
+              <span>Conference Rooms</span>
+            </div>
+          {% endblock %}
+            
+          {% block content %}
+            <p>Along the "disco hallway" (ask anyone) near the Bullpen/GNM Theater, (5) small conference rooms (referred to as "fishbowls") have been reserved for quick meetings or private calls.</p>
+          {% endblock %}
+        {% endembed %}
+      </div>
+    </dl>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

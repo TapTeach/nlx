@@ -1,0 +1,12 @@
+require('./modules/global.js');
+require('./modules/modal.js');
+require('./modules/header.js');
+require('./modules/contentful.js');
+require('./modules/gallery.js');
+require('./modules/masonry.js');
+require('./modules/masonry-search.js');
+require('./modules/carousel.js');
+require('./modules/video.js');
+require('./modules/tabs.js');
+require('./modules/maps.js');
+require('./modules/accordion.js');

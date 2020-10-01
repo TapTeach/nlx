@@ -1,0 +1,41 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'position' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Position</h1>
+      <ul>
+        <li>Utility class to specify positioning of an element.</li>
+        <li>Base class: <code>position-[value]</code></li>
+        <li>Responsive class: <code>[breakpoint]:[property]</code></li>
+        <li>Available values: <code>initial</code>, <code>relative</code>, <code>fixed</code>, <code>sticky</code>, and <code>absolute</code>.</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# Default #}
+    <div class="position-initial"></div>
+    <div class="position-relative"></div>
+    <div class="position-fixed"></div>
+    <div class="position-sticky"></div>
+    <div class="position-absolute"></div>
+
+    {# Responsive Example #}
+    <div class="position-fixed md:position-initial"></div>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

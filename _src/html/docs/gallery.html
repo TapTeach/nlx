@@ -1,0 +1,148 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'gallery' %}
+{% set enableLibraryLightGallery = true %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Gallery</h1>
+      <ul>
+        <li>Use the Twig <code>{% verbatim %}{% include{% endverbatim %}</code> to show the gallery component, <code>components/gallery.html</code>.</li>
+        <li>Rely on Contentful content gallery or self hosted images. Contentful gallery only uses <code>id</code>.</li>
+        <li>The self hosted gallery will loop through the number of images provided.</li>
+        <li>Use a thumbnail image and a full size image. Naming convention: <code>thumb-1.jpg</code>, <code>photo-1.jpg</code>. You can choose any word(s) inplace of thumb and photo. The -1 will be automatically added and incremented to the filename with the extension.</li>
+        <li>Set the variable to true <code>{% verbatim %} {% set enableLibraryLightGallery = true %} {% endverbatim %}</code>, on the page with the gallery, to enable the light-gallery javascript in the base layout. </li>
+        <li>Lightgallery documentation <a href="https://sachinchoolur.github.io/lightgallery.js" target="_blank">sachinchoolur.github.io</a>.</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">Where do I find the Contentful asset id?</h2>
+      <ul>
+        <li>Login to <a href="https://www.contentful.com" target="_blank">contentful.com</a>.</li>
+        <li>Navigate to "Content" located in the header navigation.</li>
+        <li>Search or look through the list of "Published" galleries. Once desired gallery is selected, click it for additional details.</li>
+        <li>On the gallery detail page, find the "Info" button on the top right corner of the page to retrieve the gallery ID.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">Parameters</h2>
+      <table class="sg-table">
+        <thead>
+          <tr>
+            <th>Key</th>
+            <th>Description</th>
+            <th>Contentful only?</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>srcPath</code></td>
+            <td>Used for self hosted images with DIR path and beginning of the filename without the extension or -1 number ending.</td>
+            <td>No</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td><code>imgExt</code></td>
+            <td>Self hosted image extension added to the filename. This is optional.</td>
+            <td>No</td>
+            <td><code>jpg</code></td>
+          </tr>
+          <tr>
+            <td><code>thumbSrcPath</code></td>
+            <td>Used for self hosted thumbnail images with DIR path and beginning of the filename without the extension or -1 number ending.</td>
+            <td>No</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td><code>thumbExt</code></td>
+            <td>Self hosted thumbnail image extension added to the filename. This is optional.</td>
+            <td>No</td>
+            <td><code>jpg</code></td>
+          </tr>
+          <tr>
+            <td><code>numImgs</code></td>
+            <td>Sets the total number of imagess.</td>
+            <td>No</td>
+            <td><code>1</code></td>
+          </tr>
+          <tr>
+            <td><code>placeholderSize</code></td>
+            <td>Define placeholder dimension for lazy loading. The values should be unitless.</td>
+            <td>No</td>
+            <td><code>10 10</code></td>
+          </tr>
+          <tr>
+            <td><code>id</code></td>
+            <td>Contentful content gallery id.</td>
+            <td>Yes</td>
+            <td>--</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container-xl">
+    <h2 class="type-h4 mb-1">Examples</h2>
+    <div class="sg-example">
+      {% include "_components/gallery.html" with {
+        "gallery": {
+          "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/gallery/photo",
+          "imgExt": "jpg",
+          "thumbSrcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/gallery/thumbs/thumb",
+          "thumbSrcPath": "jpg",
+          "numImgs": "10",
+          "placeholderSize": "200 133"
+        }
+      } %}
+    </div>
+  
+    <div class="sg-example">
+      {% include "_components/gallery.html" with {
+        "gallery": {
+          "id": "xyYTrr7N8O8SUSmEKmCKW"
+        }
+      } %}
+    </div>
+
+
+      {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# Non-Contentful: Gallery images are self hosted #}
+    {% include "_components/gallery.html" with {
+      "gallery": {
+        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/gallery/photo",
+        "imgExt": "jpg",
+        "thumbSrcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/gallery/thumbs/thumb",
+        "thumbSrcPath": "jpg",
+        "numImgs": "10",
+        "placeholderSize": "200 133"
+      }
+    } %}
+
+    {# Contentful: Gallery images via api #}
+    {% include "_components/gallery.html" with {
+      "gallery": {
+        "id": "xyYTrr7N8O8SUSmEKmCKW"
+      }
+    } %}
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

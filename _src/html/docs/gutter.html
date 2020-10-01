@@ -1,0 +1,67 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'gutter' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Gutter</h1>
+      <ul>
+        <li>Control an element's vertical padding using the <code>.vg-[size]</code> utility.</li>
+        <li>Why not use padding utility classes? With a set vertical gutter spacing we can better call and define spacing across content sections. Where as if we used padding utility classes, we would run into more inconsistencies when defining sections.</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <table class="sg-table mb-2">
+      <thead>
+        <th>Class</th>
+        <th>Size</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>vg</code></td>
+          <td>
+            <div class="whitespace-nowrap"><code>1</code> 40px</div>
+            <div class="whitespace-nowrap"><code>2</code> 65px</div>
+            <div class="whitespace-nowrap"><code>3</code> 85px</div>
+            <div class="whitespace-nowrap"><code>4</code> 115px</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="sg-example">
+      <div class="sg-row px-0 vg-1 mb-2">
+        <div class="ebox"><code>vg-1</code></div>
+      </div>
+      <div class="sg-row px-0 vg-2 mb-2">
+        <div class="ebox"><code>vg-2</code></div>
+      </div>
+      <div class="sg-row px-0 vg-3 mb-2">
+        <div class="ebox"><code>vg-3</code></div>
+      </div>
+      <div class="sg-row px-0 vg-4 mb-2">
+        <div class="ebox"><code>vg-4</code></div>
+      </div>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# Default #}
+    <div class="vg-2"></div>
+
+    {# Responsive Example #}
+    <div class="vg-1 lg:vg-3"></div>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+{% endblock %}

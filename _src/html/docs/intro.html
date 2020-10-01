@@ -1,0 +1,267 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'intro' %}
+{% set enableParticle = true %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Intro</h1>
+      <ul class="mb-3">
+        <li>Primary introductory banner that should define the purpose of the stage site.</li>
+        <li>Must contain <code>h1</code> element</li>
+        <li>Select from pre-defined banner images or use custom image related to potential new client.</li>
+        <li>The banner image itself should not contain text if at all possible. Reason being is that the banner image fills up a specified width/heigth in the banner. Any text at the edges of the banner could get cut off.</li>
+        <li>ParticleJS uses javascript to add customizable interactive or non-interactive particles to the background. Set the variable to true <code>{% verbatim %} {% set enableParticle = true %} {% endverbatim %}</code> on the page with the ParticleJs background to enable the javascript in the base layout. See the <a href="https://vincentgarreau.com/particles.js/" target="_blank">ParticleJS demo</a> for settings avaialble.</li>
+      </ul>
+    </div>
+
+    <table class="sg-table">
+      <thead>
+        <th>Key</th>
+        <th>Value</th>
+        <th>Default</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>title</code></td>
+          <td>The primary title used to describe the stage site.</td>
+          <td>--</td>
+        </tr>
+        <tr>
+          <td><code>titleAbove</code></td>
+          <td>Smaller title that appears above the larger title</td>
+          <td>--</td>
+        </tr>
+        <tr>
+          <td><code>titleBelow</code></td>
+          <td>Smaller title that appears below the larger title</td>
+          <td>--</td>
+        </tr>
+        <tr>
+          <td><code>bgFileName</code></td>
+          <td>The name of your background image. Please be sure to place image under /_src/images/</td>
+          <td>--</td>
+        </tr>
+        <tr>
+          <td><code>classes</code></td>
+          <td>Apply utility classes to format banner. <code>particle__fg</code> (particles in the foreground) or <code>particle__bg</code> (particles in the background behind text and components) is required for the ParticleJS background.</td>
+          <td><code class="whitespace-nowrap">vg-4 color-white</code></td>
+        </tr>
+        <tr>
+          <td><code>buttons</code></td>
+          <td>Button that appears below the title. Can be used to link out to documents. Each button entry supports: title, url, icon, whether the link should open in a new window, and class for the button color.</td>
+          <td>--</td>
+        </tr>
+        <tr>
+          <td><code>id</code></td>
+          <td>Id is required with the ParticleJS background but can be used for anything requiring an <code>id</code>.</td>
+          <td>--</td>
+        </tr>
+      </tbody>
+    </table>
+  </header>
+
+  <section>
+    {% include "_components/intro.html" with {
+      "title": "DuPont Company Launch &amp; Brand Repositioning",
+      "titleAbove": "",
+      "titleBelow": "",
+      "bgFileName": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/chevrons-left.jpg",
+      "classes": "",
+      "buttons": ""
+    } %}
+
+    <div class="container-xl">
+      {% markdown %}
+      ```twig.line-numbers
+      {% verbatim %}
+      {# // Basic default example. #}
+      {% include "_components/intro.html" with {
+        "title": "DuPont Company Launch &amp; Brand Repositioning",
+        "titleAbove": "",
+        "titleBelow": "",
+        "bgFileName": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/chevrons-left.jpg",
+        "classes": "",
+        "buttons": ""
+      } %}
+      {% endverbatim %}
+      ```
+      {% endmarkdown %}
+    </div>
+  </section>
+
+  <section>
+    {% include "_components/intro.html" with {
+      "title": "Company + VMLY&amp;R",
+      "titleAbove": "Partnership Opportunity",
+      "titleBelow": "Meeting 04.01.19",
+      "bgFileName": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/immersion.jpg",
+      "classes": "vg-4 color-white",
+      "buttons": [
+        {
+          "title": "Download PDF",
+          "url": "#",
+          "icon": "download",
+          "size": "xs",
+          "newWindow": true,
+          "class": "button--white",
+          "heading": "Heading above the button."
+        }
+      ]
+    } %}
+
+    <div class="container-xl">
+      {% markdown %}
+      ```twig.line-numbers
+      {% verbatim %}
+      {# // Example with all fields filled out. The classes key is overwriting the default values. #}
+      {% include "_components/intro.html" with {
+        "title": "VMLY&amp;R + Company",
+        "titleAbove": "Partnership Opportunity",
+        "titleBelow": "Meeting 04.01.19",
+        "bgFileName": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/immersion.jpg",
+        "classes": "vg-4 color-white",
+        "buttons": [
+          {
+            "title": "Download PDF",
+            "url": "#",
+            "icon": "download",
+            "size": "xs",
+            "newWindow": true,
+            "class": "button--white",
+            "heading": "Heading above the button."
+          }
+        ]
+      } %}
+
+      {# // Example with multiple buttons. #}
+      {% include "_components/intro.html" with {
+        "title": "VMLY&amp;R + Company",,
+        "titleAbove": "",
+        "titleBelow": "",
+        "bgFileName": "",
+        "classes": "",
+        "buttons": [
+          {
+            "title": "Primary Buttons",
+            "url": "#",
+            "icon": "download",
+            "size": "xs",
+            "newWindow": true,
+            "class": ""
+          },
+          {
+            "title": "Secondary Button",
+            "url": "#",
+            "icon": "download",
+            "size": "xs",
+            "newWindow": false,
+            "class": ""
+          }
+        ]
+      } %}
+      {% endverbatim %}
+      ```
+      {% endmarkdown %}
+    </div>
+  </section>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">ParticleJs Background</h2>
+      <ul>
+        <li>The <code>/static/assets/js/particles-app.js</code> file contains the configuration parameters.</li>
+        <li>Each background requires a unique id with its own configuration parameters.</li>
+        <li>Use the class <code>particle__fg</code> to put the particle canvas infront of the content so it is interactive or <code>particle__bg</code> to put it behind the content.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">Default Example (interactive)</h2>
+    </div>
+  </section>
+
+  {% include "_components/intro.html" with {
+    "title": "VMLY&amp;R + Company",
+    "titleAbove": "Partnership Opportunity",
+    "titleBelow": "Meeting 04.01.19",
+    "bgFileName": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/immersion.jpg",
+    "classes": "vg-4 color-white particle__fg",
+    "id": "particles-default",
+    "buttons": [
+      {
+        "title": "Download PDF",
+        "url": "#",
+        "icon": "download",
+        "size": "xs",
+        "newWindow": true,
+        "class": "button--white",
+        "heading": "Heading above the button."
+      }
+    ]
+  } %}
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">Customized Carbonation Bubble Example (non-interactive)</h2>
+    </div>
+  </section>
+
+  {% include "_components/intro.html" with {
+    "title": "&nbsp;",
+    "titleAbove": "&nbsp;",
+    "titleBelow": "&nbsp;",
+    "bgFileName": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/background/bg-cocacola.jpg",
+    "classes": "vg-4 color-white particle__fg",
+    "id": "particles-bubbles",
+    "buttons": ""
+  } %}
+
+  <section class="container-xl">
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# Default #}
+    {% include "_components/intro.html" with {
+      "title": "VMLY&amp;R + Company",
+      "titleAbove": "Partnership Opportunity",
+      "titleBelow": "Meeting 04.01.19",
+      "bgFileName": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/immersion.jpg",
+      "classes": "vg-4 color-white particle__fg",
+      "id": "particles-default",
+      "buttons": [
+        {
+          "title": "Download PDF",
+          "url": "#",
+          "icon": "download",
+          "size": "xs",
+          "newWindow": true,
+          "class": "button--white",
+          "heading": "Heading above the button."
+        }
+      ]
+    } %}
+
+    {# Bubbles #}
+    {% include "_components/intro.html" with {
+      "title": "&nbsp;",
+      "titleAbove": "&nbsp;",
+      "titleBelow": "&nbsp;",
+      "bgFileName": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/background/bg-cocacola.jpg",
+      "classes": "vg-4 color-white particle__fg",
+      "id": "particles-bubbles",
+      "buttons": ""
+    } %}
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+{% endblock %}

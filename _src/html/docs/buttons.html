@@ -1,0 +1,91 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'button' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Buttons</h1>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <div class="sg-example bg-onyx">
+      <div class="row">
+        <div class="col-12 mb-2">{{ button('FAQs', '', '', true, 'https://www.google.com', 'button--white') }}</div>
+        <div class="col-12 mb-2">{{ button('FAQs', 'download', 'xs', true, 'https://www.google.com', 'button--white') }}</div>
+        <div class="col-12 mb-2">{{ button('FAQs', 'download', 'xs', true, 'https://www.google.com', 'button--white button--round') }}</div>
+        <div class="col-12">{{ button('FAQs', '', '', true, 'https://www.google.com', 'button--white button--round') }}</div>
+      </div>
+    </div>
+    <div class="sg-example">
+      <div class="row">
+        <div class="col-12 mb-2">{{ button('FAQs', '', true, 'https://www.google.com', '') }}</div>
+        <div class="col-12">{{ button('FAQs', 'download', 'xs', true, 'https://www.google.com', 'button--round') }}</div>
+      </div>
+    </div>
+    <div class="sg-example">
+      <div class="row">
+        <div class="col-12">
+          <div class="buttonless">
+            <h2 class="type-h4 color-blue-evian tracking-wide uppercase italic align-center mb-2">Buttonless</h2>
+            <hr class="hr hr__blue mb-1">
+            <a href="#" class="color-cyan tracking-wide font-bold underline-none uppercase">View Materials <span class="va-middle">{{ icon('return-right', 'cyan', 'xs') }}</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sg-example bg-onyx">
+      <div class="row">
+        <div class="col-12">
+          <div class="buttonless buttonless--light">
+            <h2 class="type-h4 color-white tracking-wide uppercase italic align-center mb-2">Buttonless</h2>
+            <hr class="hr hr__white mb-1">
+            <a href="#" class="color-cyan tracking-wide font-bold underline-none uppercase">View Materials <span class="va-middle">{{ icon('return-right', 'cyan', 'xs') }}</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {#
+      - 1st value is the title text.
+      - 2nd value is the icon name. This field is optional.
+      - 3rd value is the icon size. Required when icon is used.
+      - 4th value set to true will open the link in a new window. This field is optional.
+      - 5th value is the url.
+      - 6th value is the class name. Use button--white for dark backgrounds, leave blank for light backgrounds, 
+        and button--round for round corners.
+    #}
+    {{ button('FAQs', '', '', true, 'https://www.google.com', 'button--white') }}
+    {{ button('FAQs', 'download', 'xs', true, 'https://www.google.com', 'button--white button--round') }}
+
+    {{ button('FAQs', '', '', true, 'https://www.google.com', '') }}
+    {{ button('FAQs', 'download', 'xs', true, 'https://www.google.com', 'button--round') }}
+
+    {# Buttonless #}
+    <div class="buttonless">
+      <h2 class="type-h4 color-blue-evian tracking-wide uppercase italic align-center mb-2">Buttonless</h2>
+      <hr class="hr hr__blue mb-1">
+      <a href="#" class="color-cyan tracking-wide font-bold underline-none uppercase">View Materials <span class="va-middle">{{ icon('return-right', 'cyan', 'xs') }}</span></a>
+    </div>
+
+    {# Buttonless dark background #}
+    <div class="buttonless buttonless--light">
+      <h2 class="type-h4 color-white tracking-wide uppercase italic align-center mb-2">Buttonless</h2>
+      <hr class="hr hr__white mb-1">
+      <a href="#" class="color-cyan tracking-wide font-bold underline-none uppercase">View Materials <span class="va-middle">{{ icon('return-right', 'cyan', 'xs') }}</span></a>
+    </div>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

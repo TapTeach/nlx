@@ -1,0 +1,30 @@
+// ================================
+// Utilities: Line-Height
+// ================================
+
+$lineHeight: (
+  none: 1,
+  tight: 1.25,
+  normal: 1.6,
+  loose: 2
+);
+
+@each $label, $value in $lineHeight {
+  .leading-#{$label} {
+    line-height: $value;
+  }
+}
+
+// --------------------------------
+// Responsive Alignment
+// --------------------------------
+
+@each $breakpoint in map-keys($breakpoints) {
+  @include media(#{'>=' + $breakpoint}) {
+    @each $label, $value in $lineHeight {
+      .#{$breakpoint}\:.leading-#{$label} {
+        line-height: $value;
+      }
+    }
+  }
+}

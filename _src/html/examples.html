@@ -1,0 +1,531 @@
+{% extends '_layouts/page.html' %}
+{% set enableLibraryMasonry = true %}
+{% set enableLibraryPlyr = true %}
+{% set enableLibraryLightGallery = true %}
+{% set headerMenu = global.menu.docs %}
+{% set pageActiveTest = 'examples' %}
+
+{# Masonry Options #}
+{% set masonryFilters = [
+  {
+    "value": ".filter--cat1",
+    "label": "Category-1"
+  },
+  {
+    "value": ".filter--cat2",
+    "label": "Category-2"
+  },
+  {
+    "value": ".filter--cat3",
+    "label": "Category-3"
+  },
+  {
+    "value": ".filter--cat4",
+    "label": "Category-4"
+  }
+] %}
+
+{# Start Page Content #}
+{% block content %}
+  {% include "_components/intro.html" with {
+    "title": "VMLY&amp;R + Company",
+    "titleSub": "Partnership Opportunity",
+    "bgFileName": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/immersion-cyan.jpg",
+    "classes": "vg-4 color-white",
+    "buttons": [
+      {
+        "title": "Download PDF",
+        "url": "#",
+        "icon": "download",
+        "newWindow": true,
+        "class": "button--white"
+      }
+    ]
+  } %}
+
+  <section class="speedBump color-white">
+    <ul class="row align-center list-reset">
+      <li class="col-12 md:col-6 vg-3 bg-onyx speedBump__col">
+        <p class="type-h4 font-light mb-2">RFP Response</p>
+        {{ button('Download RFP', 'download', 'sm', true, 'https://www.vml.com/', 'button--white') }}
+      </li>
+      <li class="col-12 md:col-6 vg-3 bg-onyx speedBump__col">
+        <p class="type-h4 font-light mb-2">Letter of Transmittal</p>
+        {{ button('Download RFP', 'download', 'sm', true, 'https://www.vml.com/', 'button--white') }}
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="vg-3">
+    <div class="container-xl">
+      <h2 class="type-headlineSection type-h3 mb-2">Our Work</h2>
+      {% embed "_components/masonry/content.html" with { "filters": masonryFilters } %}
+        {% block list %}
+          <div class="masonry__item filter--cat1">
+            {% include "_components/spotlight.html" with {
+              "title": {
+                "primary": "NAPA: Store",
+              },
+              "hotspot": {
+                "icon": "video",
+                "url": "https://vimeo.com/272846703",
+                "isVideo": true,
+              },
+              "picture": {
+                "altText": "Guy using a VR device",
+                "id": "5XuWD8eqNUuaW84E6ygwiY",
+                "placeholderSize": "600 600"
+                
+              }
+            } %}
+          </div>
+          <div class="masonry__item filter--cat1">
+            {% include "_components/spotlight.html" with {
+              "title": {
+                "primary": "NAPA: Old Car",
+              },
+              "hotspot": {
+                "icon": "video",
+                "url": "https://vimeo.com/272846703",
+                "isVideo": true,
+              },
+              "picture": {
+                "altText": "An old car",
+                "id": "5QPMIbO5VuMQoisiuoC4EM",
+                "placeholderSize": "600 600"
+              }
+            } %}
+          </div>
+          <div class="masonry__item filter--cat4">
+            {% include "_components/spotlight.html" with {
+              "title": {
+                "primary": "NewBalance",
+              },
+              "hotspot": {
+                "icon": "video",
+                "url": "https://vimeo.com/272846703",
+                "isVideo": true,
+              },
+              "picture": {
+                "altText": "A billboard showcasing NewBalance.",
+                "id": "4cUKj3Wi5y2iusuY4SwOyQ",
+                "placeholderSize": "600 600"
+              }
+            } %}
+          </div>
+          <div class="masonry__item filter--cat4">
+            {% include "_components/spotlight.html" with {
+              "title": {
+                "primary": "Wendy's",
+              },
+              "hotspot": {
+                "icon": "video",
+                "url": "https://vimeo.com/272846703",
+                "isVideo": true,
+              },
+              "picture": {
+                "altText": "Illustrated graphic of Wendy's girl.",
+                "id": "7h6rJxde3mIMo0mSqGkm2U",
+                "placeholderSize": "600 600"
+              }
+            } %}
+          </div>
+          <div class="masonry__item filter--cat4">
+            {% include "_components/spotlight.html" with {
+              "title": {
+                "primary": "Wendy's: Different",
+              },
+              "hotspot": {
+                "icon": "video",
+                "url": "https://vimeo.com/272846703",
+                "isVideo": true,
+              },
+              "picture": {
+                "altText": "An illustrated field.",
+                "id": "5nN6kaYlbyQm8WwiYmMmgW",
+                "placeholderSize": "600 600"
+              }
+            } %}
+          </div>
+          <div class="masonry__item filter--cat1">
+            {% include "_components/spotlight.html" with {
+              "title": {
+                "primary": "Kashi",
+              },
+              "hotspot": {
+                "icon": "video",
+                "url": "https://vimeo.com/272846703",
+                "isVideo": true,
+              },
+              "picture": {
+                "altText": "Kashi grains in a bowl.",
+                "id": "4qPYKTAJ9YuSysa2WQaEi4",
+                "placeholderSize": "600 600"
+              }
+            } %}
+          </div>
+          <div class="masonry__item filter--cat3">
+            {% include "_components/spotlight.html" with {
+              "title": {
+                "primary": "Absolut Vodka",
+              },
+              "hotspot": {
+                "icon": "video",
+                "url": "https://vimeo.com/272846703",
+                "isVideo": true,
+              },
+              "picture": {
+                "altText": "Man holding sticks that are on fire.",
+                "id": "5Q1CzkxA52USSOywuuOMaC",
+                "placeholderSize": "600 600"
+              }
+            } %}
+          </div>
+          <div class="masonry__item filter--cat2">
+            {% include "_components/spotlight.html" with {
+              "title": {
+                "primary": "United Rentals",
+              },
+              "hotspot": {
+                "icon": "video",
+                "url": "https://vimeo.com/272846703",
+                "isVideo": true,
+              },
+              "picture": {
+                "altText": "Railyard",
+                "id": "zmhBMx5mKskyiIicaMGC6",
+                "placeholderSize": "600 600"
+              }
+            } %}
+          </div>
+        {% endblock %}
+      {% endembed %}
+    </div>
+  </section>
+
+  <section class="vg-3 bg-gray">
+    <div class="container-xl">
+      <h2 class="type-headlineSection type-h3 mb-2">Our Work</h2>
+      <div class="row">
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "NAPA: Old Car",
+            },
+            "hotspot": {
+              "icon": "video",
+              "url": "https://vimeo.com/272846703",
+              "isVideo": true,
+            },
+            "picture": {
+              "altText": "An old car",
+              "id": "5QPMIbO5VuMQoisiuoC4EM",
+              "placeholderSize": "600 600"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "Wendy's",
+            },
+            "hotspot": {
+              "icon": "video",
+              "url": "https://vimeo.com/272846703",
+              "isVideo": true,
+            },
+            "picture": {
+              "altText": "Illustrated graphic of Wendy's girl.",
+              "id": "7h6rJxde3mIMo0mSqGkm2U",
+              "placeholderSize": "600 600"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+            {% include "_components/spotlight.html" with {
+              "title": {
+                "primary": "NewBalance",
+              },
+              "hotspot": {
+                "icon": "video",
+                "url": "https://vimeo.com/272846703",
+                "isVideo": true,
+              },
+              "picture": {
+                "altText": "A billboard showcasing NewBalance.",
+                "id": "4cUKj3Wi5y2iusuY4SwOyQ",
+                "placeholderSize": "600 600"
+              }
+            } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "NAPA: Store",
+            },
+            "hotspot": {
+              "icon": "video",
+              "url": "https://vimeo.com/272846703",
+              "isVideo": true,
+            },
+            "picture": {
+              "altText": "Guy using a VR device",
+              "id": "5XuWD8eqNUuaW84E6ygwiY",
+              "placeholderSize": "600 600"
+              
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "Wendy's: Different",
+            },
+            "hotspot": {
+              "icon": "video",
+              "url": "https://vimeo.com/272846703",
+              "isVideo": true,
+            },
+            "picture": {
+              "altText": "An illustrated field.",
+              "id": "5nN6kaYlbyQm8WwiYmMmgW",
+              "placeholderSize": "600 600"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "Kashi",
+            },
+            "hotspot": {
+              "icon": "video",
+              "url": "https://vimeo.com/272846703",
+              "isVideo": true,
+            },
+            "picture": {
+              "altText": "Kashi grains in a bowl.",
+              "id": "4qPYKTAJ9YuSysa2WQaEi4",
+              "placeholderSize": "600 600"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "Absolut Vodka",
+            },
+            "hotspot": {
+              "icon": "video",
+              "url": "https://vimeo.com/272846703",
+              "isVideo": true,
+            },
+            "picture": {
+              "altText": "Man holding sticks that are on fire.",
+              "id": "5Q1CzkxA52USSOywuuOMaC",
+              "placeholderSize": "600 600"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "United Rentals",
+            },
+            "hotspot": {
+              "icon": "video",
+              "url": "https://vimeo.com/272846703",
+              "isVideo": true,
+            },
+            "picture": {
+              "altText": "Railyard",
+              "id": "zmhBMx5mKskyiIicaMGC6",
+              "placeholderSize": "600 600"
+            }
+          } %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vg-3 bg-blue color-white">
+    <div class="container-xl">
+      <h2 class="type-headlineSection type-h3 mb-2">Gallery</h2>
+      {% include "_components/gallery.html" with {
+        "gallery": {
+          "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/gallery/photo",
+          "imgExt": "jpg",
+          "thumbSrcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/gallery/thumbs/thumb",
+          "thumbSrcPath": "jpg",
+          "numImgs": "10",
+          "placeholderSize": "200 133"
+        }
+      } %}
+    </div>
+  </section>
+
+  <section class="vg-3 bg-onyx-20">
+    <div class="container-xl">
+      <h2 class="type-headlineSection type-h3 mb-2">New Balance</h2>
+      {% include "_components/video.html" with {
+        "options": {
+        "autoplay": false,
+          "controls": ["play", "progress", "current-time", "volume"]
+        },
+        "embed": {
+          "id": "296228239",
+          "provider": "vimeo"
+        }
+      } %}
+    </div>
+  </section>
+
+  <section class="vg-3">
+    <div class="container-xl">
+      {% embed "_components/carousel.html" with {
+        "tnsOptions": {
+          autoHeight: true,
+          rewind: true,
+        },
+        "counter": {
+          "hide": false,
+          "backdrop": false,
+          "inverted": true
+        },
+        "controls": {
+          "fixed": false
+        }
+      } %}
+        {% block carousel %}
+          <div class="carousel__slide">
+            <img src="https://images.unsplash.com/photo-1516548734656-e5357f1f7b00?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7a1cf194c74c2282da638916b25b3020&auto=format&fit=crop&w=1440&h=800&q=80" alt="">
+          </div>
+          <div class="carousel__slide">
+            <img src="https://images.unsplash.com/photo-1531621403038-64ce9162b7fa?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=350d04bb987aa99440a89b0a7093016f&auto=format&fit=crop&w=1440&h=800&q=80" alt="">
+          </div>
+          <div class="carousel__slide">
+            <img src="https://images.unsplash.com/photo-1531732915018-de5e51b1ea18?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d351690c1e924b9c9d809ad780c919a3&auto=format&fit=crop&w=1440&h=800&q=80" alt="">
+          </div>
+        {% endblock %}
+      {% endembed %}
+    </div>
+  </section>
+
+  <section class="vg-3 bg-onyx-80 color-white">
+    <div class="container-xl">
+      <h2 class="type-headlineSection type-h3 mb-2">Meet the Team</h2>
+      <div class="row color-white">
+        <div class="col-6 sm:col-4">
+          {% include "_components/team.html" with {
+            "id": "team-campbell",
+            "picture": {
+              "srcPath": "https://placehold.it/500x330",
+              "altText": "Eric Campbell",
+            },
+            "name": "Eric Campbell",
+            "title": "President",
+            "bio": "
+              <p>As VML’s President, Eric provides strategic leadership across our global offices, ensuring continued growth for current client engagements and new business efforts. He is known for his inventive ways of connecting with client partners to help them navigate the constantly-changing marketing landscape.</p>
+              <p>Since joining VML in 1999, Eric’s been pivotal in the evolution of our capabilities across departments and client teams. He applies his strategic, creative, technological and operational experience to deliver unique solutions. Eric has been central to expanding the VML footprint as the leading strategic partner for the world’s most forward-thinking brands.</p>
+              <p>Eric has served on the VML Executive Leadership Team since 2007, most recently as chief business officer, where he was responsible for the agency's business development practice. He led the launch of VML Seattle in 2004 with the Microsoft business, and has been integral in VML’s inclusion in other Team WPP operations.</p>
+              <p>In his free time, Eric enjoys spending time with his family. He is also an avid baseball fan and enjoys the lifelong challenge of improving his golf game. He graduated from the University of Central Missouri with a Bachelor of Science in graphic arts technology management.</p>
+            ",
+          } %}
+        </div>
+        <div class="col-6 sm:col-4">
+          {% include "_components/team.html" with {
+            "id": "team-johnson",
+            "picture": {
+              "srcPath": "https://placehold.it/500x330",
+              "altText": "Rosanne Johnson",
+              "placeholderSize": "500 330"
+            },
+            "name": "Rosanne Johnson",
+            "title": "Executive Director",
+            "bio": "
+              <p>Rosanne joined Team Colgate/VML in January 2012 as the Global Digital Lead. Previously she spent five years as a significant contributor to the development of Ryan Partnership’s digital and CRM expertise. She managed the overall digital strategy, CRM and brand mission work for Dove U.S. Masterbrand and was a key player in Dove Global digital initiatives. Under her leadership, the Dove brand implemented several strategic initiatives in .com, media, mobile, ecommerce, research and CRM/social.</p>
+              <p>Before joining Ryan, Rosanne was Marketing Director at Byte Interactive/Story Worldwide, where she oversaw the digital strategy and CRM programs for Unilever Foods and Coty Beauty brands. She has a long history in data and direct marketing, having held positions at Nielsen and Donnelley Marketing. During her career, Rosanne has worked with consumer packaged goods, continuity marketing, retail and financial companies. Rosanne grew up in Connecticut and earned a bachelor’s degree and MBA from the University of Connecticut. She lives in Fairfield, CT with her husband, son and daughter.</p>
+              <p>Rosanne has a long consumer history with BMW – she has owned 8 BMWs, is a long-time member of the BMW car club, and is the proud wife and mother to BMW driving school certificate holders.</p>
+            ",
+          } %}
+        </div>
+        <div class="col-6 sm:col-4">
+          {% include "_components/team.html" with {
+            "id": "team-raisner",
+            "picture": {
+              "srcPath": "https://placehold.it/500x330",
+              "altText": "Miriam Raisner",
+              "placeholderSize": "500 330"
+            },
+            "name": "Miriam Raisner",
+            "title": "Strategy Director",
+            "bio": "
+              <p>Miriam is a Director on the Strategy &amp; insights team. She came to VML in 2015 through WPP’s MBA Fellowship, and has served as a Director since 2016.</p>
+              <p>Miriam currently leads planning work across several accounts, including New Balance. Since joining VML, she has worked on accounts such as J.P. Morgan Chase, Kellogg’s Special K, and Shiseido. Her passion is drawing meaningful insights from unexpected places—anywhere from social behavior to behavioral science—and seeing them through to executions that work hard for brands.</p>
+            ",
+          } %}
+        </div>
+        <div class="col-6 sm:col-4">
+          {% include "_components/team.html" with {
+            "id": "team-miller",
+            "picture": {
+              "srcPath": "https://placehold.it/500x330",
+              "altText": "Christina Miller",
+              "placeholderSize": "500 330"
+            },
+            "name": "Christina Miller",
+            "title": "Connections Director",
+            "bio": "
+              <p>Christina is a Connections Director on the Social Media team in the Connections department. She started as an intern at VML in May 2012, and transitioned into a full-time employee shortly thereafter.</p>
+              <p>Growing up a Millennial in the midst of the social media surge, Christina brings a passion and familiarity of the online social world into all of her work. Currently working on Wendy's social media, she's helped plan and execute many major campaigns for the brand such as Pretzel Love Songs and The Wooden Award with Jay Bilas. She's worked on several other social media accounts at VML, including Coors Light, Coors Banquet, Redd's Apple Ale, Third Shift and NAPA AUTO PARTS. </p>
+            "
+          } %}
+        </div>
+        <div class="col-6 sm:col-4">
+          {% include "_components/team.html" with {
+            "id": "team-zang",
+            "picture": {
+              "srcPath": "https://placehold.it/500x330",
+              "altText": "Keith Zang",
+              "placeholderSize": "500 330"
+            },
+            "name": "Keith Zang",
+            "title": "Senior Copywriter",
+            "bio": "
+              <p>Keith is a social creative in New York. He started with VML in 2015 after working on Mercedes-Benz’s social team. He’s always had a strong passion for cars and over the last few years he and his friends have transformed that passion into @classiccarchasers, an Instagram channel that has nearly 175K followers and generates nearly 2 million impressions per month. Currently, he helps creatively execute social projects and campaigns across a variety of accounts including NBA, J&amp;J and Newell Rubbermaid.</p>
+            ",
+          } %}
+        </div>
+        <div class="col-6 sm:col-4">
+          {% include "_components/team.html" with {
+            "id": "team-elimeliah",
+            "picture": {
+              "srcPath": "https://placehold.it/500x330",
+              "altText": "Craig Elimeliah",
+              "placeholderSize": "500 330"
+            },
+            "name": "Craig Elimeliah",
+            "title": "Executive Director, Technology",
+            "bio": "",
+          } %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="speedBump speedBump--light color-white">
+    <ul class="row align-center list-reset">
+      <li class="col-12 md:col-6 vg-3 bg-gray speedBump__col speedBump__col--light">
+        <p class="type-h4 font-light mb-2">RFP Response</p>
+        {{ button('Download RFP', 'download', 'sm', true, 'https://www.vml.com/', 'button--white') }}
+      </li>
+      <li class="col-12 md:col-6 vg-3 bg-gray speedBump__col speedBump__col--light">
+        <p class="type-h4 font-light mb-2">Letter of Transmittal</p>
+        {{ button('Download RFP', 'download', 'sm', true, 'https://www.vml.com/', 'button--white') }}
+        </a>
+      </li>
+    </ul>
+  </section>
+
+{% endblock %}

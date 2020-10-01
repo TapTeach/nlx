@@ -1,0 +1,27 @@
+//
+// Color Swatch
+//
+
+.color-swatch {
+  &::after {
+    text-transform: lowercase;
+  }
+}
+
+@each $color, $shades in $colors {
+  @each $shade, $hex in $shades {
+    @if $shade == 'base' {
+      .bg-#{$color}.color-swatch {
+        &::after {
+          content: '#{$hex}';
+        }
+      }
+    } @else {
+      .bg-#{$color}-#{$shade}.color-swatch {
+        &::after {
+          content: '#{$hex}';
+        }
+      }
+    }
+  }
+}

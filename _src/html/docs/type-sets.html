@@ -1,0 +1,113 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'type-sets' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Type Sets</h1>
+      <ul>
+        <li>Instead of being able to apply multiple classes to control the font-size directly. As an author you are instead choosing from pre-defined type-sets. These type-sets when combined with a modular design add consistency to your project.</li>
+        <li>Some of the type-sets will have built in line-height, letter-spacing, transforms, or responsive sizing. Now if we want an h3 element to look like an h1, we can simply do so by applying <code>.type-h1</code> to the <code>h3</code> element.</li>
+        <li>You can further modify the styles of your typography by combining <a href="/docs/font-weight.html">font-weight</a>, <a href="/docs/letter-spacing.html">letter-spacing</a>, <a href="/docs/line-height.html">line-height</a>, <a href="/docs/text-style.html">style &amp; decoration</a>, and <a href="/docs/color.html">color</a>.</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="container-xl">
+
+    <h2 class="type-h4 mb-1">Text</h2>
+    <div class="sg-example">
+      <div class="mb-3">
+        <code>.type-xs</code>
+        <p class="type-xs">The quick brown fox jumped over the lazy dog.</p>
+      </div>
+      <div class="mb-3">
+        <code>.type-sm</code>
+        <p class="type-sm">The quick brown fox jumped over the lazy dog.</p>
+      </div>
+      <div class="mb-3">
+        <code>.type-base</code>
+        <p class="type-base">The quick brown fox jumped over the lazy dog.</p>
+      </div>
+      <div class="mb-3">
+        <code>.type-lg</code>
+        <p class="type-lg">The quick brown fox jumped over the lazy dog.</p>
+      </div>
+      <div>
+        <code>.type-xl</code>
+        <p class="type-xl">The quick brown fox jumped over the lazy dog.</p>
+      </div>
+    </div>
+
+    <h2 class="type-h4 mb-1 mt-3">Headlines</h2>
+    <div class="sg-example">
+      <div class="mb-3">
+        <code>.type-h1</code>
+        <p class="type-h1">The quick brown fox jumped over the lazy dog.</p>
+      </div>
+      <div class="mb-3">
+        <code>.type-h2</code>
+        <p class="type-h2">The quick brown fox jumped over the lazy dog.</p>
+      </div>
+      <div class="mb-3">
+        <code>.type-h3</code>
+        <p class="type-h3">The quick brown fox jumped over the lazy dog.</p>
+      </div>
+      <div class="mb-3">
+        <code>.type-h4</code>
+        <p class="type-h4">The quick brown fox jumped over the lazy dog.</p>
+      </div>
+      <div class="mb-3">
+        <code>.type-h5</code>
+        <p class="type-h5">The quick brown fox jumped over the lazy dog.</p>
+      </div>
+      <div>
+        <code>.type-h6</code>
+        <p class="type-h6">The quick brown fox jumped over the lazy dog.</p>
+      </div>
+    </div>
+
+    <h2 class="type-h4 mb-1 mt-3">Other</h2>
+    <div class="sg-example">
+      <div class="mb-3">
+        <code>.type-meta</code>
+        <p class="type-meta">The quick brown fox jumped over the lazy dog.</p>
+      </div>
+      <div>
+        <code>.type-headlineSection</code>
+        <h2 class="type-headlineSection type-h3">The quick brown fox</h2>
+      </div>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# // Example: Apply a different sizing to a paragraph #}
+    <p class="type-xs"></p>
+    <p class="type-sm"></p>
+    <p class="type-base"></p>
+    <p class="type-lg"></p>
+    <p class="type-xl"></p>
+
+    {# // Example: Change headline element to have different styling #}
+    <h1 class="type-h2"></h1>
+    <h2 class="type-h3"></h2>
+    <h3 class="type-h4"></h3>
+    <h4 class="type-h5"></h4>
+    <h5 class="type-h1"></h5>
+    
+    {# // Example: Headline with / accents #}
+    <h1 class="type-headlineSection type-h2"></h1>
+
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

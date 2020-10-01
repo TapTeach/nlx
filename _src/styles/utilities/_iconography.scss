@@ -1,0 +1,44 @@
+// ================================
+// Utilities: Iconography
+// ================================
+
+/* stylelint-disable */
+.iconography {
+  width: rem(32px);
+  height: rem(32px);
+  fill: currentColor;
+
+  &[size='xs'] {
+    width: rem(16px);
+    height: rem(16px);
+  }
+
+  &[size='sm'] {
+    width: rem(24px);
+    height: rem(24px);
+  }
+
+  &[size='md'] {
+    width: rem(32px);
+    height: rem(32px);
+  }
+
+  &[size='lg'] {
+    width: rem(40px);
+    height: rem(40px);
+  }
+
+  &[size='xl'] {
+    width: rem(48px);
+    height: rem(48px);
+  }
+
+  &[color='black'] {
+    fill: #000;
+  }
+
+  &[color='cyan'] {
+    fill: setcolor(cyan);
+  }
+}
+/* stylelint-enable */

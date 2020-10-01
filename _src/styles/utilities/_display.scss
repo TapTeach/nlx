@@ -1,0 +1,31 @@
+// ================================
+// Utilities: Display
+// ================================
+
+$displays: (
+  block: block,
+  inline: inline,
+  inline-block: inline-block,
+  flex: flex,
+  inline-flex: inline-flex
+);
+
+@each $label, $value in $displays {
+  .#{$label} {
+    display: $value;
+  }
+}
+
+// --------------------------------
+// Responsive Alignment
+// --------------------------------
+
+@each $breakpoint in map-keys($breakpoints) {
+  @include media(#{'>=' + $breakpoint}) {
+    @each $label, $value in $displays {
+      .#{$breakpoint}\:#{$label} {
+        display: $value;
+      }
+    }
+  }
+}

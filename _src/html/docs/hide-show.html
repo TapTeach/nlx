@@ -1,0 +1,123 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'hide-show' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Hide & Show</h1>
+      <ul>
+        <li>Hide or Show content based on viewport size.</li>
+        <li>Resize the browser window to see containers appear and disappear.</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <h2 class="type-h4 mb-2">Hide</h2>
+
+    <div class="sg-example">
+      <code>hide</code>
+      <p>Hidden all the time</p>
+    </div>
+
+    <div class="sg-example">
+      <code>xs:hide</code>
+      <p>Hidden on viewports < 568px</p>
+      <div class="ebox xs:hide mt-2">Hidden on viewports < 568px</div>
+    </div>
+
+    <div class="sg-example">
+      <code>sm:hide</code>
+      <p>Hidden on viewports >= 568px and < 768px</p>
+      <div class="ebox sm:hide mt-2">Hidden on viewports >= 568px and < 768px</div>
+    </div>
+
+    <div class="sg-example">
+      <code>md:hide</code>
+      <p>Hidden on viewports >= 768px and < 980px</p>
+      <div class="ebox md:hide mt-2">Hidden on viewports >= 768px and < 980px</div>
+    </div>
+
+    <div class="sg-example">
+      <code>lg:hide</code>
+      <p>Hidden on viewports >= 980px and < 1280px</p>
+      <div class="ebox lg:hide mt-2">Hidden on viewports >= 980px and < 1280px</div>
+    </div>
+
+    <div class="sg-example">
+      <code>xl:hide</code>
+      <p>Hidden on viewports >= 1280px</p>
+      <div class="ebox xl:hide mt-2">Hidden on viewports >= 1280px</div>
+    </div>
+
+    <div class="sg-example">
+      <code>hide-mobile</code>
+      <p>Hidden on viewports < 768px</p>
+      <div class="ebox hide-mobile mt-2">Hidden on viewports < 768px</div>
+    </div>
+
+    <div class="sg-example">
+      <code>hide-tablet</code>
+      <p>Hidden on viewports >= 768px and < 1024px</p>
+      <div class="ebox hide-tablet mt-2">Hidden on viewports >= 768px and < 1024px</div>
+    </div>
+
+    <div class="sg-example">
+      <code>hide-desktop</code>
+      <p>Hidden on viewports >= 1024px</p>
+      <div class="ebox hide-desktop mt-2">Hidden on viewports >= 1024px</div>
+    </div>
+
+    <div class="sg-example">
+      <div class="mb-2">
+        <code>hide-visually</code>
+        <ul>
+          <li>Element is hidden visually, but readable by screen readers.</li>
+          <li>This works great if there's a piece of copy describing an area to screen readers. An alternate and much more prefered method would be to utilize aria-label="" on the element.</li>
+        </ul>
+      </div>
+      {% markdown %}
+      ```twig.line-numbers
+      {% verbatim %}
+      {# // with .hide-visually #}
+      <button type="button">
+        <span class="hide-visually">Close menu</span>
+      </button>
+
+      {# // with aria-label="" #}
+      <button type="button" aria-label="Close menu"></button>
+      {% endverbatim %}
+      ```
+      {% endmarkdown %}
+    </div>
+
+  </section>
+
+  <section class="container-xl">
+    <h2 class="type-h4 mb-2">Show</h2>
+
+    <div class="sg-example">
+      <code>show-mobile</code>
+      <p>Visible on mobile viewports < 568px. Hidden on all other viewports.</p>
+      <div class="ebox show-mobile mt-2">Visible on mobile viewports < 568px.</div>
+    </div>
+    <div class="sg-example">
+      <code>show-tablet</code>
+      <p>Visible on tablet viewports >= 568px and < 1024px. </p>
+      <div class="ebox show-tablet mt-2">Visible on tablet viewports >= 568px and < 1024px. </div>
+    </div>
+    <div class="sg-example">
+      <code>show-desktop</code>
+      <p>Visible on viewports >= 1024px. </p>
+      <div class="ebox show-desktop mt-2">Visible on viewports >= 1024px. </div>
+    </div>
+
+  </section>
+
+{% endblock %}

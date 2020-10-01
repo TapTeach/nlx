@@ -1,0 +1,229 @@
+// ================================
+// Components: Agenda
+// ================================
+
+.agenda__nav {
+  --headerOffset: 60px;
+  position: sticky;
+  top: var(--headerOffset);
+  left: 0;
+  right: 0;
+  width: 100%;
+  transition: top 350ms $cubic-in;
+  z-index: 20;
+}
+
+.agenda__tablist {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: #f8f8f8;
+}
+
+.agenda__tab {
+  flex-grow: 1;
+  text-align: center;
+  padding: rem(20px 0);
+  font-size: rem(11px);
+  cursor: pointer;
+
+  span {
+    display: block;
+    line-height: 1;
+  }
+
+  span + span {
+    margin-top: rem(10px);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: setcolor(cyan);
+    color: setcolor(white);
+
+    .agenda__tabDay {
+      color: currentColor;
+    }
+  }
+
+  &[aria-selected='true'] {
+    font-weight: 700;
+    background-color: setcolor(blue);
+    color: setcolor(white);
+
+    .agenda__tabDay {
+      color: currentColor;
+    }
+  }
+}
+
+.agenda__tabDay {
+  color: rgba(setcolor(purple), 0.5);
+}
+
+.agenda__panel {
+  &[aria-hidden='true'] {
+    display: none;
+  }
+}
+
+.agenda__panelContent {
+  padding: rem(0 15px 0 20px);
+
+  @include media('>=md') {
+    padding: rem(0 30px);
+  }
+}
+
+.dayList {
+  border-left: 1px solid rgba(setcolor(blue), 0.1);
+  padding: rem(40px 0 0);
+}
+
+.dayList__row {
+  display: flex;
+  font-size: rem(13px);
+  line-height: 1.3;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: rem(2px);
+    left: 0;
+    transform: translateX(-50%);
+    display: block;
+    width: rem(12px);
+    height: rem(12px);
+    border: 2px solid setcolor(cyan);
+    border-radius: 100%;
+    background-color: setcolor(white);
+  }
+
+  &:last-child {
+    &::before {
+      content: '';
+      position: absolute;
+      top: rem(5px);
+      left: rem(-1px);
+      width: rem(4px);
+      height: 100%;
+      background-color: setcolor(white);
+      pointer-events: none;
+    }
+  }
+
+  & + & {
+    margin-top: rem(20px);
+  }
+
+  a {
+    color: setcolor(cyan);
+    text-decoration: none;
+  }
+
+  p,
+  ul {
+    font-size: 0.85em;
+    margin-top: rem(5px);
+    color: setcolor(onyx, 80);
+  }
+
+  ul {
+    margin-left: rem(15px);
+  }
+}
+
+.dayList__time {
+  width: rem(125px);
+  min-width: rem(125px);
+  max-width: rem(125px);
+  padding-left: rem(20px);
+}
+
+.dayList__activity {
+  flex-grow: 1;
+
+  @include media('>=md') {
+    max-width: rem(400px);
+  }
+}
+
+.dayList__title {
+  @include setfont(default, $font-500);
+  letter-spacing: -0.03em;
+  font-size: 1.1em;
+}
+
+.dayList__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+
+  & + & {
+    margin-top: rem(8px);
+  }
+
+  img {
+    display: block;
+    width: rem(45px);
+    min-width: rem(35px);
+    height: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: rem(10px);
+  }
+
+  li {
+    list-style: none;
+  }
+
+  span {
+    cite {
+      display: block;
+      color: setcolor(onyx, 80);
+    }
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    .dayList__speakerName {
+      color: setcolor(blue);
+    }
+  }
+}
+
+.dayList__speakerName {
+  font-size: 1em;
+  line-height: 1.2;
+}
+
+.dayList__speakerTitle {
+  line-height: 1.2;
+
+  color: setcolor(onyx);
+  font-size: 0.85em;
+}
+
+.dayList__speakerLocation {
+  line-height: 1.5;
+  text-transform: uppercase;
+
+  color: setcolor(onyx, 60);
+  font-size: 0.65em;
+}
+
+.attendeeNoResults {
+  @extend %container-xl;
+  padding-top: rem(20px);
+  padding-bottom: rem(20px);
+  font-size: rem(12px);
+  text-align: center;
+
+  &[aria-hidden='true'] {
+    display: none;
+  }
+}

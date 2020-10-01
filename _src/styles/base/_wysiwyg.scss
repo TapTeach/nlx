@@ -1,0 +1,69 @@
+// ================================
+// Wysiwyg Styles
+// ================================
+
+%wysiwyg {
+  // h1, .type-h1,
+  // h2, .type-h2 {
+  //   margin-bottom: .3em;
+  // }
+
+  // h3, .type-h3,
+  // h4, .type-h4 {
+  //   margin-bottom: .5em;
+  // }
+
+  h5,
+  .type-h5,
+  h6,
+  .type-h6 {
+    margin-bottom: 0;
+  }
+
+  * + h1,
+  * + h2,
+  * + h3,
+  * + h4 {
+    margin-top: rem(20px);
+
+    @include media('>=lg') {
+      margin-top: rem(40px);
+    }
+  }
+
+  a:not(.button) {
+    color: setcolor(cyan);
+    word-break: break-all;
+  }
+
+  ol,
+  ul {
+    margin-left: rem(18px);
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  hr {
+    margin: rem(45px 0);
+    border: 2px solid #cecece;
+  }
+
+  // spacing between elements
+  > * {
+    margin-bottom: rem(20px);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// --------------------------------
+// Extend Styles
+// --------------------------------
+
+.wysiwyg {
+  @extend %wysiwyg;
+}

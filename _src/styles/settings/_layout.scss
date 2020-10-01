@@ -1,0 +1,24 @@
+// ================================
+// Grid
+// ================================
+
+/// Amount of space to be added on each side of a column
+/// @group settings
+$spacing-unit: 10px !default;
+
+/// Number of columns to be generated for flex-grid
+/// @group settings
+$grid-columns: 12 !default;
+
+/// Side gutter spacing used on container
+/// @group settings
+$container-gutter: 40px !default;
+
+/// Define max-widths used to generate container classes
+/// @group settings
+$container-width: (
+  sm: rem(530px, $font-size-base-rem),
+  md: rem(768px, $font-size-base-rem),
+  lg: rem(960px, $font-size-base-rem),
+  xl: rem(1188px, $font-size-base-rem)
+) !default;

@@ -1,0 +1,24 @@
+{% set placeholderDefault = '10 10' %}
+
+{% if gallery.id %}
+  <div class="gallery" data-contentful-gallery data-contentful-gallery-id="{{gallery.id}}"></div>
+
+{% else %}
+  {% if gallery.srcPath %}
+    <div class="gallery" data-gallery>
+      {% for i in range(1, gallery.numImgs|default(1)) %}
+        <a href="{{gallery.srcPath}}-{{ i }}.{{ gallery.imgExt|default("jpg") }}" class="gallery__permalink">
+          <figure class="gallery__figure">
+            <div>
+              <img data-src="{{gallery.thumbSrcPath}}-{{ i }}.{{ gallery.thumbExt|default("jpg") }}" src="data:image/svg+xml,%3Csvg enable-background='new 0 0 {{ gallery.placeholderSize|default(placeholderDefault) }}' viewBox='0 0 {{ gallery.placeholderSize|default(placeholderDefault) }}' xmlns='http://www.w3.org/2000/svg'/%3E" class="gallery__img lazyload thumb">
+              <span class="previewLoader" aria-hidden="true"></span>
+            </div>
+          </figure>
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endif %}
+
+
+

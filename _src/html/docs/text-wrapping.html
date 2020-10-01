@@ -1,0 +1,59 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'text-wrapping' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Whitespace &amp; Wrapping</h1>
+  </header>
+
+  <section class="container-xl">
+    <div class="sg-example">
+      <div class="mb-3">
+        <code>.whitespace-normal</code>
+        <p class="whitespace-normal">Fusce orci lorem, finibus sed tincidunt at, posuere ut nunc. Donec eleifend massa nulla, at aliquet purus malesuada a. Sed suscipit dolor quis auctor interdum. Curabitur sapien felis, accumsan et elementum vitae, mollis quis sapien.</p>
+      </div>
+      <div class="mb-0">
+        <code>.whitespace-nowrap</code>
+        <p class="whitespace-nowrap">Fusce orci lorem, finibus sed tincidunt at, posuere ut nunc. Donec eleifend massa nulla, at aliquet purus malesuada a. Sed suscipit dolor quis auctor interdum. Curabitur sapien felis, accumsan et elementum vitae, mollis quis sapien.</p>
+      </div>
+    </div>
+
+    <div class="sg-example">
+      <div class="mb-3">
+        <code>.break-normal</code>
+        <p class="break-normal">Honorificabilitudinitatibus califragilisticexpialidocious Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu 次の単語グレートブリテンおよび北アイルランド連合王国で本当に大きな言葉</p>
+      </div>
+      <div class="mb-0">
+        <code>.break-word</code>
+        <p class="break-word">Honorificabilitudinitatibus califragilisticexpialidocious Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu 次の単語グレートブリテンおよび北アイルランド連合王国で本当に大きな言葉</p>
+      </div>
+    </div>
+
+    <div class="sg-example">
+      <div class="mb-0">
+        <code>.truncate</code>
+        <p class="truncate">Fusce orci lorem, finibus sed tincidunt at, posuere ut nunc. Donec eleifend massa nulla, at aliquet purus malesuada a. Sed suscipit dolor quis auctor interdum. Curabitur sapien felis, accumsan et elementum vitae, mollis quis sapien.</p>
+      </div>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    <p class="whitespace-normal"></p>
+    <p class="whitespace-nowrap"></p>
+    <p class="break-normal"></p>
+    <p class="break-word"></p>
+    <p class="truncate"></p>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

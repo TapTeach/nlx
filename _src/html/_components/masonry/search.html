@@ -1,0 +1,25 @@
+{# Masonry Search #}
+
+<div class="searchInput" data-masonry-search>
+  <div class="container">
+    <div class="searchInput__wrapper mb-2">
+      <input type="search" id="search-input" class="searchInput__input" data-masonry-search-input />
+      <label for="search-input" class="searchInput__label">Search</label>
+      <button class="searchInput__clear" aria-label="Clear Search" data-masonry-clear-search></button>
+    </div>
+
+    {% block heading %}{% endblock %}
+  </div>
+</div>
+
+<ul class="search" data-masonry-search-wall data-masonry-search-shuffle="{{ shuffle|default(false) }}">
+  {% block results %}{% endblock %}
+</ul>
+
+<div class="searchNoResults" aria-hidden="true" data-masonry-noresults>
+  <p class="mb-2">No attendees found. Please refine your search.</p>
+  <p><button type="button" class="button" data-masonry-clear-search><span class="button__label">Clear Search</span></button></p>
+</div>
+
+{# Masonry Loader #}
+{% include "_components/masonry/loader.html" %}

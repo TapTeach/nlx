@@ -1,0 +1,154 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'color' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Color</h1>
+      <ul>
+        <li>Utility classes for controlling the text &amp; background color of an element.</li>
+        <li>The onyx colors comes in alpha transparency.</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <table class="sg-table mb-2">
+      <thead>
+        <th>Color</th>
+        <th>SCSS Function</th>
+        <th>Color Class</th>
+        <th>Background Class</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bg-purple color-white font-mono color-swatch"></td>
+          <td><code>setcolor(purple)</code></td>
+          <td><code>.color-purple</code></td>
+          <td><code>.bg-purple</code></td>
+        </tr>
+        <tr>
+          <td class="bg-purple-medium color-white font-mono color-swatch"></td>
+          <td><code>setcolor(purple, medium)</code></td>
+          <td><code>.color-purple-medium</code></td>
+          <td><code>.bg-purple-medium</code></td>
+        </tr>
+        <tr>
+          <td class="bg-blue color-white font-mono color-swatch"></td>
+          <td><code>setcolor(blue)</code></td>
+          <td><code>.color-blue</code></td>
+          <td><code>.bg-blue</code></td>
+        </tr>
+        <tr>
+          <td class="bg-blue-light color-white font-mono color-swatch"></td>
+          <td><code>setcolor(blue, light)</code></td>
+          <td><code>.color-blue-light</code></td>
+          <td><code>.bg-blue-light</code></td>
+        </tr>
+        <tr>
+          <td class="bg-cyan color-white font-mono color-swatch"></td>
+          <td><code>setcolor(cyan)</code></td>
+          <td><code>.color-cyan</code></td>
+          <td><code>.bg-cyan</code></td>
+        </tr>
+        <tr>
+          <td class="bg-red color-white font-mono color-swatch"></td>
+          <td><code>setcolor(red)</code></td>
+          <td><code>.color-red</code></td>
+          <td><code>.bg-red</code></td>
+        </tr>
+        <tr>
+          <td class="bg-yellow font-mono color-swatch"></td>
+          <td><code>setcolor(yellow)</code></td>
+          <td><code>.color-yellow</code></td>
+          <td><code>.bg-yellow</code></td>
+        </tr>
+        <tr>
+          <td class="bg-gold font-mono color-swatch"></td>
+          <td><code>setcolor(gold)</code></td>
+          <td><code>.color-gold</code></td>
+          <td><code>.bg-gold</code></td>
+        </tr>
+        <tr>
+          <td class="bg-black color-white font-mono color-swatch"></td>
+          <td><code>setcolor(black)</code></td>
+          <td><code>.color-black</code></td>
+          <td><code>.bg-black</code></td>
+        </tr>
+        <tr>
+          <td class="bg-gray-dark color-white font-mono color-swatch"></td>
+          <td><code>setcolor(gray, dark)</code></td>
+          <td><code>.color-gray-dark</code></td>
+          <td><code>.bg-gray-dark</code></td>
+        </tr>
+        <tr>
+          <td class="bg-gray color-blue font-mono color-swatch"></td>
+          <td><code>setcolor(gray)</code></td>
+          <td><code>.color-gray</code></td>
+          <td><code>.bg-gray</code></td>
+        </tr>
+        <tr>
+          <td class="bg-onyx color-white font-mono color-swatch"></td>
+          <td><code>setcolor(onyx)</code></td>
+          <td><code>.color-onyx</code></td>
+          <td><code>.bg-onyx</code></td>
+        </tr>
+        <tr>
+          <td class="bg-onyx-80 color-white font-mono color-swatch"></td>
+          <td><code>setcolor(onyx, 80)</code></td>
+          <td><code>.color-onyx-80</code></td>
+          <td><code>.bg-onyx-80</code></td>
+        </tr>
+        <tr>
+          <td class="bg-onyx-60 color-white font-mono color-swatch"></td>
+          <td><code>setcolor(onyx, 60)</code></td>
+          <td><code>.color-onyx-60</code></td>
+          <td><code>.bg-onyx-60</code></td>
+        </tr>
+        <tr>
+          <td class="bg-onyx-40 color-white font-mono color-swatch"></td>
+          <td><code>setcolor(onyx, 40)</code></td>
+          <td><code>.color-onyx-40</code></td>
+          <td><code>.bg-onyx-40</code></td>
+        </tr>
+        <tr>
+          <td class="bg-onyx-20 color-white font-mono color-swatch"></td>
+          <td><code>setcolor(onyx, 20)</code></td>
+          <td><code>.color-onyx-20</code></td>
+          <td><code>.bg-onyx-20</code></td>
+        </tr>
+        <tr>
+          <td class="bg-onyx-10 font-mono color-swatch"></td>
+          <td><code>setcolor(onyx, 10)</code></td>
+          <td><code>.color-onyx-10</code></td>
+          <td><code>.bg-onyx-10</code></td>
+        </tr>
+        <tr>
+          <td class="bg-white font-mono color-swatch"></td>
+          <td><code>setcolor(white)</code></td>
+          <td><code>.color-white</code></td>
+          <td><code>.bg-white</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# For Text Color #}
+    <p class="color-white"></p>
+
+    {# For Background Color #}
+    <div class="bg-white"></div>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

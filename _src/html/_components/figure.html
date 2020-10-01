@@ -1,0 +1,18 @@
+{% set placeholderDefault = '10 10' %}
+
+{% if picture.id %}
+  <figure class="picture" data-contenful-picture>
+    <img src="data:image/svg+xml,%3Csvg enable-background='new 0 0 {{ picture.placeholderSize|default(placeholderDefault) }}' viewBox='0 0 {{ picture.placeholderSize|default(placeholderDefault) }}' xmlns='http://www.w3.org/2000/svg'/%3E" class="picture__img lazyload {{picture.class}}" data-contentful-img data-img-id="{{ picture.id }}" data-img-width="{{ picture.width }}" data-img-height="{{ picture.height }}" />
+    <span class="previewLoader" aria-hidden="true"></span>
+    <figcaption class="hide-visually">{{ picture.altText }}</figcaption>
+  </figure>
+
+  {% else %}
+    {% if picture.srcPath %}
+      <figure class="picture">
+        <img src="data:image/svg+xml,%3Csvg enable-background='new 0 0 {{ picture.placeholderSize|default(placeholderDefault) }}' viewBox='0 0 {{ picture.placeholderSize|default(placeholderDefault) }}' xmlns='http://www.w3.org/2000/svg'/%3E" data-src="{{ picture.srcPath }}" class="picture__img lazyload {{picture.class}}" alt="{{ picture.altText }}" />
+        <span class="previewLoader" aria-hidden="true"></span>
+        <figcaption class="hide-visually">{{ picture.altText }}</figcaption>
+      </figure>
+    {% endif %}
+{% endif %}

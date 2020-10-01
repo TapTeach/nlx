@@ -1,0 +1,35 @@
+// ================================
+// In View
+// ================================
+
+// --------------------------------
+// Fade Up
+// --------------------------------
+
+[inview='fade-up'].on {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+[inview='fade-up'] {
+  opacity: 0;
+  transform: translate(0, 30px) scale(1.08);
+  transform-origin: center top;
+  transition: all 0.8s;
+}
+
+[in-delay='short'] {
+  transition-delay: 350ms;
+}
+
+// --------------------------------
+// Slide Up
+// --------------------------------
+
+[inview='slide-up']:not(.on) {
+  transform: translateY(40vh);
+}
+
+[inview='slide-up'] {
+  @include animate-slide;
+}

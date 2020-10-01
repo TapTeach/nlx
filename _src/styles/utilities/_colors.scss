@@ -1,0 +1,45 @@
+// ================================
+// Utilities: Colors
+// ================================
+
+// Generate color classes for all colors in $colors map
+@each $color, $shades in $colors {
+  @each $shade, $hex in $shades {
+    @if $shade == 'base' {
+      .color-#{$color} {
+        color: $hex;
+      }
+    } @else {
+      .color-#{$color}-#{$shade} {
+        color: $hex;
+      }
+    }
+  }
+}
+
+// Generate background classes for all colors in $colors map
+@each $color, $shades in $colors {
+  @each $shade, $hex in $shades {
+    @if $shade == 'base' {
+      .bg-#{$color} {
+        background-color: $hex;
+      }
+    } @else {
+      .bg-#{$color}-#{$shade} {
+        background-color: $hex;
+      }
+    }
+  }
+}
+
+// Background Gradients
+.bg-gradient-gray {
+  background-color: #232526;
+  background-image: linear-gradient(45deg, rgb(35, 37, 38), rgb(65, 67, 69));
+}
+
+// Background Patterns
+.bg-radial-gray {
+  background-color: #3e434d;
+  background-image: radial-gradient(ellipse at center, #3e434d 30%, #2b303b 90%);
+}

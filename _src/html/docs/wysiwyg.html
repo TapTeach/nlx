@@ -1,0 +1,69 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'wysiwyg' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Wysiwyg</h1>
+      <ul>
+        <li>When you have a grouping of typography elements, you want to maintain consistency across multiple groupings as much as possible.</li>
+        <li>By applying <code>.wysiwyg</code> class to a parent container, all interior elements take on new styles.</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <div class="sg-example">
+        <div class="wysiwyg">
+          <h1>Heading 1</h1>
+          <p>Vivamus cursus sapien rutrum turpis volutpat tristique. Curabitur vitae condimentum mi. Fusce velit mi, tristique sit amet mattis sit amet, eleifend at dui. Maecenas euismod tristique justo nec lacinia. Nullam vehicula fringilla nibh vitae interdum. Nunc laoreet lorem ipsum, a porttitor neque tincidunt at. Phasellus id nibh risus. Fusce iaculis, risus sit amet sollicitudin aliquam, turpis justo tempor ipsum, quis mattis dolor sapien quis dui. Sed aliquet rhoncus dolor nec commodo.</p>
+          <h2>Heading 2</h2>
+          <p>Vivamus cursus sapien rutrum turpis volutpat tristique. Curabitur vitae condimentum mi. Fusce velit mi, tristique sit amet mattis sit amet, eleifend at dui. Maecenas euismod tristique justo nec lacinia. Nullam vehicula fringilla nibh vitae interdum. Nunc laoreet lorem ipsum, a porttitor neque tincidunt at. Phasellus id nibh risus. Fusce iaculis, risus sit amet sollicitudin aliquam, turpis justo tempor ipsum, quis mattis dolor sapien quis dui. Sed aliquet rhoncus dolor nec commodo.</p>
+          <h3>Heading 3</h3>
+          <p>Vivamus cursus sapien rutrum turpis volutpat tristique. Curabitur vitae condimentum mi. Fusce velit mi, tristique sit amet mattis sit amet, eleifend at dui. Maecenas euismod tristique justo nec lacinia. Nullam vehicula fringilla nibh vitae interdum. Nunc laoreet lorem ipsum, a porttitor neque tincidunt at. Phasellus id nibh risus. Fusce iaculis, risus sit amet sollicitudin aliquam, turpis justo tempor ipsum, quis mattis dolor sapien quis dui. Sed aliquet rhoncus dolor nec commodo.</p>
+          <h4>Heading 4</h4>
+          <p>Vivamus cursus sapien rutrum turpis volutpat tristique. Curabitur vitae condimentum mi. Fusce velit mi, tristique sit amet mattis sit amet, eleifend at dui. Maecenas euismod tristique justo nec lacinia. Nullam vehicula fringilla nibh vitae interdum. Nunc laoreet lorem ipsum, a porttitor neque tincidunt at. Phasellus id nibh risus. Fusce iaculis, risus sit amet sollicitudin aliquam, turpis justo tempor ipsum, quis mattis dolor sapien quis dui. Sed aliquet rhoncus dolor nec commodo.</p>
+          <h5>Heading 5</h5>
+          <p>Vivamus cursus sapien rutrum turpis volutpat tristique. Curabitur vitae condimentum mi. Fusce velit mi, tristique sit amet mattis sit amet, eleifend at dui. Maecenas euismod tristique justo nec lacinia. Nullam vehicula fringilla nibh vitae interdum. Nunc laoreet lorem ipsum, a porttitor neque tincidunt at. Phasellus id nibh risus. Fusce iaculis, risus sit amet sollicitudin aliquam, turpis justo tempor ipsum, quis mattis dolor sapien quis dui. Sed aliquet rhoncus dolor nec commodo.</p>
+          <h6>Heading 6</h6>
+          <p>Vivamus cursus sapien rutrum turpis volutpat tristique. Curabitur vitae condimentum mi. Fusce velit mi, tristique sit amet mattis sit amet, eleifend at dui. Maecenas euismod tristique justo nec lacinia. Nullam vehicula fringilla nibh vitae interdum. Nunc laoreet lorem ipsum, a porttitor neque tincidunt at. Phasellus id nibh risus. Fusce iaculis, risus sit amet sollicitudin aliquam, turpis justo tempor ipsum, quis mattis dolor sapien quis dui. Sed aliquet rhoncus dolor nec commodo.</p>
+          <p>Etiam vel lacus semper, <a href="#">this is a link</a>, dignissim leo. Donec <em>this is italic</em> a magna pharetra, id <strong>this is bold</strong>. In eget sem sem. In <u>this is an underline</u>, ut tristique tortor ultrices in. Nunc sodales placerat arcu, sed tempus nibh posuere quis. Nunc convallis mi neque. Proin a nulla ut eros finibus accumsan. Nunc et tortor non est finibus tincidunt. Morbi hendrerit tincidunt facilisis.</p>
+          <h6>Unordered List:</h6>
+          <ul>
+            <li>In hac habitasse platea dictumst. Ut quis nisl leo.</li>
+            <li>Nam sollicitudin tincidunt elementum. Nullam sit amet fermentum massa.</li>
+            <li>Cras vitae euismod tellus. Phasellus quis malesuada nibh.</li>
+            <li>Donec sapien dui, efficitur ut massa vitae, porttitor placerat tortor.</li>
+            <li>In tincidunt erat mauris, sit amet scelerisque lorem malesuada vitae.</li>
+          </ul>
+          <h6>Ordered List:</h6>
+          <ol>
+            <li>In hac habitasse platea dictumst. Ut quis nisl leo.</li>
+            <li>Nam sollicitudin tincidunt elementum. Nullam sit amet fermentum massa.</li>
+            <li>Cras vitae euismod tellus. Phasellus quis malesuada nibh.</li>
+            <li>Donec sapien dui, efficitur ut massa vitae, porttitor placerat tortor.</li>
+            <li>In tincidunt erat mauris, sit amet scelerisque lorem malesuada vitae.</li>
+          </ol>
+          <p>Donec lobortis condimentum blandit. Maecenas semper id tortor a suscipit. Praesent varius tincidunt lectus, vitae imperdiet erat tincidunt in. Phasellus eget urna faucibus, blandit erat quis, cursus eros. Maecenas sed orci rhoncus, auctor ligula eget, aliquet lorem. Aenean lacinia, felis sit amet fringilla sollicitudin, lacus orci sodales nulla, a tristique orci ante ut eros. Nunc turpis eros, congue nec eleifend fermentum, maximus vel magna. Nunc volutpat turpis vulputate, dictum tortor non, aliquet nisl. Morbi auctor imperdiet dolor. Duis mattis mauris at magna gravida, quis lacinia neque molestie. Aenean eu dui consectetur, suscipit turpis id, accumsan tellus. Mauris placerat consectetur mi id bibendum.</p>
+        </div>
+      </div>
+      {% markdown %}
+      ```twig.line-numbers
+      {% verbatim %}
+      <div class="wysiwyg">
+        {# your typography elements here  #}
+      </div>
+      {% endverbatim %}
+      ```
+      {% endmarkdown %}
+    </div>
+  </section>
+
+{% endblock %}

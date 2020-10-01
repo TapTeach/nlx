@@ -1,0 +1,51 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'container' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Container</h1>
+      <ul>
+        <li>Utility classes for limiting the width of content.</li>
+        <li>Containers are always 100% width with a max-width depending on container size.</li>
+        <li>All containers have a built in padding across viewports.</li>
+        <li>Remove padding by adding class <code>px-0</code>.</li>
+        <li>Remove centering by adding class <code>mx-0</code>.</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="align-center">
+    <code>container-sm</code>
+    <div class="container-sm mt-1 mb-2"><p class="ebox">[max-width: 530px]</p></div>
+    <code>container-md</code>
+    <div class="container-md mt-1 mb-2"><p class="ebox">[max-width: 768px]</p></div>
+    <code>container-lg</code>
+    <div class="container-lg mt-1 mb-2"><p class="ebox">[max-width: 960px]</p></div>
+    <code>container-xl</code>
+    <div class="container-xl mt-1 mb-2"><p class="ebox">[max-width: 1188px]</p></div>
+    <code>container</code>
+    <div class="container mt-1"><p class="ebox">[width: 100%]</p></div>
+  </section>
+
+  <section class="container-xl">
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    <div class="container"></div>
+    <div class="container-sm"></div>
+    <div class="container-md"></div>
+    <div class="container-lg"></div>
+    <div class="container-xl"></div>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

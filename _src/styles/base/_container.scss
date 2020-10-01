@@ -1,0 +1,30 @@
+// ================================
+// Components: Container
+// ================================
+
+.container,
+%container {
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: rem($container-gutter/2);
+  padding-right: rem($container-gutter/2);
+
+  @include media('>=md') {
+    padding-left: rem($container-gutter);
+    padding-right: rem($container-gutter);
+  }
+  @include media('>=lg') {
+    padding-left: rem($container-gutter * 2);
+    padding-right: rem($container-gutter * 2);
+  }
+}
+
+@each $size, $width in $container-width {
+  .container-#{$size},
+  %container-#{$size} {
+    @extend %container;
+    max-width: $width;
+  }
+}

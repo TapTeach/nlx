@@ -1,0 +1,66 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'speaker' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Speaker Modal</h1>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <div class="sg-example">
+      {% include "_components/speaker.html" with {
+        "id": "evanson",
+        "img": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/search/results/aaron_evanson.png",
+        "name": "Aaron Evanson",
+        "title": "Executive Creative Director",
+        "location": "Location or Company"
+      } %}
+
+      {% include "_partials/modals.html" %}
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {#
+      Place the speaker component or your own markup using an #id and class 'js-modal-inline'.
+      Title and Location are optional.
+      Include the modals.html file once on the same page.
+      Place the speaker modal code in the modals.html.
+    #}
+
+    {# Speaker Component #}
+    {% include "_components/speaker.html" with {
+      "id": "evanson",
+      "img": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/search/results/aaron_evanson.png",
+      "name": "Aaron Evanson",
+      "title": "Executive Creative",
+      "location": "Location or Company"
+    } %}
+
+    {# Speaker Modal Component #}
+    {% include "_components/speaker-modal.html" with {
+      "id": "evanson",
+      "img": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/search/results/aaron_evanson.png",
+      "name": "Aaron Evanson",
+      "title": "Executive Creative",
+      "location": "Location or Company",
+      "email": "aaron.evanson@vmlyr.com"
+    } %}
+
+    {# Modal file #}
+    {% include "_partials/modals.html" %}
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

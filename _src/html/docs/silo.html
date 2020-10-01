@@ -1,0 +1,191 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'silo' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Silo</h1>
+      <ul>
+        <li>Use the Twig <code>{% verbatim %}{% embed "_components/silo.html" %}{% endverbatim %}</code> to show the silo component.</li>
+        <li>The silo component is tall and narrow boxes that uses <a href="./grid.html">grid</a> to align.</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="container-xl">
+      <div class="sg-comments">
+        <h2 class="type-h4">Parameters</h2>
+        <table class="sg-table">
+          <thead>
+            <tr>
+              <th>Key</th>
+              <th>Description</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>title</code></td>
+              <td>Title text of the silo</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td><code>text</code></td>
+              <td>Paragraph text below title</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td><code>bgImg</code></td>
+              <td>
+                Background image for silo.<br>
+                <code>https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/silo-mobile.jpg</code><br>
+                <code>https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/silo-mobile-photographer.jpg</code><br>
+                <code>https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/silo-computer.jpg</code><br>
+                <code>https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/silo-camera.jpg</code>
+              </td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td><code>url</code></td>
+              <td>External url to link silo to.</td>
+              <td>No url or modal, no hover state.</td>
+            </tr>
+            <tr>
+              <td><code>modal</code></td>
+              <td>Popover box when silo is clicked.<br>
+                <code>id</code> is a unique string that ties the url and modal together.<br>
+                <code>copy</code> is the content inside the modal.
+              </td>
+              <td>No url or modal, no hover state.</td>
+            </tr>
+            <tr>
+              <td><code>linkText</code></td>
+              <td>Text below hr line.</td>
+              <td>Hidden if no url or modal provided.</td>
+            </tr>
+            <tr>
+              <td><code>icons</code></td>
+              <td>              
+                Icons availble from <a href="./iconography.html">Iconography</a>.<br>
+                <code>name</code> Name of icon<br>
+                <code>color</code> Color of icon. See <a href="./color.html">Colors</a>.<br>
+                <code>size</code> Size of icon.
+              </td>
+              <td>Hidden if no url or modal provided.<br>
+                <code>size</code>: xs
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </section>
+
+  <section class="container-xl">
+    <div class="sg-example">
+      <div class="row justify-center">
+        <div class="col-10 sm:col-6 md:col-3 mb-2 md:mb-0">
+          {% include "_components/silo.html" with {
+            "title": "Social Media",
+            "text": "Full-service social media offering from content strategy to community management to analytics.",
+            "bgImg": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/silo-mobile.jpg",
+            "url": "https://www.vmlyr.com",
+            "linkText": "Learn More",
+            "icons": {
+              "name": "external",
+              "color": "cyan",
+              "size": "xs"
+            }
+          } %}
+        </div>
+        <div class="col-10 sm:col-6 md:col-3 mb-2 md:mb-0">
+          {% include "_components/silo.html" with {
+            "title": "Discoverability",
+            "text": "The Discoverability group creates powerful, data-driven search campaigns and digital content that drive visibility, traffic, conversions for brands through organic search, paid search, and performance content.",
+            "bgImg": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/silo-mobile-photographer.jpg",
+            "linkText": "View Information",
+            "icons": {
+              "name": "info-fill",
+              "color": "cyan",
+              "size": "xs"
+            },
+            "modal": {
+              "id": "discover",
+              "copy": "
+                <p>The Discoverability group creates powerful, data-driven search campaigns and digital content that drive visibility, traffic, conversions for brands through organic search, paid search, and performance content.</p>
+                <p>Designed to help clients create connected, personalized content experiences at scale, Content Studio marries human-centered design with digital storytelling, blending data, technology, content and experience.</p>
+              "
+            }
+          } %}
+        </div>
+        <div class="col-10 sm:col-6 md:col-3 mb-2 md:mb-0">
+          {% include "_components/silo.html" with {
+            "title": "Content Studio",
+            "text": "Designed to help clients create connected, personalized content experiences at scale, Content Studio marries human-centered design with digital storytelling, blending data, technology, content and experience.",
+            "bgImg": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/silo-computer.jpg"
+          } %}
+        </div>
+        <div class="col-10 sm:col-6 md:col-3">
+          {% include "_components/silo.html" with {
+            "title": "Paid Media",
+            "text": "Catalyst will serve as an external partner to VMLY&R for this engagement and will lead paid social, display, SEM, and measurement.",
+            "bgImg": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/silo-camera.jpg"
+          } %}
+        </div>
+      </div>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# Silo with external url #}
+    {% include "_components/silo.html" with {
+      "title": "Social Media",
+      "text": "Full-service social media offering from content strategy to community management to analytics.",
+      "bgImg": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/silo-mobile.jpg",
+      "url": "https://www.vmlyr.com",
+      "linkText": "Learn More",
+      "icons": {
+        "name": "external",
+        "color": "cyan",
+        "size": "xs"
+      }
+    } %}
+
+    {# Silo with modal #}
+    {% include "_components/silo.html" with {
+      "title": "Discoverability",
+      "text": "The Discoverability group creates powerful, data-driven search campaigns and digital content that drive visibility, traffic, conversions for brands through organic search, paid search, and performance content.",
+      "bgImg": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/silo-mobile-photographer.jpg",
+      "linkText": "View Information",
+      "icons": {
+        "name": "info-fill",
+        "color": "cyan",
+        "size": "xs"
+      },
+      "modal": {
+        "id": "discover",
+        "copy": "
+          <p>The Discoverability group creates powerful, data-driven search campaigns and digital content that drive visibility, traffic, conversions for brands through organic search, paid search, and performance content.</p>
+          <p>Designed to help clients create connected, personalized content experiences at scale, Content Studio marries human-centered design with digital storytelling, blending data, technology, content and experience.</p>
+        "
+      }
+    } %}
+
+    {# Silo with no url or modal or hover #}
+    {% include "_components/silo.html" with {
+      "title": "Paid Media",
+      "text": "Catalyst will serve as an external partner to VMLY&R for this engagement and will lead paid social, display, SEM, and measurement.",
+      "bgImg": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/silo-camera.jpg"
+    } %}
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

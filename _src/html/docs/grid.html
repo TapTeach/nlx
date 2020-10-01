@@ -1,0 +1,626 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'grid' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Flexbox Grid</h1>
+      <ul>
+        <li>12 columns</li>
+        <li>Use <code>col-</code> plus number of columns to define width. Example: <code>col-4</code></li>
+        <li>Add responsive modifiers to trigger different column widths, sorting, or positioning by breakpoint <code> xs:, sm:, md:, lg:, xl:</code></li>
+        <li>A set of columns must be wrapped with the <code>.row</code> wrapper.</li>
+        <li>Any set of columns inside of a <code>.row</code> that do not equal to 100% will wrap to a new line.</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">Row Gutter</h2>
+    </div>
+
+    <div class="sg-example">
+      <code>.row</code>
+        <div class="row mb-2">
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+        </div>
+  
+        <code>.row--gutter-narrow</code>
+        <div class="row row--gutter-narrow mb-2">
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+        </div>
+  
+        <code>.row--gutter-wide</code>
+        <div class="row row--gutter-wide mb-2">
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+        </div>
+  
+        <code>.row--gutter-wide-lg</code>
+        <div class="row row--gutter-wide-lg mb-2">
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+        </div>
+  
+        <code>.row--gutter-gapless</code>
+        <div class="row row--gutter-gapless mb-2">
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+        </div>
+  
+        <code>.row--columns</code>
+        <div class="row row--columns">
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+          <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+        </div>
+      </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# margin left and right set to -$spacing-unit = 10px #}
+    <div class="row">
+      <div class="col-12">...</div>
+    </div>
+
+    {# margin left and right set to -$spacing-unit / 2 #}
+    <div class="row row--gutter-narrow">
+      <div class="col-12">...</div>
+    </div>
+
+    {# margin left and right set to -$spacing-unit * 2  #}
+    <div class="row row--gutter-wide">
+      <div class="col-12">...</div>
+    </div>
+
+    {# gutter-wide will on show on breakpoint >=lg #}
+    <div class="row row--gutter-wide-lg">
+      <div class="col-12">...</div>
+    </div>
+
+    {# margin left and right set to 0 #}
+    <div class="row row--gutter-gapless">
+      <div class="col-12">...</div>
+    </div>
+
+    {# row direction is columns and .reverse will reverse the direction #}
+    <div class="row row--columns">
+      <div class="col-12">...</div>
+    </div>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">Default</h2>
+    </div>
+
+    <div class="sg-example">
+      <div class="row">
+        <div class="col-12"><p class="ebox">col-12</p></div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 sm:col-6"><p class="ebox">col-6</p></div>
+        <div class="col-12 sm:col-6"><p class="ebox">col-6</p></div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 sm:col-4"><p class="ebox">col-4</p></div>
+        <div class="col-12 sm:col-4"><p class="ebox">col-4</p></div>
+        <div class="col-12 sm:col-4"><p class="ebox">col-4</p></div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 sm:col-3"><p class="ebox">col-3</p></div>
+        <div class="col-12 sm:col-3"><p class="ebox">col-3</p></div>
+        <div class="col-12 sm:col-3"><p class="ebox">col-3</p></div>
+        <div class="col-12 sm:col-3"><p class="ebox">col-3</p></div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+        <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+        <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+        <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+        <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+        <div class="col-12 sm:col-2"><p class="ebox">col-2</p></div>
+      </div>
+    </div>
+
+    {% markdown %}
+    ```html.line-numbers
+    <div class="row">
+      <div class="col-12">...</div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">...</div>
+      <div class="col-6">...</div>
+    </div>
+
+    <div class="row">
+      <div class="col-4">...</div>
+      <div class="col-4">...</div>
+      <div class="col-4">...</div>
+    </div>
+    ```
+    {% endmarkdown %}
+  </section>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">Responsive</h2>
+    </div>
+
+    <div class="sg-example">
+      <div class="row">
+        <div class="col-12 md:col-4 lg:col-6"><p class="ebox">[resize browser]</p></div>
+      </div>
+    </div>
+
+    {% markdown %}
+    ```html.line-numbers
+    <!--
+    // col-12: by default the column will be 100%
+    // lg:col-6: while in a large viewport, the column will be 50% (12/12)
+    // md:col-4: while in a medium viewport, the column will be 33% (4/12)
+    -->
+
+    <div class="row">
+      <div class="col-12 sm:col-6 md:col-4 lg:col-3">...</div>
+    </div>
+    ```
+    {% endmarkdown %}
+  </section>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">Auto</h2>
+      <ul>
+        <li>Add any number of columns to a row and each column will be the same width.</li>
+        <li>Perfect for when having an odd numnber of columns that is not divisible by 12.</li>
+        <li>Can be utilized to fill up remaining amount of space in conjunction with a column that has a defined width.</li>
+      </ul>
+    </div>
+
+    <div class="sg-example">
+      <div class="row">
+        <div class="col-auto"><p class="ebox">col-auto</p></div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 sm:col-auto"><p class="ebox">col-auto</p></div>
+        <div class="col-12 sm:col-5"><p class="ebox">col-5</p></div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 sm:col-auto"><p class="ebox">col-auto</p></div>
+        <div class="col-12 sm:col-auto"><p class="ebox">col-auto</p></div>
+        <div class="col-12 sm:col-auto"><p class="ebox">col-auto</p></div>
+        <div class="col-12 sm:col-auto"><p class="ebox">col-auto</p></div>
+        <div class="col-12 sm:col-auto"><p class="ebox">col-auto</p></div>
+      </div>
+    </div>
+
+    {% markdown %}
+    ```html.line-numbers
+    <div class="row">
+      <div class="col-auto">...</div>
+    </div>
+
+    <div class="row">
+      <div class="col-auto">...</div>
+      <div class="col-5">...</div>
+    </div>
+
+    <div class="row">
+      <div class="col-auto">...</div>
+      <div class="col-auto">...</div>
+      <div class="col-auto">...</div>
+      <div class="col-auto">...</div>
+      <div class="col-auto">...</div>
+    </div>
+    ```
+    {% endmarkdown %}
+  </section>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">Variable</h2>
+      <ul>
+        <li>Takes on the width of the content inside of the column.</li>
+        <li>Best utilized with content that has a max-width or set width.</li>
+        <li>Variable columns work great with positioning helper classes.</li>
+        <li>If the column does not fit inside of the row, the column will wrap to new line.</li>
+      </ul>
+    </div>
+
+    <div class="sg-example">
+      <div class="row">
+        <div class="col-variable"><p class="ebox">col-variable</p></div>
+        <div class="col-variable"><p class="ebox">[I am taking on the width of content]</p></div>
+      </div>
+    </div>
+
+    {% markdown %}
+    ```html.line-numbers
+    <div class="row">
+      <div class="col-variable">...</div>
+      <div class="col-variable">...</div>
+    </div>
+    ```
+    {% endmarkdown %}
+  </section>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">Offset</h2>
+      <ul>
+        <li>Offset content from left side.</li>
+        <li>Offset values range from 1-12.</li>
+      </ul>
+    </div>
+
+    <div class="sg-example">
+      <div class="row">
+        <div class="col-offset-1 col-auto"><p class="ebox">col-offset-1</p></div>
+      </div>
+      <div class="row">
+        <div class="col-offset-2 col-auto"><p class="ebox">col-offset-2</p></div>
+      </div>
+      <div class="row">
+        <div class="col-offset-3 col-auto"><p class="ebox">col-offset-3</p></div>
+      </div>
+      <div class="row">
+        <div class="col-offset-4 col-auto"><p class="ebox">col-offset-4</p></div>
+      </div>
+      <div class="row">
+        <div class="col-offset-5 col-auto"><p class="ebox">col-offset-5</p></div>
+      </div>
+      <div class="row">
+        <div class="col-offset-6 col-auto"><p class="ebox">col-offset-6</p></div>
+      </div>
+      <div class="row">
+        <div class="col-offset-7 col-auto"><p class="ebox">col-offset-7</p></div>
+      </div>
+      <div class="row">
+        <div class="col-offset-8 col-auto"><p class="ebox">col-offset-8</p></div>
+      </div>
+      <div class="row">
+        <div class="col-offset-9 col-auto"><p class="ebox">col-offset-9</p></div>
+      </div>
+    </div>
+
+    {% markdown %}
+    ```html.line-numbers
+    <div class="row">
+      <div class="col-offset-1 col-auto">...</div>
+    </div>
+
+    <div class="row">
+      <div class="col-offset-4 col-5">...</div>
+    </div>
+    ```
+    {% endmarkdown %}
+  </section>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">Align Items</h2>
+      <ul>
+        <li>Column positioning along the cross axis.</li>
+        <li>By default the column behavior is to use stretch.</li>
+        <li>Add responsive modifiers <code> xs:, sm:, md:, lg:, xl:</code></li>
+      </ul>
+    </div>
+    <div class="sg-example">
+      <div class="sg-row sg-row--fshort">
+        <div class="row row--gutter-narrow">
+          <div class="col-auto"><div class="ebox"></div></div>
+          <div class="col-auto"><div class="ebox"></div></div>
+          <div class="col-auto"><div class="ebox"></div></div>
+        </div>
+      </div>
+      {% markdown %}
+      ```html.line-numbers
+      <div class="row">
+        ...
+      </div>
+      ```
+      {% endmarkdown %}
+    </div>
+
+    <div class="sg-example">
+      <code>items-start</code>
+      <div class="sg-row">
+        <div class="row row--gutter-narrow items-start">
+          <div class="col-auto"><div class="ebox ebox--short"></div></div>
+          <div class="col-auto"><div class="ebox ebox--tall"></div></div>
+          <div class="col-auto"><div class="ebox ebox--short"></div></div>
+        </div>
+      </div>
+      {% markdown %}
+      ```html.line-numbers
+      <div class="row items-start">
+        ...
+      </div>
+      ```
+      {% endmarkdown %}
+    </div>
+
+    <div class="sg-example">
+      <code>items-center</code>
+      <div class="sg-row">
+        <div class="row row--gutter-narrow items-center">
+          <div class="col-auto"><div class="ebox ebox--short"></div></div>
+          <div class="col-auto"><div class="ebox ebox--tall"></div></div>
+          <div class="col-auto"><div class="ebox ebox--short"></div></div>
+        </div>
+      </div>
+      {% markdown %}
+      ```html.line-numbers
+      <div class="row items-center">
+        ...
+      </div>
+      ```
+      {% endmarkdown %}
+    </div>
+
+    <div class="sg-example">
+      <code>items-end</code>
+      <div class="sg-row">
+        <div class="row row--gutter-narrow items-end">
+          <div class="col-auto"><div class="ebox ebox--short"></div></div>
+          <div class="col-auto"><div class="ebox ebox--tall"></div></div>
+          <div class="col-auto"><div class="ebox ebox--short"></div></div>
+        </div>
+      </div>
+      {% markdown %}
+      ```html.line-numbers
+      <div class="row items-end">
+        ...
+      </div>
+      ```
+      {% endmarkdown %}
+    </div>
+  </section>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">Align Content</h2>
+      <ul>
+        <li>Column positioning in multi-line rows.</li>
+        <li>Will only work if there are multiple lines of columns.</li>
+        <li>Your row container must have a fixed or height greater than the column height.</li>
+        <li>Add responsive modifiers <code> xs:, sm:, md:, lg:, xl:</code></li>
+      </ul>
+    </div>
+    <div class="sg-example">
+      <code>content-start</code>
+      <div class="sg-row sg-row--ftall">
+        <div class="row row--gutter-narrow content-start">
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+        </div>
+      </div>
+      {% markdown %}
+      ```html.line-numbers
+      <div class="row content-start">
+        ...
+      </div>
+      ```
+      {% endmarkdown %}
+    </div>
+
+    <div class="sg-example">
+      <code>content-center</code>
+      <div class="sg-row sg-row--ftall">
+        <div class="row row--gutter-narrow content-center">
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+        </div>
+      </div>
+      {% markdown %}
+      ```html.line-numbers
+      <div class="row content-center">
+        ...
+      </div>
+      ```
+      {% endmarkdown %}
+    </div>
+
+    <div class="sg-example">
+      <code>content-end</code>
+      <div class="sg-row sg-row--ftall">
+        <div class="row row--gutter-narrow content-end">
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+        </div>
+      </div>
+      {% markdown %}
+      ```html.line-numbers
+      <div class="row content-end">
+        ...
+      </div>
+      ```
+      {% endmarkdown %}
+    </div>
+
+    <div class="sg-example">
+      <code>content-around</code>
+      <div class="sg-row sg-row--ftall">
+        <div class="row row--gutter-narrow content-around">
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+        </div>
+      </div>
+      {% markdown %}
+      ```html.line-numbers
+      <div class="row content-around">
+        ...
+      </div>
+      ```
+      {% endmarkdown %}
+    </div>
+    <div class="sg-example">
+      <code>content-between</code>
+      <div class="sg-row sg-row--ftall">
+        <div class="row row--gutter-narrow content-between">
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+          <div class="col-4"><div class="ebox ebox--short"></div></div>
+        </div>
+      </div>
+      {% markdown %}
+      ```html.line-numbers
+      <div class="row content-between">
+        ...
+      </div>
+      ```
+      {% endmarkdown %}
+    </div>
+  </section>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">Justify Content</h2>
+      <ul>
+        <li>Column positioning along the main axis.</li>
+        <li>Add responsive modifiers <code> xs:, sm:, md:, lg:, xl:</code></li>
+      </ul>
+    </div>
+    <div class="sg-example">
+      <code>justify-start</code>
+      <div class="sg-row">
+        <div class="row row--gutter-narrow justify-start">
+          <div class="col-3"><div class="ebox ebox--short"></div></div>
+          <div class="col-3"><div class="ebox ebox--short"></div></div>
+        </div>
+      </div>
+      {% markdown %}
+      ```html.line-numbers
+      <div class="row justify-start">
+        ...
+      </div>
+      ```
+      {% endmarkdown %}
+    </div>
+
+    <div class="sg-example">
+      <code>justify-center</code>
+      <div class="sg-row">
+        <div class="row row--gutter-narrow justify-center">
+          <div class="col-3"><div class="ebox ebox--short"></div></div>
+          <div class="col-3"><div class="ebox ebox--short"></div></div>
+        </div>
+      </div>
+      {% markdown %}
+      ```html.line-numbers
+      <div class="row justify-center">
+        ...
+      </div>
+      ```
+      {% endmarkdown %}
+    </div>
+
+    <div class="sg-example">
+      <code>justify-end</code>
+      <div class="sg-row">
+        <div class="row row--gutter-narrow justify-end">
+          <div class="col-3"><div class="ebox ebox--short"></div></div>
+          <div class="col-3"><div class="ebox ebox--short"></div></div>
+        </div>
+      </div>
+      {% markdown %}
+      ```html.line-numbers
+      <div class="row justify-end">
+        ...
+      </div>
+      ```
+      {% endmarkdown %}
+    </div>
+
+    <div class="sg-example">
+      <code>justify-around</code>
+      <div class="sg-row">
+        <div class="row row--gutter-narrow justify-around">
+          <div class="col-3"><div class="ebox ebox--short"></div></div>
+          <div class="col-3"><div class="ebox ebox--short"></div></div>
+        </div>
+      </div>
+      {% markdown %}
+      ```html.line-numbers
+      <div class="row justify-around">
+        ...
+      </div>
+      ```
+      {% endmarkdown %}
+    </div>
+    <div class="sg-example">
+      <code>justify-between</code>
+      <div class="sg-row">
+        <div class="row row--gutter-narrow justify-between">
+          <div class="col-3"><div class="ebox ebox--short"></div></div>
+          <div class="col-3"><div class="ebox ebox--short"></div></div>
+        </div>
+      </div>
+      {% markdown %}
+      ```html.line-numbers
+      <div class="row justify-between">
+        ...
+      </div>
+      ```
+      {% endmarkdown %}
+    </div>
+  </section>
+{% endblock %}

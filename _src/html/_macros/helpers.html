@@ -1,0 +1,20 @@
+{% macro icon(id, color, size, viewBox) %}
+  {% if id %}
+    <svg viewBox="{{viewBox|default('0 0 1 1')}}" class="iconography" size="{{ size|default('') }}" color="{{ color|default('currentColor') }}">
+      <use xlink:href="../assets/icons/icons.svg#{{id}}"></use>
+    </svg>
+  {% endif %}
+{% endmacro %}
+
+{% macro button(title, type, size, newWindow, url, class) %}
+  {% import _self as iconography %}
+
+  {% if title %}
+    <a href="{{url}}" {% if newWindow %}target="_blank"{% endif %} class="button {{ class }}">
+      <span class="button__label {% if type == false %}button__labelPr{% endif %}">{{title}}</span>
+      {% if type %}
+        <span class="button__icon">{{ iconography.icon(type, 'currentColor', size) }}</span>
+      {% endif %}
+    </a>
+  {% endif %}
+{% endmacro %}

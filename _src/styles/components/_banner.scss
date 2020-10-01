@@ -1,0 +1,19 @@
+// ================================
+// Components: Examples
+// ================================
+
+.banner {
+  display: flex;
+  height: 90vh;
+  max-height: rem(600px);
+  justify-content: center;
+  align-items: center;
+
+  [class*='container-'] {
+    padding-top: rem(60px);
+  }
+}
+
+.banner__instruction {
+  opacity: 0.75;
+}

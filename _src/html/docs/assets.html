@@ -1,0 +1,163 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Assets (update the content on this page)</h1>
+      <ul>
+        <li>Individual spotlight blocks to feature content such as agency work or case studies.</li>
+        <li>The spotlight scales in accordance to the size of picture supplied.</li>
+        <li>Combine with the <a href="/docs/grid.html">Grid</a> to create the desired layout.</li>
+      </ul>
+    </div>
+  </header>
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">
+        Parameters
+      </h2>
+      <table class="sg-table">
+        <thead>
+          <tr>
+            <th>Key</th>
+            <th>Value</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>title</code></td>
+            <td>Sets the title below picture.</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td><code>iconId</code></td>
+            <td>Use iconography to place an icon over the picture when hovered.</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td><code>url</code></td>
+            <td>Sets the url for the clickable link or video embed url.</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td><code>isVideo</code></td>
+            <td>Set <code>true</code> for video or <code>false</code> for links.</td>
+            <td><code>false</code></td>
+          </tr>
+          <tr>
+            <td><code>picture</code></td>
+            <td>See <a href="figure.html">picture component for parameters</a></td>
+            <td>--</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container-xl">
+    <h2 class="type-h4 mb-1">Examples</h2>
+    <div class="sg-example">
+      <div class="row justify-center">
+        <div class="col-12 md:col-4">
+          {% include "_components/spotlight.html" with {
+            "title": "Wendy's: Social",
+            "iconId": "doc-pdf",
+            "url": "https://vml.com",
+            "isVideo": false,
+            "picture": {
+              "altText": "This is alt text",
+              "default": {
+                "id": "zmhBMx5mKskyiIicaMGC6",
+                "width": "500",
+                "height": "200"
+              },
+              "md": {
+                "id": "5Q1CzkxA52USSOywuuOMaC",
+                "width": "300",
+                "height": "300"
+              },
+              "lg": {
+                "id": "7h6rJxde3mIMo0mSqGkm2U",
+                "width": "600",
+                "height": "600"
+              }
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-4">
+          {% include "_components/spotlight.html" with {
+            "title": "New Balance",
+            "iconId": "video",
+            "url": "https://vimeo.com/272846703",
+            "isVideo": true,
+            "picture": {
+              "altText": "This is alt text",
+              "default": {
+                "id": "zmhBMx5mKskyiIicaMGC6",
+                "width": "500",
+                "height": "200"
+              },
+              "md": {
+                "id": "5Q1CzkxA52USSOywuuOMaC",
+                "width": "300",
+                "height": "300"
+              },
+              "lg": {
+                "id": "4cUKj3Wi5y2iusuY4SwOyQ",
+                "width": "600",
+                "height": "600"
+              }
+            }
+          } %}
+        </div>
+      </div>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# // This spotlight component is for 1 image with 3 responsive sizes #}
+    {% include "_components/spotlight.html" with {
+      "title": "This is the title text",
+      "iconId": "doc-pdf",
+      "url": "https://vml.com",
+      "isVideo": false,
+      "picture": {
+        "altText": "This is alt text",
+        "default": {
+          "id": "zmhBMx5mKskyiIicaMGC6",
+          "width": "500",
+          "height": "200",
+        },
+        "md": {
+          "id": "zmhBMx5mKskyiIicaMGC6",
+          "width": "300",
+          "height": "300",
+        },
+        "lg": {
+          "id": "5Q1CzkxA52USSOywuuOMaC",
+          "width": "600",
+          "height": "600",
+        }
+      }
+    } %}
+
+    {# An example with the grid in use #}
+    <div class="row">
+      <div class="col-12 md:col-4"> <!-- // spotlight // --> </div>
+      <div class="col-12 md:col-4"> <!-- // spotlight // --> </div>
+      <div class="col-12 md:col-4"> <!-- // spotlight // --> </div>
+    </div>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

@@ -1,0 +1,96 @@
+// ================================
+// Components: Contact
+// ================================
+
+.contact {
+  text-decoration: none;
+
+  & + & {
+    margin-top: rem(8px);
+  }
+
+  li {
+    list-style: none;
+  }
+
+  img {
+    display: block;
+    min-width: rem(35px);
+    height: auto;
+  }
+
+  span {
+    cite {
+      display: block;
+      color: setcolor(onyx, 80);
+    }
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    .dayList__speakerName {
+      color: setcolor(blue);
+    }
+  }
+}
+
+.contact__flex {
+  display: block;
+
+  img {
+    width: 100%;
+    margin-bottom: rem(15px);
+  }
+
+  @include media('>=sm') {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    img {
+      width: 50%;
+      margin-right: rem(10px);
+      margin-bottom: 0;
+    }
+  }
+}
+
+.contact__block {
+  display: block;
+
+  img {
+    width: 100%;
+  }
+}
+
+.contact__name {
+  color: var(--contactNameColor);
+  font-weight: 700;
+  font-size: 1.1em;
+  line-height: 1.2;
+}
+
+.contact__title {
+  line-height: 1.2;
+  margin-bottom: rem(10px);
+  color: var(--contactTitleColor);
+  font-size: 0.9em;
+}
+
+.contact__email,
+.contact__phone {
+  line-height: 1.5;
+  font-size: 0.9em;
+
+  a {
+    text-decoration: none;
+    color: var(--contactLinkColor);
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: var(--contactLinkHoverColor);
+    }
+  }
+}

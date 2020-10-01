@@ -1,0 +1,25 @@
+// ================================
+// Utilities: Show
+// ================================
+/// Show an element on mobile viewports < 568px. Hidden on all other viewports.
+/// @group show
+.show-mobile {
+  @include media('>=sm') {
+    display: none !important;
+  }
+}
+/// Show an element on tablet viewports >= 568px and < 1024px. Hidden on all other viewports.
+/// @group show
+.show-tablet {
+  display: none !important;
+  @include media('>=sm', '<lg') {
+    display: block !important;
+  }
+}
+/// Show an element on viewports >= 1024px. Hidden on all other viewports.
+/// @group show
+.show-desktop {
+  @include media('<lg') {
+    display: none !important;
+  }
+}

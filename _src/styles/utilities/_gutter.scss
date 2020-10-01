@@ -1,0 +1,32 @@
+// ================================
+// Utilities: Gutter
+// ================================
+
+$gutter: (
+  1: rem(40px),
+  2: rem(65px),
+  3: rem(85px),
+  4: rem(115px)
+);
+
+@each $label, $value in $gutter {
+  .vg-#{$label} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+}
+
+// --------------------------------
+// Responsive Gutter
+// --------------------------------
+
+@each $breakpoint in map-keys($breakpoints) {
+  @include media(#{'>=' + $breakpoint}) {
+    @each $label, $value in $gutter {
+      .#{$breakpoint}\:vg-#{$label} {
+        padding-top: $value;
+        padding-bottom: $value;
+      }
+    }
+  }
+}

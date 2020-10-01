@@ -1,0 +1,13 @@
+<div class="googleMap">
+  {% for marker in mapSrc %}
+    <div
+      class="marker"
+      data-id="location-{{ marker.id }}"
+      data-lat="{{ marker.lat }}"
+      data-lng="{{ marker.lng }}"
+      data-marker="{{ options.pathImagesAmazon }}/maps/icons/icon-{{ marker.icon }}.svg">
+    </div>
+  {% endfor %}
+</div>
+
+{% include "../_partials/modals.html" %}

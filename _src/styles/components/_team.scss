@@ -1,0 +1,158 @@
+// ================================
+// Components: Team
+// ================================
+
+.team {
+  margin: rem(10px 0);
+  background-color: var(--teamBgColor);
+  overflow: hidden;
+
+  &:hover {
+    .team__img {
+      &::before {
+        opacity: 0.6;
+      }
+    }
+
+    svg {
+      transform: scale(1) translateZ(0);
+      opacity: 1;
+    }
+  }
+}
+
+.team__icon {
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: setcolor(white);
+  pointer-events: none;
+  z-index: 3;
+
+  svg {
+    opacity: 0.7;
+    transform: scale(1) translateZ(0);
+    transform-origin: center center;
+    transition: all 350ms 100ms $cubic-in;
+    backface-visibility: hidden;
+
+    @include media('>=lg') {
+      opacity: 0;
+    }
+  }
+}
+
+.team__img {
+  overflow: hidden;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: var(--hotspotGradientColor2);
+    background-image: linear-gradient(45deg, var(--hotspotGradientColor1), var(--hotspotGradientColor2));
+    opacity: 0;
+    transition: opacity 350ms $cubic-in;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+  }
+
+  .preview__loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #010023;
+    background-image: url('../images/loader/ball-triangle.svg');
+    background-repeat: no-repeat;
+    background-position: 50%;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.65s cubic-bezier(0.18, 0.98, 0.45, 1);
+    z-index: 2;
+  }
+
+  .lazyloaded + .preview__loader {
+    opacity: 0;
+  }
+}
+
+.team__meta {
+  line-height: 1;
+  padding: rem(8px 10px);
+  z-index: 3;
+}
+
+.team__name {
+  text-transform: uppercase;
+  font-size: 1.1em;
+  color: var(--teamNameColor);
+  line-height: 1.2;
+
+  @include media('>=xs') {
+    font-size: 0.9em;
+  }
+}
+
+.team__title {
+  line-height: 1.1;
+  font-size: 0.85em;
+  color: var(--teamTitleColor);
+
+  @include media('>=xs') {
+    font-size: 0.8em;
+  }
+}
+
+.team__hotspot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.team-modal {
+  background-color: setcolor(white);
+  padding: rem(80px 20px 40px);
+  width: 100%;
+  max-width: rem(600px);
+  margin: 0 auto;
+
+  @include media('>=lg') {
+    padding: rem(80px 40px 40px);
+  }
+}
+
+.hotspotless {
+  background-color: var(--teamBgColorNohover);
+
+  .team__hotspot {
+    cursor: default;
+  }
+
+  &:hover {
+    .team__img {
+      &::before {
+        opacity: 0;
+      }
+    }
+  }
+}

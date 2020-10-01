@@ -1,0 +1,22 @@
+// ================================
+// Components: Letter
+// ================================
+
+.letter__col {
+  padding-top: rem(150px);
+  padding-bottom: rem(60px);
+  background-color: #232526;
+  background-image: linear-gradient(20deg, rgb(35, 37, 38), rgb(65, 67, 69));
+
+  @include media('>=sm') {
+    padding-top: rem(180px);
+    padding-bottom: rem(120px);
+  }
+
+  &:nth-child(2) {
+    @include media('<sm') {
+      padding-top: rem(60px);
+      padding-bottom: rem(60px);
+    }
+  }
+}

@@ -1,0 +1,410 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'backgrounds' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Backgrounds</h1>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">Utilities</h2>
+      <ul>
+        <li>Format background position, repeating, and size.</li>
+        <li>Class: <code>bg-[utility]</code></li>
+        <li>Responsive class: <code>[breakpoint]:bg-[utility]</code></li>
+        <li>Click on any of the radio buttons below to see how the classes will affect the background image.</li>
+        <li>See the <a href="video.html">Video page</a> for a video background.</li>
+      </ul>
+    </div>
+    <table class="sg-table mb-2">
+      <thead>
+        <th>Position</th>
+        <th>Repeat</th>
+        <th>Size</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div><input type="radio" name="bg-position" id="bg-bottom" data-bg-position data-class="bg-bottom" class="mr-1"><label for="bg-bottom" class="whitespace-nowrap"><code style="cursor: pointer">bottom</code></label></div>
+            <div><input type="radio" name="bg-position" id="bg-center" data-bg-position data-class="bg-center" class="mr-1"><label for="bg-center" class="whitespace-nowrap"><code style="cursor: pointer">center</code></label></div>
+            <div><input type="radio" name="bg-position" id="bg-left" data-bg-position data-class="bg-left" class="mr-1"><label for="bg-left" class="whitespace-nowrap"><code style="cursor: pointer">left</code></label></div>
+            <div><input type="radio" name="bg-position" id="bg-left-bottom" data-bg-position data-class="bg-left-bottom" class="mr-1"><label for="bg-left-bottom" class="whitespace-nowrap"><code style="cursor: pointer">left-bottom</code></label></div>
+            <div><input type="radio" name="bg-position" id="bg-left-top" data-bg-position data-class="bg-left-top" class="mr-1"><label for="bg-left-top" class="whitespace-nowrap"><code style="cursor: pointer">left-top</code></label></div>
+            <div><input type="radio" name="bg-position" id="bg-right" data-bg-position data-class="bg-right" class="mr-1"><label for="bg-right" class="whitespace-nowrap"><code style="cursor: pointer">right</code></label></div>
+            <div><input type="radio" name="bg-position" id="bg-right-bottom" data-bg-position data-class="bg-right-bottom" class="mr-1"><label for="bg-right-bottom" class="whitespace-nowrap"><code style="cursor: pointer">right-bottom</code></label></div>
+            <div><input type="radio" name="bg-position" id="bg-right-top" data-bg-position data-class="bg-right-top" class="mr-1"><label for="bg-right-top" class="whitespace-nowrap"><code style="cursor: pointer">right-top</code></label></div>
+            <div><input type="radio" name="bg-position" id="bg-top" data-bg-position data-class="bg-top" class="mr-1"><label for="bg-top" class="whitespace-nowrap"><code style="cursor: pointer">top</code></label></div>
+          </td>
+          <td>
+            <div><input type="radio" name="bg-repeat" id="bg-repeat" data-bg-repeat data-class="bg-repeat" class="mr-1"><label for="bg-repeat" class="whitespace-nowrap"><code style="cursor: pointer">repeat</code></label></div>
+            <div><input type="radio" name="bg-repeat" id="bg-no-repeat" data-bg-repeat data-class="bg-no-repeat" class="mr-1"><label for="bg-no-repeat" class="whitespace-nowrap"><code style="cursor: pointer">no-repeat</code></label></div>
+            <div><input type="radio" name="bg-repeat" id="bg-repeat-x" data-bg-repeat data-class="bg-repeat-x" class="mr-1"><label for="bg-repeat-x" class="whitespace-nowrap"><code style="cursor: pointer">repeat-x</code></label></div>
+            <div><input type="radio" name="bg-repeat" id="bg-repeat-y" data-bg-repeat data-class="bg-repeat-y" class="mr-1"><label for="bg-repeat-y" class="whitespace-nowrap"><code style="cursor: pointer">repeat-y</code></label></div>
+          </td>
+          <td>
+            <div><input type="radio" name="bg-size" id="bg-auto" data-bg-size data-class="bg-auto" class="mr-1"><label for="bg-auto" class="whitespace-nowrap"><code style="cursor: pointer">auto</code></label></div>
+            <div><input type="radio" name="bg-size" id="bg-cover" data-bg-size data-class="bg-cover" class="mr-1"><label for="bg-cover" class="whitespace-nowrap"><code style="cursor: pointer">cover</code></label></div>
+            <div><input type="radio" name="bg-size" id="bg-contain" data-bg-size data-class="bg-contain" class="mr-1"><label for="bg-contain" class="whitespace-nowrap"><code style="cursor: pointer">contain</code></label></div>
+            <div><input type="radio" name="bg-size" id="bg-contain-x" data-bg-size data-class="bg-contain-x" class="mr-1"><label for="bg-contain-x" class="whitespace-nowrap"><code style="cursor: pointer">contain-x</code></label></div>
+            <div><input type="radio" name="bg-size" id="bg-contain-y" data-bg-size data-class="bg-contain-y" class="mr-1"><label for="bg-contain-y" class="whitespace-nowrap"><code style="cursor: pointer">contain-y</code></label></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="sg-example">
+      <div class="ebox ebox--bg" data-bg-container style="background-image: url('https://images.unsplash.com/photo-1543843911-494c9888a277?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=500&q=40')"></div>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# Default #}
+    <div class="bg-center"></div>
+    <div class="bg-repeat-x"></div>
+    <div class="bg-cover"></div>
+
+    {# Responsive #}
+    <div class="bg-cover md:bg-auto"></div>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">Available Backgrounds</h2>
+      <ul>
+        <li>All backgrounds are located in the <code>https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/</code> folder.</li>
+        <li>Below each background, the file-name is listed.</li>
+      </ul>
+      <div class="row">
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>chevrons-top.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__chevrons-top.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>chevrons-bottom.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__chevrons-bottom.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>chevrons-left.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__chevrons-left.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>chevrons-right.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__chevrons-right.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>chevrons-top-cyan.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__chevrons-top-cyan.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>chevrons-bottom-cyan.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__chevrons-bottom-cyan.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>chevrons-left-cyan.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__chevrons-left-cyan.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>chevrons-right-cyan.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__chevrons-right-cyan.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>arrows.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__arrows.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>constellation.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__constellation.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>chevrons-left-white.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__chevrons-left-white.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>chevrons-right-white.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__chevrons-right-white.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>x-fade-top.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__x-fade-top.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>x-bold.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__x-bold.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>x-fade-bottom.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__x-fade-bottom.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>x-fade-left.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__x-fade-left.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>x-fade-right.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__x-fade-right.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>x-fade-inverted.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__x-fade-inverted.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>immersion-white.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__immersion-white.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>immersion-cyan.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__immersion-cyan.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "<code>immersion.jpg</code>"
+            },
+            "hotspot": {
+              "icon": 'video',
+              "isVideo": false,
+            },
+            "picture": {
+              "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/thumbnails/thumb__immersion.jpg",
+              "placeholderSize": "400 225"
+            }
+          } %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

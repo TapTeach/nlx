@@ -1,0 +1,94 @@
+[{
+  "name": "arrow-down",
+  "code": "EA01"
+},{
+  "name": "arrow-left",
+  "code": "EA02"
+},{
+  "name": "arrow-right",
+  "code": "EA03"
+},{
+  "name": "arrow-up",
+  "code": "EA04"
+},{
+  "name": "caret-down",
+  "code": "EA05"
+},{
+  "name": "caret-left",
+  "code": "EA06"
+},{
+  "name": "caret-right",
+  "code": "EA07"
+},{
+  "name": "caret-up",
+  "code": "EA08"
+},{
+  "name": "chevron-down",
+  "code": "EA09"
+},{
+  "name": "chevron-left",
+  "code": "EA0A"
+},{
+  "name": "chevron-right",
+  "code": "EA0B"
+},{
+  "name": "chevron-up",
+  "code": "EA0C"
+},{
+  "name": "close-fill",
+  "code": "EA0D"
+},{
+  "name": "close-outline",
+  "code": "EA0E"
+},{
+  "name": "directions-sign",
+  "code": "EA0F"
+},{
+  "name": "directions",
+  "code": "EA10"
+},{
+  "name": "download-file",
+  "code": "EA11"
+},{
+  "name": "download",
+  "code": "EA12"
+},{
+  "name": "email",
+  "code": "EA13"
+},{
+  "name": "external",
+  "code": "EA14"
+},{
+  "name": "full-screen",
+  "code": "EA15"
+},{
+  "name": "menu",
+  "code": "EA16"
+},{
+  "name": "minus",
+  "code": "EA17"
+},{
+  "name": "phone",
+  "code": "EA18"
+},{
+  "name": "plus",
+  "code": "EA19"
+},{
+  "name": "remove",
+  "code": "EA1A"
+},{
+  "name": "return-left",
+  "code": "EA1B"
+},{
+  "name": "return-right",
+  "code": "EA1C"
+},{
+  "name": "search",
+  "code": "EA1D"
+},{
+  "name": "ui-collapse",
+  "code": "EA1E"
+},{
+  "name": "ui-expand",
+  "code": "EA1F"
+}]

@@ -1,0 +1,60 @@
+{
+  "list": [
+    {
+      "nameFirst": "Aaron",
+      "nameLast": "Evanson",
+      "city": "Chicago",
+      "email": "aaron.evanson@vml.com",
+      "region": "NA",
+      "photo": "aaron_evanson.png"
+    },
+    {
+      "nameFirst": "Aden",
+      "nameLast": "Hepburn",
+      "city": "Sydney",
+      "email": "aden.hepburn@vml.com.au",
+      "region": "Australia / New Zealand",
+      "photo": "aden_hepburn.png"
+    },
+    {
+      "nameFirst": "Adriano",
+      "nameLast": "Abdalla",
+      "city": "São Paulo",
+      "email": "adriano.abdalla@vmlbrasil.com",
+      "region": "SA",
+      "photo": "adriano_abdalla.png"
+    },
+    {
+      "nameFirst": "Alejandro",
+      "nameLast": "Villaneuva",
+      "city": "Mexico City",
+      "email": "alejandro.villanueva@vml.com",
+      "region": "LATAM",
+      "photo": "alejandro_villanueva.png"
+    },
+    {
+      "nameFirst": "Alexis",
+      "nameLast": "Bronstorph",
+      "city": "Toronto",
+      "email": "alexis.bronstorph@taxi.ca",
+      "region": "NA",
+      "photo": "alexis_bronstorph.png"
+    },
+    {
+      "nameFirst": "Alexis",
+      "nameLast": "Ospina",
+      "city": "Mexico City",
+      "email": "alexis.ospina@yr.com",
+      "region": "LATAM",
+      "photo": "alexis_ospina.png"
+    },
+    {
+      "nameFirst": "Alison",
+      "nameLast": "Pierce",
+      "city": "Kansas City",
+      "email": "allison.pearce@yr.com",
+      "region": "NA",
+      "photo": "ali_pierce.png"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+// ================================
+// Utilities: Overflow
+// ================================
+
+$overflow: (
+  auto: auto,
+  hidden: hidden,
+  visible: visible,
+  scroll: scroll
+);
+
+@each $label, $value in $overflow {
+  .overflow-#{$label} {
+    overflow: $value;
+  }
+}
+
+// --------------------------------
+// Responsive Alignment
+// --------------------------------
+
+@each $breakpoint in map-keys($breakpoints) {
+  @include media(#{'>=' + $breakpoint}) {
+    @each $label, $value in $overflow {
+      .#{$breakpoint}\:.overflow-#{$label} {
+        overflow: $value;
+      }
+    }
+  }
+}

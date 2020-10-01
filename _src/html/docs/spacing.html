@@ -1,0 +1,69 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'spacing' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Padding/Margin</h1>
+      <ul>
+        <li>Control an element's padding and margin using the <code>.p[side]-[size]</code> and <code>.m[side]-[size]</code> utilities.</li>
+        <li>Add responsive modifiers to control padding and margin by breakpoint <code> xs:, sm:, md:, lg:, xl:</code></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <table class="sg-table mb-2">
+      <thead>
+        <th>Class</th>
+        <th>Side</th>
+        <th>Size</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="whitespace-nowrap"><code>p</code> Padding</div>
+            <div class="whitespace-nowrap"><code>m</code> Margin</div>
+          </td>
+          <td>
+            <div class="whitespace-nowrap"><code>t</code> Top</div>
+            <div class="whitespace-nowrap"><code>l</code> Left</div>
+            <div class="whitespace-nowrap"><code>b</code> Bottom</div>
+            <div class="whitespace-nowrap"><code>r</code> Right</div>
+            <div class="whitespace-nowrap"><code>x</code> Horizontal</div>
+            <div class="whitespace-nowrap"><code>y</code> Vertical</div>
+          </td>
+          <td>
+            <div class="whitespace-nowrap"><code>0</code> Zero</div>
+            <div class="whitespace-nowrap"><code>1</code> 10px</div>
+            <div class="whitespace-nowrap"><code>2</code> 20px</div>
+            <div class="whitespace-nowrap"><code>3</code> 40px</div>
+            <div class="whitespace-nowrap"><code>4</code> 80px</div>
+            <div class="whitespace-nowrap"><code>auto</code> (margin only)</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# Default #}
+    <div class="pt-3"></div>
+    <div class="mb-1"></div>
+    <div class="pl-1"></div>
+    <div class="mx-auto"></div>
+
+    {# Responsive Example #}
+    <div class="mb-1 lg:mb-3"></div>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+{% endblock %}

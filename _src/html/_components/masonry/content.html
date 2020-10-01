@@ -1,0 +1,26 @@
+{# Masonry Filters #}
+{% if filters %}
+<div class="masonry-select mb-3">
+  <label class="masonry-select__label" for="masonry-filter">Filter by:</label>
+  <div class="masonry-select__container">
+    <select class="masonry-select__dropdown" id="masonry-filter" data-masonry-select>
+      <option value="*">Show all</option>
+      {% for filter in filters %}
+        <option value="{{ filter.value }}">{{ filter.label }}</option>
+      {% endfor %}
+    </select>
+    {{ icon('chevron-down', 'currentColor', 'xs') }}
+  </div>
+</div>
+{% endif %}
+
+{# Masonry Loader #}
+{% include "_components/masonry/loader.html" %}
+
+{# Masonry List #}
+<div class="masonry" data-masonry-wall data-masonry-shuffle="{{ shuffle|default(false) }}">
+  <div class="masonry__sizer"></div>
+  <div class="masonry__gutter-sizer"></div>
+
+  {% block list %}{% endblock %}
+</div>

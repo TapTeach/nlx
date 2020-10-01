@@ -1,0 +1,204 @@
+{#
+Twig Templating!
+Homepage: https://twig.symfony.com/
+Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'video' %}
+{% set enableLibraryPlyr = true %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Video</h1>
+      <ul>
+        <li>Set the variable to true <code>{% verbatim %} {% set enableLibraryPlyr = true %} {% endverbatim %}</code>, on the page with the video, to enable the plyr javascript in the base layout. </li>
+        <li>Background video uses the html5 video element and not Plyr so the variable above is not used. It is preloaded and played when scrolled in view then stops when out of view. It does not work on mobile so use the background image as a backup.</li>
+        <li>For Vimeo videos, obtain the url from Distribution > Video file links > Copy link.</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">Parameters</h2>
+      <table class="sg-table">
+        <thead>
+          <tr>
+            <th>Key</th>
+            <th>Value</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>options</code></td>
+            <td>Any options from <a href="https://github.com/sampotts/plyr#options" target="_blank">Plyr</a> can be
+              passed in. (some options may not work due to open issue)</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td><code>html5</code></td>
+            <td>Set <code>true</code> for HTML 5 video embed.</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td><code>class</code></td>
+            <td>Add html classes to the video <code>div</code> container.</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td><code>embed</code></td>
+            <td><div class="whitespace-nowrap"><code>mp4</code> location of video file (optional)</div>
+              <div class="whitespace-nowrap"><code>webm</code> location of webm file (optional)</div>
+              <div class="whitespace-nowrap"><code>poster</code> location of background image (optional)</div>
+              <div class="whitespace-nowrap"><code>provider</code> vimeo or youtube (optional)</div>
+              <div class="whitespace-nowrap"><code>id</code> vimeo or youtube video id</div>
+            </td>
+            <td><code>provider: vimeo</code>, <code>poster</code> first frame from html 5 video or selected frame from
+              video
+              provider.</td>
+          </tr>
+          <tr>
+            <td><code>background</code></td>
+            <td><div class="whitespace-nowrap"><code>source</code> location of video file</div>
+              <div class="whitespace-nowrap"><code>attributes</code> html5 video attributes (optional)</div>
+              <div class="whitespace-nowrap"><code>block content</code> items overlayed on top of the video (optional)</div>
+            </td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td><code>issues</code></td>
+            <td>There is an issue ticket stating a work around to get some of the features to work like autoplay and loop.  Set storage to disabled. <code>"storage": {"enabled": false}</code></td>
+            <td>--</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container-xl">
+    <div class="sg-example">
+      <h2 class="type-h4 mb-1">HTML5 Video</h2>
+      {% include "_components/video.html" with {
+        "options": {
+          "autoplay": false,
+          "controls": ["play", "progress", "current-time", "volume"]
+        },
+        "html5": true,
+        "class": "mb-4",
+        "embed": {
+          "mp4": "../assets/videos/south-carolina-city.mp4",
+          "webm": "../assets/videos/south-carolina-city.webm",
+          "poster": "https://images.unsplash.com/photo-1515784638688-3f7e90ebb446?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&h=500&q=80"
+        }
+      } %}
+
+      <h2 class="type-h4 mb-1">Vimeo</h2>
+      {% include "_components/video.html" with {
+        "options": {
+          "autoplay": false,
+          "controls": ["play", "play-large", "progress", "current-time", "volume", "fullscreen"]
+        },
+        "embed": {
+          "id": "296228239",
+          "provider": "vimeo"
+        }
+      } %}
+    </div>
+  </section>
+
+  <section>
+    <div class="container-xl">
+      <h2 class="type-h4 mb-2">Background Video</h2>
+    </div>
+
+    <div class="videoBlock bg-blue color-white" style="background-image: url('https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/kansas-city.jpg');" data-video-bg> 
+      {% embed "_components/video.html" with {
+        "background": {
+          "source": "https://player.vimeo.com/external/359634070.sd.mp4?s=aff998167f0fd7fcd0d95681a9cada19a28fa8ed&profile_id=165",
+          "attributes": "preload='auto' muted='true' loop='true'"
+        }
+      } %}
+      {% block content %}
+        <div class="container-lg">
+          <div class="row">
+            <div class="col-12 md:col-6 md:px-3">
+              <h2 class="type-h2 align-left md:align-center mb-3">Wednesday, May 1</h2>
+            </div>
+            <div class="col-12 md:col-6 md:px-3">
+              <p class="type-lg font-open mb-2"><span class="font-black">When:</span> Noon-4:30 p.m.</p>
+              <p class="type-lg font-open mb-2"><span class="font-black">Where:</span> <span class="italic">3 Columbus Circle for kickoff, 
+                followed by various connected adventure locations throughout NYC</span></p>
+            </div>
+          </div>
+        </div>
+      {% endblock %}
+    {% endembed %}
+    </div>
+  </section>
+
+  <div class="container-xl mt-3">
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+
+    {# HTML 5 #}
+    {% include "_components/video.html" with {
+      "options": {
+        "autoplay": false,
+        "controls": ["play", "progress", "current-time", "volume"]
+      },
+      "html5": true,
+      "class": "mb-4",
+      "embed": {
+        "mp4": "./assets/videos/south-carolina-city.mp4",
+        "webm": "./assets/videos/south-carolina-city.webm",
+        "poster": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/_fpo/south-carolina-city.jpg"
+      }
+    } %}
+
+    {# Vimeo #}
+    {% include "_components/video.html" with {
+      "options": {
+      "autoplay": false,
+        "controls": ["play", "play-large", "progress", "current-time", "volume", "fullscreen"]
+      },
+      "embed": {
+        "id": "296228239",
+        "provider": "vimeo"
+      }
+    } %}
+
+    {# Background Video #}
+    <div class="videoBlock bg-blue color-white" style="background-image: url('https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/kansas-city.jpg');" data-video-bg> 
+      {% embed "_components/video.html" with {
+        "background": {
+          "source": "https://player.vimeo.com/external/359634070.sd.mp4?s=aff998167f0fd7fcd0d95681a9cada19a28fa8ed&profile_id=165",
+          "attributes": "preload='auto' muted='true' loop='true'"
+        }
+      } %}
+        {% block content %}
+          <div class="container-lg">
+            <div class="row">
+              <div class="col-12 md:col-6 md:px-3">
+                <h2 class="type-h2 align-left md:align-center mb-3">Wednesday, May 1</h2>
+              </div>
+              <div class="col-12 md:col-6 md:px-3">
+                <p class="type-lg font-open mb-2"><span class="font-black">When:</span> Noon-4:30 p.m.</p>
+                <p class="type-lg font-open mb-2"><span class="font-black">Where:</span> <span class="italic">3 Columbus Circle for kickoff, 
+                  followed by various connected adventure locations throughout NYC</span></p>
+              </div>
+            </div>
+          </div>
+        {% endblock %}
+      {% endembed %}
+      </div>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+
+  </div>
+
+{% endblock %}

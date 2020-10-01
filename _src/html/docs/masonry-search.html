@@ -1,0 +1,124 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'search' %}
+{% set enableLibraryMasonry = true %}
+
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Masonry Search</h1>
+      <ul>
+        <li>Use masonry search to list and search data.</li>
+        <li>Place your markup inside the embed to create the look you want.</li>
+        <li>Set the variable to true <code>{% verbatim %} {% set enableLibraryMasonry = true %} {% endverbatim %}</code>, on the page with the masonry grid, to enable the masonry javascript in the base layout. </li>
+        <li>Unlike other components, the masonry search utilizes the <a href="https://twig.symfony.com/doc/2.x/tags/embed.html">embed tag</a>.</li>
+        <li>Inside the top of <code>{% verbatim %}{% block results %}{% endverbatim %}</code>, the for loop and <code>li</code> are required to place your markup within.
+        <li>The data in the for loop is located in <code>_data/search.json</code>. Update the for loop with your data variable used.</li>
+      </ul>
+    </div>
+  </header>
+
+    {% embed "_components/masonry/search.html" with { } %}
+      {% block heading %}
+        <div class="row">
+          <div class="col-3"><p class="type-sm font-bold">Heading 1</p></div>
+          <div class="col-3"><p class="type-sm font-bold">Heading 2</p></div>
+          <div class="col-3"><p class="type-sm font-bold">Heading 3</p></div>
+          <div class="col-3"><p class="type-sm font-bold">Heading 4</p></div>
+        </div>
+      {% endblock %}
+
+      {% block results %}
+        {% for item in search.list %}
+          <li class="search__item overflow-scroll" data-masonry-search-item>
+            <div class="container">
+              <div class="row items-center">
+                <div class="col-3">
+                  <img src="data:image/svg+xml,%3Csvg enable-background='new 0 0 10 10' viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'/%3E" data-src="{{ options.pathImagesAmazon }}/search/results/{{ item.photo }}" alt="" class="block lazyload" style="max-height: 70px;">
+                </div>
+                <div class="col-3">
+                  <p>{{ item.nameFirst }} {{ item.nameLast }}</p>
+                </div>
+                <div class="col-3">
+                  <p>{{ item.city }}</p>
+                  <p>{{ item.region }}</p>
+                </div>
+                <div class="col-3">
+                  <p>{{ item.email }}</p>
+                </div>
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      {% endblock %}
+    {% endembed %}
+
+  <section class="container-xl">
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# // Default template structure #}
+    {% embed "_components/masonry/search.html" %}
+      {# Column Headers are optional #}
+      {% block heading %}
+        <div class="row">
+          {# Place your markup here #}
+        </div>
+      {% endblock %}
+    
+      {# Search Results #}
+      {% block results %}
+        {% for item in search.list %}
+          <li class="search__item" data-masonry-search-item>
+            {# Place your markup here #}
+          </li>
+        {% endfor %}
+      {% endblock %}
+    {% endembed %}
+
+    {# // A Search Example #}
+    {% embed "_components/masonry/search.html" %}
+      {% block heading %}
+        <div class="row">
+          <div class="col-3"><p class="type-sm font-bold">Heading 1</p></div>
+          <div class="col-3"><p class="type-sm font-bold">Heading 2</p></div>
+          <div class="col-3"><p class="type-sm font-bold">Heading 3</p></div>
+          <div class="col-3"><p class="type-sm font-bold">Heading 4</p></div>
+        </div>
+      {% endblock %}
+
+      {% block results %}
+        {% for item in search.list %}
+          <li class="search__item overflow-scroll" data-masonry-search-item>
+            <div class="container">
+              <div class="row items-center">
+                <div class="col-3">
+                  <img src="data:image/svg+xml,%3Csvg enable-background='new 0 0 10 10' viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'/%3E" data-src="{{ options.pathImagesAmazon }}/search/results/{{ item.photo }}" alt="" class="block lazyload" style="max-height: 70px;">
+                </div>
+                <div class="col-3">
+                  <p>{{ item.nameFirst }} {{ item.nameLast }}</p>
+                </div>
+                <div class="col-3">
+                  <p>{{ item.city }}</p>
+                  <p>{{ item.region }}</p>
+                </div>
+                <div class="col-3">
+                  <p>{{ item.email }}</p>
+                </div>
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      {% endblock %}
+    {% endembed %}
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+{% endblock %}

@@ -1,0 +1,233 @@
+// ================================
+// Components: Modal Details
+// ================================
+
+.detailsModal {
+  background-color: setcolor(white);
+  width: calc(100% - #{rem(30px)});
+  max-width: rem(400px);
+  margin: 0 auto;
+  border-radius: rem(15px);
+  overflow: hidden;
+}
+
+.detailsModal__wrapperSpeaker {
+  padding: rem(40px 20px 20px);
+}
+
+.detailsModal__photo {
+  display: block;
+  width: rem(130px);
+  height: rem(130px);
+  margin: rem(0 auto 30px);
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.detailsModal__speakerMeta {
+  text-align: center;
+  margin-bottom: rem(10px);
+}
+
+.detailsModal__speakerName {
+  @include setfont(default, $font-400);
+  color: setcolor(cyan);
+  font-size: rem(18px);
+}
+
+.detailsModal__speakerTitle {
+  font-size: rem(14px);
+}
+
+.detailsModal__speakerLocation {
+  font-size: rem(10px);
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.detailsModal__speakerEmail {
+  font-size: rem(14px);
+
+  a {
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: setcolor(blue);
+    }
+  }
+}
+
+.detailsModal__speakerLocation + .detailsModal__speakerEmail {
+  margin-top: rem(10px);
+}
+
+.detailsModal__speakerExcerpt {
+  font-size: rem(12px);
+}
+
+.detailsModal__wrapperLocation {
+  display: flex;
+  transform: translateX(0%);
+  transition: 650ms $cubic-in;
+
+  &.is-expanded {
+    transform: translateX(-100%);
+  }
+
+  > * {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+
+.detailsModal__wrapperLocation + .mfp-close {
+  color: setcolor(white);
+  text-shadow: rem(0 1px 2px) rgba(0, 0, 0, 0.3);
+}
+
+.locationDetail__header {
+  height: rem(145px);
+  background-size: cover;
+  background-position: center center;
+  background-color: setcolor(cyan);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 110%;
+    height: 50%;
+    position: absolute;
+    bottom: rem(-2px);
+    left: -5%;
+    background-color: transparent;
+    background-image: linear-gradient(0deg, rgba(setcolor(blue), 1) 0%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0.6;
+  }
+}
+
+.locationDetail__name {
+  font-size: rem(23px);
+  line-height: 1;
+  color: setcolor(white);
+  position: absolute;
+  bottom: rem(15px);
+  left: rem(15px);
+}
+
+.locationMeta {
+  padding: rem(0 15px 20px);
+  font-size: rem(13px);
+  line-height: 1.4;
+}
+
+.locationMeta__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: rem(7px 0);
+  min-height: rem(50px);
+
+  dt,
+  dd {
+    width: 100%;
+  }
+
+  dt {
+    color: setcolor(cyan);
+    font-weight: 500;
+  }
+
+  a {
+    color: currentColor;
+  }
+}
+
+.locationMeta__row + .locationMeta__row {
+  border-top: 1px solid rgba(setcolor(blue), 0.1);
+}
+
+.locationDetails {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  appearance: none;
+  height: rem(50px);
+  padding: rem(0 30px 0 15px);
+  margin: 0;
+  border: 0;
+  background-color: setcolor(blue);
+  color: setcolor(white);
+  width: 100%;
+  text-align: left;
+  font-size: rem(14px);
+  cursor: pointer;
+
+  @include ico--chevron-right {
+    position: absolute;
+    top: 48%;
+    right: rem(18px);
+    transform: translateY(-50%);
+    opacity: 0.6;
+    font-size: 0.9em;
+  }
+}
+
+.locationDetails--back {
+  height: rem(60px);
+  padding: rem(0 50px 0 40px);
+
+  @include ico--chevron-left {
+    left: rem(15px);
+  }
+}
+
+.locationDetail__main {
+  .locationDetails {
+    background-color: setcolor(white);
+    color: setcolor(cyan);
+    font-weight: 400;
+    border-bottom: 1px solid rgba(setcolor(blue), 0.1);
+    font-size: rem(13px);
+  }
+}
+
+.locationMeta__icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: rem(20px);
+  color: setcolor(cyan);
+}
+
+.locationMeta__hotspot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.locationExcerpt {
+  border-bottom: 1px solid rgba(setcolor(blue), 0.1);
+  font-size: rem(13px);
+  padding: rem(10px 15px);
+}
+
+.locationCopy {
+  padding: rem(20px 15px);
+  font-size: rem(13px);
+
+  p + * {
+    margin-top: rem(20px);
+  }
+
+  p + p {
+    margin-top: rem(10px);
+  }
+}

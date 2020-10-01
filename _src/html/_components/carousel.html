@@ -1,0 +1,34 @@
+{% set counterBackdrop = null %}
+{% set counterInverted = null %}
+{% set carouselArrows = controls.fixed ? ' carousel--hasFixedArrows' : ' carousel--hasFloatingArrows' %}
+
+{% if counter.backdrop %}
+  {% set counterBackdrop = ' carouselCounter--hasBackdrop' %}
+{% endif %}
+
+{% if counter.inverted %}
+  {% set counterInverted = ' color-white' %}
+{% endif %}
+
+<article class="carousel{{ carouselArrows }}" data-carousel data-carousel-options='{{tnsOptions|json_encode()}}'>
+  <div class="carousel__slides" data-carousel-slides>
+    {% block carousel %}{% endblock %}
+  </div>
+
+  <div class="tns-controls" data-carousel-controls aria-label="Carousel Navigation" tabindex="0">
+    <button aria-controls="customize" tabindex="-1" data-controls="prev">
+      {{ icon(iconLeft.name|default('chevron-left-thin'), iconLeft.color|default('white'), 'md') }}
+    </button>
+    <button aria-controls="customize" tabindex="-1" data-controls="next">
+      {{ icon(iconRight.name|default('chevron-right-thin'), iconRight.color|default('white'), 'md') }}
+    </button>
+  </div>
+
+  {% if not counter.hide %}
+    <div class="carouselCounter{{ counterBackdrop }}{{ counterInverted }}" aria-hidden="false" data-carousel-counter>
+      <span class="carouselCounter__text">
+        <span class="carouselCounter__current" data-carousel-index>1</span> / <span class="carouselCounter__total" data-carousel-total>--</span>
+      </span>
+    </div>
+  {% endif %}
+</article>

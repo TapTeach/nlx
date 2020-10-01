@@ -1,0 +1,280 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'spotlight' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Spotlight</h1>
+      <ul>
+        <li>Individual spotlight blocks to feature content such as agency work or case studies.</li>
+        <li>The spotlight scales in accordance to the size of picture supplied.</li>
+        <li>Combine with the <a href="/docs/grid.html">Grid</a> to create the desired layout.</li>
+      </ul>
+    </div>
+  </header>
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">
+        Parameters
+      </h2>
+      <table class="sg-table">
+        <thead>
+          <tr>
+            <th>Key</th>
+            <th>Value</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>title</code></td>
+            <td>Sets the title below picture with a <code>primary</code> and an optional <code>sub</code>. <br>
+              <code>overlay</code> - boolean to move the primary text over the image with an optional icon. <br>
+              <code>overlayIcon</code> - boolean to display the icon below the title.<br>
+               <code>overlayHoverIcon</code> - boolean to display the icon below the title on hover.<br>
+              <code>overlayText</code> - title text over the image.<br>
+              <code>overlayTextHover</code> - title text over the image on hover.
+            </td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td><code>hotspot</code></td>
+            <td>Add hover features by setting <code>newWindow</code>, <code>url</code> and <code>icon</code>, <code>isVideo</code>, or <code>disable</code> features.</td>
+            <td><code>disabled: false</code></td>
+          </tr>
+          <tr>
+            <td><code>extras</code></td>
+            <td>Add links below the image by setting the <code>url</code>, <code>title</code>, <code>newWindow</code>, <code>video</code>, and <code>version</code> optional features.</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td><code>picture</code></td>
+            <td>See <a href="figure.html">picture component for parameters</a></td>
+            <td>--</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container-xl">
+    <h2 class="type-h4 mb-1">Examples</h2>
+    <div class="sg-example">
+      <div class="row justify-center">
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "Talk Social To Me",
+              "sub": "Wendy's"
+            },
+            "hotspot": {
+              "url": "https://vml.com",
+              "icon": 'external',
+              "isVideo": false,
+              "newWindow": true,
+            },
+            "picture": {
+              "altText": "Wendy's Talk Social To Me",
+              "id": "7h6rJxde3mIMo0mSqGkm2U",
+              "placeholderSize": "600 600",
+              "width": "600",
+              "height": "600"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "Rebrand Case Study",
+              "sub": "New Balance"
+            },
+            "hotspot": {
+              "url": "https://vimeo.com/272846703",
+              "icon": 'video',
+              "isVideo": true,
+            },
+            "picture": {
+              "altText": "New Balance Rebrand Case Study",
+              "id": "4cUKj3Wi5y2iusuY4SwOyQ",
+              "placeholderSize": "600 600",
+              "width": "600",
+              "height": "600"
+            }
+          } %}
+        </div>
+        <div class="col-12 md:col-3">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "Microsoft Partner Networks",
+              "sub": ""
+            },
+            "hotspot": {
+              "disable": true
+            },
+            "picture": {
+              "altText": "Microsoft Partner Networks",
+              "id": "7tvEAY2bV6qO0Omm8g8sss",
+              "placeholderSize": "600 600",
+              "width": "600",
+              "height": "600"
+            },
+            "extras": [
+              {
+                "url": "https://www.google.com",
+                "title": "Regular Link"
+              },
+              {
+                "url": "https://www.google.com",
+                "title": "New Window Link",
+                "newWindow": true,
+              },
+              {
+                "url": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/bg-x.jpg",
+                "title": "Versioned Link",
+                "newWindow": true,
+                "version": true
+              },
+              {
+                "url": "https://vimeo.com/272846703",
+                "title": "Video Link",
+                "video": true
+              }
+            ]
+          } %}
+        </div>
+        <div class="col-12 md:col-3 color-white uppercase">
+          {% include "_components/spotlight.html" with {
+            "title": {
+              "primary": "",
+              "sub": "",
+              "overlay": true,
+              "overlayIcon": false,
+              "overlayHoverIcon": true,
+              "overlayText": "Quit Smoking<br> with Ray",
+              "overlayTextHover": "Quit it"
+            },
+            "hotspot": {
+              "url": "https://vml.com",
+              "icon": 'external',
+              "isVideo": false,
+              "newWindow": true,
+            },
+            "picture": {
+              "altText": "Man looking at camera giving thumbs up",
+              "id": "2YkmI4nMRKsD4ARHuxLgKp",
+              "placeholderSize": "600 600",
+              "width": "600",
+              "height": "600"
+            }
+          } %}
+        </div>
+      </div>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# Basic #}
+    {% include "_components/spotlight.html" with {
+      "title": {
+        "primary": "Rebrand Case Study",
+        "sub": "New Balance"
+      },
+      "hotspot": {
+        "url": "https://vimeo.com/272846703",
+        "icon": 'video',
+        "isVideo": true,
+      },
+      "picture": {
+        "altText": "New Balance Case Study",
+        "id": "4cUKj3Wi5y2iusuY4SwOyQ",
+        "placeholderSize": "600 600",
+        "width": "600",
+        "height": "600"
+      }
+    } %}
+
+    {# With Extra Links #}
+    {% include "_components/spotlight.html" with {
+      "title": {
+        "primary": "Microsoft Partner Networks",
+        "sub": ""
+      },
+      "hotspot": {
+        "disable": true
+      },
+      "picture": {
+        "altText": "Microsoft Partner Networks",
+        "id": "7tvEAY2bV6qO0Omm8g8sss",
+        "placeholderSize": "600 600",
+        "width": "600",
+        "height": "600"
+      },
+      "extras": [
+        {
+          "url": "https://www.google.com",
+          "title": "Regular Link"
+        },
+        {
+          "url": "https://www.google.com",
+          "title": "New Window Link",
+          "newWindow": true,
+        },
+        {
+          "url": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/bg-x.jpg",
+          "title": "Versioned Link",
+          "newWindow": true,
+          "version": true
+        },
+        {
+          "url": "https://vimeo.com/272846703",
+          "title": "Video Link",
+          "video": true
+        }
+      ]
+    } %}
+
+    {# With overlay text and icon #}
+    {% include "_components/spotlight.html" with {
+      "title": {
+        "primary": "",
+        "sub": "",
+        "overlay": true,
+        "overlayIcon": false,
+        "overlayHoverIcon": true,
+        "overlayText": "Quit Smoking<br> with Ray",
+        "overlayTextHover": "Quit it"
+      },
+      "hotspot": {
+        "url": "https://vml.com",
+        "icon": 'external',
+        "isVideo": false,
+        "newWindow": true,
+      },
+      "picture": {
+        "altText": "Man looking at camera giving thumbs up",
+        "id": "2YkmI4nMRKsD4ARHuxLgKp",
+        "placeholderSize": "600 600",
+        "width": "600",
+        "height": "600"
+      }
+    } %}
+
+    {# An example with the grid in use #}
+    <div class="row">
+      <div class="col-12 md:col-4"> <!-- // spotlight // --> </div>
+      <div class="col-12 md:col-4"> <!-- // spotlight // --> </div>
+      <div class="col-12 md:col-4"> <!-- // spotlight // --> </div>
+    </div>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

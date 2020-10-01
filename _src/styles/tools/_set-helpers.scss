@@ -1,0 +1,109 @@
+// ================================
+// Utilities
+// ================================
+
+// Font-smoothing for OSX
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+// Remove font-smoothing if not necessary
+@mixin no-font-smoothing {
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+  text-shadow: none;
+}
+
+// Visually hide elements while at the same time make them accessible on screen readers
+%visually-hidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+// Ellipsis
+%ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// Remove all list styling
+// ex: @extend %naked-list
+%naked-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// Remove all button styling and reset it to default
+// ex: @extend %naked-button
+%naked-button {
+  background: transparent;
+  outline: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+// --------------------------------
+// Clearfix
+// --------------------------------
+
+%cf {
+  zoom: 1;
+
+  &::before,
+  &::after {
+    content: '\0020';
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+@mixin cf {
+  zoom: 1;
+
+  &::before,
+  &::after {
+    content: '\0020';
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+// --------------------------------
+// Class Helpers
+// --------------------------------
+
+// Clear class helpers
+.cf,
+.clear,
+.clearfix {
+  @extend %cf;
+}
+
+// Visually hide elements while at the same time make them accessible on screen readers
+.visually-hidden,
+.screen-reader-text {
+  @extend %visually-hidden;
+}

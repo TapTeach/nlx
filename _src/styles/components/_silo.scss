@@ -1,0 +1,65 @@
+// ================================
+// Components: FAQ
+// ================================
+
+.silo {
+  background-color: setcolor(blue);
+  padding: rem(20px 10px); //130 0
+  min-height: rem(350px);
+
+  @include media('>=lg') {
+    min-height: rem(360px);
+  }
+
+  .silo__top {
+    min-height: rem(220px);
+
+    @include media('>=lg') {
+      min-height: rem(230px);
+    }
+  }
+
+  .silo__title {
+    color: var(--siloTitleColor);
+  }
+
+  .silo__text {
+    color: var(--siloTextColor);
+  }
+
+  .silo__link {
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    color: var(--siloLinkColor);
+  }
+
+  .silo__hover {
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: rgba(var(--siloHover), 0.3);
+
+      .silo__link--light {
+        font-weight: 700;
+      }
+    }
+  }
+
+  .silo__hr {
+    max-width: rem(125px);
+    border: 1px solid var(--siloHr);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.ssilo__iconLink {
+  width: 100%;
+  max-width: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}

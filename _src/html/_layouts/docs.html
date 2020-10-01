@@ -1,0 +1,23 @@
+{% extends '_layouts/base.html' %}
+{% set bodyClass = 'node-docs' %}
+{% set headerMenu = global.menu.docs %}
+{% set headerMenuCompact = true %}
+{% set headerHomePermalink = '/docs/' %}
+{% set title = "VMLY&R | Style Guide" %}
+
+{% block stylesHeader %}
+  <link rel="stylesheet" href="{{ options.pathStyles }}/sguide.css?v={{ package.version }}">
+{% endblock %}
+
+{% block page %}
+  <article class="docsWrapper" data-module="docs">
+    <div class="docsWrapper__content vg-1">
+      {% block content %}{% endblock %}
+    </div>
+  </article>
+{% endblock %}
+
+{% block scriptsFooter %}
+  <script type="text/javascript" src="{{ options.pathStyleGuide }}/js/prism.js?v={{ package.version }}"></script>
+  <script type="text/javascript" src="{{ options.pathScripts }}/docs.js?v={{ package.version }}"></script>
+{% endblock %}

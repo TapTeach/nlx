@@ -1,0 +1,11 @@
+{
+  "pathStyleGuide": "../sguide",
+  "pathImages": "../assets/images",
+  "pathImagesAmazon": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images",
+  "pathStyles": "../assets/styles",
+  "pathScripts": "../assets/scripts",
+  "pathSprites": "../assets/svgs",
+  "pathFonts": "../assets/fonts",
+  "pathFontsAmazon": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/fonts",
+  "pathBios": "../assets/files/bios"
+}

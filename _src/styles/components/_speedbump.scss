@@ -1,0 +1,21 @@
+// ================================
+// Components: Speed Bump
+// ================================
+
+.speedBump__col {
+  background-color: var(--speedBumpBg);
+  border-left: 1px solid rgba(var(--speedBumpBorderLft), 0.25);
+  border-bottom: 1px solid rgba(var(--speedBumpBorderRght), 0.25);
+}
+
+.speedBump__col--light {
+  background-image: linear-gradient(25deg, var(--speedBumpLtBg));
+}
+
+.speedBump__col--dark {
+  background-image: linear-gradient(25deg, var(--speedBumpDkBg));
+}
+
+.speedBump__title {
+  @extend %type-h5;
+}

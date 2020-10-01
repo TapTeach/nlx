@@ -1,0 +1,14 @@
+// ================================
+// Media Query Breakpoints
+// ================================
+
+// the media query breakpoints are used within include-media
+
+$breakpoints: (
+  xs: em(480),
+  sm: em(568),
+  md: em(768),
+  lg: em(980),
+  xl: em(1280),
+  gr: em(1450)
+);

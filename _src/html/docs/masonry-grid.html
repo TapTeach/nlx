@@ -1,0 +1,288 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'masonry' %}
+{% set enableLibraryMasonry = true %}
+
+{% set masonryFilters = [
+  {
+    "value": ".filter--cat1",
+    "label": "Category-1"
+  },
+  {
+    "value": ".filter--cat2",
+    "label": "Category-2"
+  },
+  {
+    "value": ".filter--cat3",
+    "label": "Category-3"
+  },
+  {
+    "value": ".filter--cat4",
+    "label": "Category-4"
+  }
+] %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Masonry Grid</h1>
+      <ul>
+        <li>Use masonry grid to filter large list of work.</li>
+        <li>The masonry grid utilizes the <a href="/docs/spotlight.html">spotlight component</a> with minor style updates to work best inside of masonry grid. Please reference the <a href="/docs/spotlight.html">spotlight component</a> for how to populate individual entries.</li>
+        <li>Other content can be used in place of spotlight. </li>
+        <li>Set the variable to true <code>{% verbatim %} {% set enableLibraryMasonry = true %} {% endverbatim %}</code>, on the page with the masonry grid, to enable the masonry javascript in the base layout. </li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <div class="sg-example mb-3">
+      {% embed "_components/masonry/content.html" with { "shuffle": false, "filters": masonryFilters } %}
+        {% block list %}
+          <div class="masonry__item filter--cat1" data-masonry-item>
+            {% include "_components/spotlight.html" with {
+              "title": {
+                "primary": "Digital Store",
+                "sub": "NAPA"
+              },
+              "hotspot": {
+                "url": "https://vimeo.com/260452441",
+                "icon": 'video',
+                "isVideo": true
+              },
+              "picture": {
+                "altText": "Guy using a VR device.",
+                "id": "5XuWD8eqNUuaW84E6ygwiY",
+                "placeholderSize": "600 600",
+                "height": "600",
+                "width": "600"
+              }
+            } %}
+          </div>
+          <div class="masonry__item filter--cat1">
+            {% include "_components/spotlight.html" with {
+              "title": {
+                "primary": "Old Car",
+                "sub": "NAPA"
+              },
+              "hotspot": {
+                "url": "https://vimeo.com/279770632",
+                "icon": 'video',
+                "isVideo": true
+              },
+              "picture": {
+                "altText": "An old car.",
+                "id": "5QPMIbO5VuMQoisiuoC4EM",
+                "placeholderSize": "600 600",
+                "height": "600",
+                "width": "600"
+              }
+            } %}
+          </div>
+          <div class="masonry__item filter--cat4">
+            {% include "_components/spotlight.html" with {
+              "title": {
+                "primary": "Global Rebrand Strategy",
+                "sub": "New Balance"
+              },
+              "hotspot": {
+                "url": "https://vimeo.com/296228239",
+                "icon": 'video',
+                "isVideo": true
+              },
+              "picture": {
+                "altText": "A billboard showcasing a New Balance ad.",
+                "id": "4cUKj3Wi5y2iusuY4SwOyQ",
+                "placeholderSize": "600 600",
+                "height": "600",
+                "width": "600"
+              }
+            } %}
+          </div>
+          <div class="masonry__item filter--cat4">
+            {% include "_components/spotlight.html" with {
+              "title": {
+                "primary": "Talk Social To Me",
+                "sub": "Wendy's"
+              },
+              "hotspot": {
+                "url": "https://vimeo.com/279694769",
+                "icon": 'video',
+                "isVideo": true
+              },
+              "picture": {
+                "altText": "Illustrated graphic of Wendy's girl.",
+                "id": "7h6rJxde3mIMo0mSqGkm2U",
+                "placeholderSize": "600 600",
+                "height": "600",
+                "width": "600"
+              }
+            } %}
+          </div>
+          <div class="masonry__item filter--cat4">
+            {% include "_components/spotlight.html" with {
+              "title": {
+                "primary": "Deliciously Different",
+                "sub": "Wendy's"
+              },
+              "hotspot": {
+                "url": "https://vimeo.com/290993140/79adf48e2e",
+                "icon": 'video',
+                "isVideo": true
+              },
+              "picture": {
+                "altText": "An illustrated field.",
+                "id": "5nN6kaYlbyQm8WwiYmMmgW",
+                "placeholderSize": "600 600",
+                "height": "600",
+                "width": "600"
+              }
+            } %}
+          </div>
+          <div class="masonry__item filter--cat1">
+            {% include "_components/spotlight.html" with {
+              "title": {
+                "primary": "Plant Powered Music",
+                "sub": "Kashi"
+              },
+              "hotspot": {
+                "url": "https://vimeo.com/285164300",
+                "icon": 'video',
+                "isVideo": true
+              },
+              "picture": {
+                "altText": "Kashi grains in a bowl.",
+                "id": "4qPYKTAJ9YuSysa2WQaEi4",
+                "placeholderSize": "600 600",
+                "height": "600",
+                "width": "600"
+              }
+            } %}
+          </div>
+          <div class="masonry__item filter--cat3">
+            {% include "_components/spotlight.html" with {
+              "title": {
+                "primary": "One Source",
+                "sub": "Absolut Vodka"
+              },
+              "hotspot": {
+                "url": "https://vimeo.com/292341167",
+                "icon": 'video',
+                "isVideo": true
+              },
+              "picture": {
+                "altText": "Man holding sticks that are on fire.",
+                "id": "5Q1CzkxA52USSOywuuOMaC",
+                "placeholderSize": "600 600",
+                "height": "600",
+                "width": "600"
+              }
+            } %}
+          </div>
+          <div class="masonry__item filter--cat2">
+            {% include "_components/spotlight.html" with {
+              "title": {
+                "primary": "Let's Break New Ground",
+                "sub": "United Rentals"
+              },
+              "hotspot": {
+                "url": "https://vimeo.com/283535067",
+                "icon": 'video',
+                "isVideo": true
+              },
+              "picture": {
+                "altText": "Railyard",
+                "id": "zmhBMx5mKskyiIicaMGC6",
+                "placeholderSize": "600 600",
+                "height": "600",
+                "width": "600"
+              }
+            } %}
+          </div>
+        {% endblock %}
+      {% endembed %}
+    </div>
+
+    <div class="sg-comments">
+      <ul>
+        <li>Unlike other components, the masonry grid utilizes the <a href="https://twig.symfony.com/doc/2.x/tags/embed.html">embed tag</a>.</li>
+        <li>Inside of the <code>{% verbatim %}{% block list %} {% endblock %}{% endverbatim %}</code> tag data is being passed to the <code>masonry.html</code> template partial. There is no set amount of entries you can have inside of a grid. It is suggested however you have at least three rows for the sorting to be effective.</li>
+        <li>Inside of <code>.masonry__item</code> the <a href="/docs/spotlight.html">spotlight component</a> or custom content should be included.</li>
+        <li>Set <code>shuffle</code> to true to enable shuffling. Otherwise the masonry grid will be loaded in order.</li>
+      </ul>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# // Default template structure #}
+    {% embed "_components/masonry/content.html" with { "shuffle": false, "filters": masonryFilters } %}
+      {% block list %}
+        <div class="masonry__item filter--categorySlug"> ... </div>
+        <div class="masonry__item filter--categorySlug"> ... </div>
+        <div class="masonry__item filter--categorySlug"> ... </div>
+        <div class="masonry__item filter--categorySlug"> ... </div>
+      {% endblock %}
+    {% endembed %}
+
+    {# // An example using spotlight #}
+    {% embed "_components/masonry/masonry.html" with { "shuffle": false, "filters": masonryFilters } %}
+      {% block list %}
+        <div class="masonry__item filter--social">
+          {% include "_components/spotlight.html" with { ... } %}
+        </div>
+        <div class="masonry__item filter--culture">
+          {% include "_components/spotlight.html" with { ... } %}
+        </div>
+      {% endblock %}
+    {% endembed %}
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+
+
+    <div class="sg-comments mt-3">
+      <ul>
+        <li>Filtering is optional.
+        <li>To add filtering, you first must define a variable of <code>masonryFilters</code> with data.</li>
+        <li>The <code>.filter--</code> value can be anything. Ideally you want to use a single letter word that is relevenat to your category. As an example: <code>.filter--media</code>, <code>.filter--culture</code>, <code>.filter--social</code>, etc</li>
+        <li>These values will be used to populate the filter select dropdown.</li>
+      </ul>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# // Filtering data #}
+    {% set masonryFilters = [
+      {
+        "value": ".filter--categorySlug1",
+        "label": "Category Name 1"
+      },
+      {
+        "value": ".filter--categorySlug2",
+        "label": "Category Name 2"
+      },
+      {
+        "value": ".filter--categorySlug3",
+        "label": "Category Name 3"
+      },
+      {
+        "value": ".filter--categorySlug4",
+        "label": "Category Name 4"
+      }
+    ] %}
+
+    {# // Once the values are defined, the .filter-- should be used on the .masonry__item container #}
+    <div class="masonry__item filter--categorySlug1"> ... </div>
+    <div class="masonry__item filter--categorySlug2"> ... </div>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+{% endblock %}

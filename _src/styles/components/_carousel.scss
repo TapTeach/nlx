@@ -1,0 +1,287 @@
+// ================================
+// Components: Carousel
+// ================================
+
+$carouselButtonSize: rem(45px);
+
+.carousel {
+  .tns-outer {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: $carouselButtonSize;
+    z-index: 2;
+  }
+
+  .tns-controls {
+    button {
+      display: block;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      margin-left: rem(10px);
+      background: var(--carouselBtnColor);
+      font-size: 1.3em;
+      color: setcolor(white);
+      //height: $carouselButtonSize;
+      //width: $carouselButtonSize;
+      transition: transform 350ms $cubic-in;
+      z-index: 2;
+      cursor: pointer;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &:first-child {
+        //@include ico--chevron-left;
+      }
+
+      &:last-child {
+        //@include ico--chevron-right;
+      }
+
+      &:active {
+        background-color: var(--carouselBtnActiveColor);
+      }
+
+      &:disabled {
+        background: var(--carouselBtnDisabledColor);
+        cursor: not-allowed;
+
+        svg {
+          opacity: 0.4;
+        }
+      }
+
+      span {
+        @extend %visually-hidden;
+      }
+    }
+  }
+
+  .tns-nav {
+    position: absolute;
+    top: calc(100% + (#{$carouselButtonSize} / 2));
+    left: rem(15px);
+    display: flex;
+    transform: translateY(-50%);
+
+    > [aria-controls] {
+      width: rem(5px);
+      height: rem(5px);
+      padding: 0;
+      margin: rem(0 5px 0 0);
+      background: #ddd;
+      border: 0;
+      border-radius: 100%;
+    }
+  }
+
+  .tns-nav > [aria-selected='true'] {
+    background: #999;
+  }
+}
+
+// if arrows are fixed to bottom-right
+.carousel--hasFixedArrows {
+  .tns-controls {
+    position: absolute;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-self: flex-start;
+    bottom: 0;
+
+    button + button {
+      margin-left: 1px;
+    }
+  }
+
+  .carouselCounter {
+    justify-content: flex-end;
+  }
+
+  .tns-nav {
+    left: auto;
+    right: rem(15px);
+  }
+}
+
+// if arrows are in the middle
+.carousel--hasFloatingArrows {
+  .tns-controls {
+    position: absolute;
+    width: 80%;
+    top: calc(50% - (#{$carouselButtonSize} / 2));
+    left: 10%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 2;
+
+    button {
+      pointer-events: all;
+
+      &:first-child {
+        transform: translateX(-50%);
+
+        &:active {
+          transform: translateX(-55%);
+        }
+      }
+
+      &:last-child {
+        transform: translateX(50%);
+
+        &:active {
+          transform: translateX(55%);
+        }
+      }
+    }
+  }
+}
+
+// individual carousel slides
+.carousel__slide {
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 650ms ease;
+  transition-delay: 100ms;
+
+  &.tns-slide-active {
+    opacity: 1;
+    transition-delay: 0;
+    z-index: 1;
+  }
+
+  //&:not(:nth-child(1)) {
+  //display: none;
+  //}
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+// counter at bottom of carousel
+.carouselCounter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $carouselButtonSize;
+  font-size: 0.8em;
+  line-height: 1;
+  text-align: center;
+  margin-top: -$carouselButtonSize;
+
+  &[aria-hidden='true'] {
+    span {
+      display: none;
+    }
+  }
+}
+
+// add a background color to counter container
+.carouselCounter--hasBackdrop {
+  background-color: rgba(#cecece, 0.2);
+  padding: rem(0 10px);
+}
+
+.carousel__hero {
+  // hr width
+  .hr__mw {
+    max-width: rem(500px);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // start/stop animation buttton
+  .tns-outer [data-action] {
+    display: none;
+  }
+
+  // individual carousel slides updated to show all slides
+  .carousel__slide {
+    overflow: visible;
+    opacity: 1;
+    transition: opacity 650ms ease;
+    transition-delay: 100ms;
+
+    &.tns-slide-active {
+      opacity: 1;
+      transition-delay: 0;
+      z-index: 1;
+    }
+
+    //&:not(:nth-child(1)) {
+    // display: none;
+    //}
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .carousel__slideBoxHover {
+    position: initial;
+    text-decoration: none;
+    color: setcolor(white);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: setcolor(gold);
+
+      svg {
+        fill: setcolor(gold);
+      }
+    }
+  }
+
+  .carousel__slideBox {
+    background-color: setcolor(cyan);
+    color: setcolor(white);
+    max-height: rem(250px);
+    width: 100%;
+    padding: rem(25px 50px);
+    z-index: 10;
+
+    @include media('>=lg') {
+      position: absolute;
+      height: auto;
+      width: rem(375px);
+      bottom: 35px;
+      left: 0;
+    }
+  }
+
+  .carousel__slideBoxHeading {
+    font-size: rem(26px);
+    font-weight: 400;
+  }
+
+  .carousel__slideBoxText {
+    font-size: rem(22px);
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .carousel .tns-outer {
+    margin-bottom: 0;
+  }
+}

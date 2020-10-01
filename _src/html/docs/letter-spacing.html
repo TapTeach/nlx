@@ -1,0 +1,44 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'letter-spacing' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Letter Spacing</h1>
+      <p>Utilities for controlling letter spacing of an element.</p>
+  </header>
+
+  <section class="container-xl">
+    <div class="sg-example">
+      <code>.tracking-tight</code>
+      <p class="tracking-tight">The quick brown fox jumps over the lazy dog</p>
+    </div>
+
+    <div class="sg-example">
+      <code>.tracking-normal</code>
+      <p class="tracking-normal">The quick brown fox jumps over the lazy dog</p>
+    </div>
+
+    <div class="sg-example">
+      <code>.tracking-wide</code>
+      <p class="tracking-wide">The quick brown fox jumps over the lazy dog</p>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    <p class="tracking-tight"></p>
+    <p class="tracking-normal"></p>
+    <p class="tracking-wide"></p>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

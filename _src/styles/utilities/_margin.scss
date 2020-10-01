@@ -1,0 +1,98 @@
+// ================================
+// Utilities: Margin
+// ================================
+
+$spacer-unit: 10px;
+
+$margins: (
+  auto: auto,
+  0: 0,
+  1: rem(10px),
+  2: rem(20px),
+  3: rem(40px),
+  4: rem(80px)
+);
+
+@each $label, $value in $margins {
+  .mt-#{$label} {
+    margin-top: $value;
+  }
+}
+
+@each $label, $value in $margins {
+  .mb-#{$label} {
+    margin-bottom: $value;
+  }
+}
+
+@each $label, $value in $margins {
+  .ml-#{$label} {
+    margin-left: $value;
+  }
+}
+
+@each $label, $value in $margins {
+  .mr-#{$label} {
+    margin-right: $value;
+  }
+}
+
+@each $label, $value in $margins {
+  .mx-#{$label} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+}
+
+@each $label, $value in $margins {
+  .my-#{$label} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+}
+
+// --------------------------------
+// Responsive Margin
+// --------------------------------
+
+@each $breakpoint in map-keys($breakpoints) {
+  @include media(#{'>=' + $breakpoint}) {
+    @each $label, $value in $margins {
+      .#{$breakpoint}\:mt-#{$label} {
+        margin-top: $value;
+      }
+    }
+
+    @each $label, $value in $margins {
+      .#{$breakpoint}\:mb-#{$label} {
+        margin-bottom: $value;
+      }
+    }
+
+    @each $label, $value in $margins {
+      .#{$breakpoint}\:ml-#{$label} {
+        margin-left: $value;
+      }
+    }
+
+    @each $label, $value in $margins {
+      .#{$breakpoint}\:mr-#{$label} {
+        margin-right: $value;
+      }
+    }
+
+    @each $label, $value in $margins {
+      .#{$breakpoint}\:mx-#{$label} {
+        margin-left: $value;
+        margin-right: $value;
+      }
+    }
+
+    @each $label, $value in $margins {
+      .#{$breakpoint}\:my-#{$label} {
+        margin-top: $value;
+        margin-bottom: $value;
+      }
+    }
+  }
+}

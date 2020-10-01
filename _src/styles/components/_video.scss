@@ -1,0 +1,48 @@
+// ================================
+// Components: Video
+// ================================
+
+.plyr__poster {
+  background-size: cover;
+}
+
+.videoBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top 10% center;
+  overflow: hidden;
+
+  @include media('>=md') {
+    background-position: center center;
+  }
+}
+
+.videoBlock--vmlyr {
+  background-image: url('https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/vmlyr-bilboard-sm.jpg');
+
+  @include media('>=md') {
+    background-image: url('https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/vmlyr-bilboard.jpg');
+  }
+}
+
+.videoBlock__content {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: rem(150px 0);
+}
+
+.videoBlock__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 100%;
+  transform: translate(-50%, -50%);
+
+  @include media('>=md') {
+    width: 100%;
+    height: auto;
+  }
+}

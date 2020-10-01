@@ -1,0 +1,299 @@
+// ================================
+// Tools: Columns
+// ================================
+
+@mixin columns($columns...) {
+  .col-auto {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+
+  .col-variable {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+  }
+
+  @each $i in $columns {
+    @for $n from 1 through $i {
+      .col-#{$n} {
+        flex-basis: ($n / $i) * 100%;
+        max-width: ($n / $i) * 100%;
+      }
+    }
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    @include media(#{'>=' + $breakpoint}) {
+      .#{$breakpoint}\:col-auto {
+        flex-grow: 1;
+        flex-basis: 0;
+        max-width: 100%;
+      }
+
+      .#{$breakpoint}\:col-variable {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none;
+      }
+
+      @each $i in $columns {
+        @for $n from 1 through $i {
+          .#{$breakpoint}\:col-#{$n} {
+            flex-basis: ($n / $i) * 100%;
+            max-width: ($n / $i) * 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Generate offset classes for each breakpoint
+@mixin columns-offsets($columns...) {
+  @each $i in $columns {
+    @for $n from 1 through ($i - 1) {
+      .col-offset-#{$n} {
+        margin-left: ($n / $i) * 100%;
+      }
+    }
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    @include media(#{'>=' + $breakpoint}) {
+      @each $i in $columns {
+        @for $n from 1 through ($i - 1) {
+          .#{$breakpoint}\:col-offset-#{$n} {
+            margin-left: ($n / $i) * 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Generate flexbox helper classes for each breakpoint
+@mixin columns-helpers() {
+  // Utilities for controlling how flex items are positioned along a container's cross axis.
+  .items-start {
+    align-items: flex-start;
+  }
+
+  .items-center {
+    align-items: center;
+  }
+
+  .items-end {
+    align-items: flex-end;
+  }
+
+  .items-baseline {
+    align-items: baseline;
+  }
+
+  // Utilities for controlling how lines are positioned in multi-line flex containers.
+  .content-start {
+    align-content: flex-start;
+  }
+
+  .content-center {
+    align-content: center;
+  }
+
+  .content-end {
+    align-content: flex-end;
+  }
+
+  .content-between {
+    align-content: space-between;
+  }
+
+  .content-around {
+    align-content: space-around;
+  }
+
+  // Utilities for controlling how an individual flex item is positioned along its container's cross axis.
+  .self-auto {
+    align-self: auto;
+  }
+
+  .self-start {
+    align-self: flex-start;
+  }
+
+  .self-center {
+    align-self: center;
+  }
+
+  .self-end {
+    align-self: flex-end;
+  }
+
+  .self-stretch {
+    align-self: stretch;
+  }
+
+  // Utilities for controlling flex items are positioned along a container's main axis.
+  .justify-start {
+    justify-content: flex-start;
+  }
+
+  .justify-center {
+    justify-content: center;
+  }
+
+  .justify-end {
+    justify-content: flex-end;
+  }
+
+  .justify-between {
+    justify-content: space-between;
+  }
+
+  .justify-around {
+    justify-content: space-around;
+  }
+
+  // Utilities to help order flex-items
+  .order-first {
+    order: -1;
+  }
+
+  .order-last {
+    order: 1;
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    @include media(#{'>=' + $breakpoint}) {
+      // Utilities for controlling how flex items are positioned along a container's cross axis
+      .#{$breakpoint}\:items-start {
+        align-items: flex-start;
+      }
+
+      .#{$breakpoint}\:items-center {
+        align-items: center;
+      }
+
+      .#{$breakpoint}\:items-end {
+        align-items: flex-end;
+      }
+
+      .#{$breakpoint}\:items-baseline {
+        align-items: baseline;
+      }
+
+      // Utilities for controlling how lines are positioned in multi-line flex containers
+      .#{$breakpoint}\:content-start {
+        align-content: flex-start;
+      }
+
+      .#{$breakpoint}\:content-center {
+        align-content: center;
+      }
+
+      .#{$breakpoint}\:content-end {
+        align-content: flex-end;
+      }
+
+      .#{$breakpoint}\:content-between {
+        align-content: space-between;
+      }
+
+      .#{$breakpoint}\:content-around {
+        align-content: space-around;
+      }
+
+      // Utilities for controlling how an individual flex item is positioned along its container's cross axis
+      .#{$breakpoint}\:self-auto {
+        align-self: auto;
+      }
+
+      .#{$breakpoint}\:self-start {
+        align-self: flex-start;
+      }
+
+      .#{$breakpoint}\:self-center {
+        align-self: center;
+      }
+
+      .#{$breakpoint}\:self-end {
+        align-self: flex-end;
+      }
+
+      .#{$breakpoint}\:self-stretch {
+        align-self: stretch;
+      }
+
+      // Utilities for controlling flex items are positioned along a container's main axis
+      .#{$breakpoint}\:justify-start {
+        justify-content: flex-start;
+      }
+
+      .#{$breakpoint}\:justify-center {
+        justify-content: center;
+      }
+
+      .#{$breakpoint}\:justify-end {
+        justify-content: flex-end;
+      }
+
+      .#{$breakpoint}\:justify-between {
+        justify-content: space-between;
+      }
+
+      .#{$breakpoint}\:justify-around {
+        justify-content: space-around;
+      }
+
+      // Utilities to help order flex-items
+      .#{$breakpoint}\:order-first {
+        order: -1;
+      }
+
+      .#{$breakpoint}\:order-last {
+        order: 1;
+      }
+
+      .#{$breakpoint}\:start-#{$breakpoint} {
+        justify-content: flex-start;
+      }
+
+      .#{$breakpoint}\:center-#{$breakpoint} {
+        justify-content: center;
+      }
+
+      .#{$breakpoint}\:end-#{$breakpoint} {
+        justify-content: flex-end;
+      }
+
+      .#{$breakpoint}\:top-#{$breakpoint} {
+        align-items: flex-start;
+      }
+
+      .#{$breakpoint}\:middle-#{$breakpoint} {
+        align-items: center;
+      }
+
+      .#{$breakpoint}\:bottom-#{$breakpoint} {
+        align-items: flex-end;
+      }
+
+      .#{$breakpoint}\:around-#{$breakpoint} {
+        justify-content: space-around;
+      }
+
+      .#{$breakpoint}\:between-#{$breakpoint} {
+        justify-content: space-between;
+      }
+
+      .#{$breakpoint}\:first-#{$breakpoint} {
+        order: -1;
+      }
+
+      .#{$breakpoint}\:last-#{$breakpoint} {
+        order: 1;
+      }
+    }
+  }
+}

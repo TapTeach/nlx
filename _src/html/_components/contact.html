@@ -1,0 +1,9 @@
+<div class="contact {% if imgTop %}contact__block{% else %}contact__flex{% endif %}">
+  <img src="{{ options.pathImagesAmazon }}/1px.gif" data-src="{{img}}" alt="Portrait of {{name}}" class="lazyload {% if imgTop %}mb-2{% endif %}">
+  <ul>
+    {% if name %}<li class="contact__name">{{name}}</li>{% endif %}
+    {% if title %}<li class="contact__title">{{title}}</li>{% endif %}
+    {% if phone %}<li class="contact__phone"><a href="tel:{{phone}}">{{phone}}</a></li>{% endif %}
+    {% if email %}<li class="contact__email"><a href="mailto:{{email}}">{{email}}</a></li>{% endif %}
+  </ul>
+</div>

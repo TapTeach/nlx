@@ -1,0 +1,50 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'line-height' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Line Height</h1>
+      <p>Utilities for controlling the leading (line height) of an element.</p>
+  </header>
+
+  <section class="container-xl">
+    <div class="sg-example mb-2">
+      <code>.leading-none</code>
+      <p class="leading-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, quia temporibus eveniet a libero incidunt suscipit laborum, rerum accusantium modi quidem, ipsam illum quis sed voluptatum quae eum fugit earum.</p>
+    </div>
+
+    <div class="sg-example mb-2">
+      <code>.leading-tight</code>
+      <p class="leading-tight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, quia temporibus eveniet a libero incidunt suscipit laborum, rerum accusantium modi quidem, ipsam illum quis sed voluptatum quae eum fugit earum.</p>
+    </div>
+
+    <div class="sg-example mb-2">
+      <code>.leading-normal</code>
+      <p class="leading-normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, quia temporibus eveniet a libero incidunt suscipit laborum, rerum accusantium modi quidem, ipsam illum quis sed voluptatum quae eum fugit earum.</p>
+    </div>
+
+    <div class="sg-example mb-2">
+      <code>.leading-loose</code>
+      <p class="leading-loose">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, quia temporibus eveniet a libero incidunt suscipit laborum, rerum accusantium modi quidem, ipsam illum quis sed voluptatum quae eum fugit earum.</p>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    <p class="leading-none"></p>
+    <p class="leading-tight"></p>
+    <p class="leading-normal"></p>
+    <p class="leading-loose"></p>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

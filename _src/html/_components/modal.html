@@ -1,0 +1,30 @@
+<div id="location-{{id}}" class="detailsModal pt-0 mfp-hide">
+  <article class="detailsModal__wrapper detailsModal__wrapperLocation" data-location-modal>
+
+    {# main location content #}
+    <section class="locationDetail__main">
+      <header class="locationDetail__header" {% if imgFileName %}style="background-image: url('{{imgFileName}}')"{% endif %}>
+        <h1 class="locationDetail__name">{{locName}}</h1>
+      </header>
+      {% if excerpt %}
+      <div class="locationExcerpt">
+        <p>{{excerpt}}</p>
+      </div>
+      {% endif %}
+      <dl class="locationMeta">
+        {% for detail in details %}
+        <div class="locationMeta__row">
+            {% if detail.title %}<dt>{{detail.title}}</dt>{% endif %}
+          {% if detail.text %}<dd>{{detail.text}}</dd>{% endif %}
+          {% if detail.url %}
+          <span class="locationMeta__icon ico--{{detail.icon}}" aria-hidden="true"></span>
+          <a href="{{detail.url}}" class="locationMeta__hotspot" target="_blank"></a>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </dl>
+    </section>
+    {# /end main location content #}
+
+  </article>
+</div>

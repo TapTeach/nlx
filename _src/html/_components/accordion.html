@@ -1,0 +1,13 @@
+
+<dt class="{% if block('content') is defined %}dt__expandable{% endif %}" data-faq-dt>
+  {% block label %}{% endblock %}
+  {% if block('content') is defined %}<div class="dt__icon"></div>{% endif %}
+</dt>
+{% if block('content') is defined %}
+  <dd class="{{contentColor|default('color-blue bg-gray')}}">
+    <div class="faq__ddOverflow">
+      {% block content %}{% endblock %}
+    </div>
+  </dd>
+{% endif %}
+  

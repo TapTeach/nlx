@@ -1,0 +1,202 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'map' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Map</h1>
+      <ul>
+        <li>Add a map with markers and the map will center over the markers area.</li>
+        <li>Images are in the images/maps directory and modals are in _partials.</li>
+        <li>Use the Twig <code>{% verbatim %} {% include{% endverbatim %}</code> to show the map component, <code>components/map.html</code>, and modal component <code>components/modal.html</code>.</li>
+        <li>GoogleMapsLoader.KEY in maps.js is domain specific to localhost and vmlyrconnect.com. This requires billing and is on Besim's personal account, so low traffic sites only on this key.</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">Parameters</h2>
+      <table class="sg-table">
+        <thead>
+          <tr>
+            <th>Key</th>
+            <th>Value</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>mapSrc</code></td>
+            <td><code>location</code> is the name of the marker location title. <br><code>id</code> is a unique value, identical to the modals id. <br> <code>lat</code>: latitude of the location. <br> <code>lng</code>: longitude of the location. <br> <code>icon</code>: <code>star</code>, 
+              <code>bar</code>, <code>coffee</code>, <code>shopping</code>, <code>hotel</code>, <code>building</code>, <code>memorial</code>, <code>hash-tag</code>, <code>vmlyr</code></td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td><code>id</code></td>
+            <td>This is a unique value for the marker, identical to the map id.</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td><code>imgFileName</code></td>
+            <td>The path to the image with the filename for the background image at the top of the modal.</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td><code>locName</code></td>
+            <td>The title text of the location over the background image.</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td><code>excerpt</code></td>
+            <td>This is an optional area to add text in the first section.</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td><code>details</code></td>
+            <td>Each parameter is optional. <br><code>title</code> is above the text. <br><code>text</code> is the visible text <br><code>url</code> creates a link for email, phone, map for directions, or a website <br><code>icon</code>: <code>directions</code> for car icon, <code>phone</code> for phone icon</td>
+            <td>--</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+    {% include "_components/map.html" with {
+      "mapSrc": [
+        {
+          "location": "Cherry Hall",
+          "id": "cherry-hall",
+          "lat": "39.0937734",
+          "lng": "-94.5794099",
+          "icon": "star"
+        },
+        {
+          "location": "Crossroads Hotel",
+          "id": "crossroads",
+          "lat": "39.088146",
+          "lng": "-94.589402",
+          "icon": "hotel"
+        },
+        {
+          "location": "VMLY&R Kansas City",
+          "id": "vmlyr",
+          "lat": "39.1206252",
+          "lng": "-94.5927679",
+          "icon": "vmlyr"
+        },
+        {
+          "location": "The Guild",
+          "id": "guild",
+          "lat": "39.0935126",
+          "lng": "-94.5795811",
+          "icon": "bar"
+        },
+        {
+          "location": "Union Station",
+          "id": "union-station",
+          "lat": "39.084937",
+          "lng": "-94.586386",
+          "icon": "building"
+        },
+        {
+          "location": "National WWI Museum and Memorial",
+          "id": "ww1",
+          "lat": "39.0809531",
+          "lng": "-94.5882007",
+          "icon": "memorial"
+        },
+        {
+          "location": "Mildred’s Coffeehouse",
+          "id": "mildreds",
+          "lat": "39.0908091",
+          "lng": "-94.5878877",
+          "icon": "coffee"
+        },
+        {
+          "location": "Country Club Plaza",
+          "id": "country-club-plaza",
+          "lat": "39.0419871",
+          "lng": "-94.5941815",
+          "icon": "shopping"
+        },
+        {
+          "location": "#KCGIVES Mural",
+          "id": "mural",
+          "lat": "39.0730658",
+          "lng": "-94.5811457",
+          "icon": "hash-tag"
+        }
+      ]
+    } %}
+
+
+  <section class="container-xl">
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# Map #}
+    {% include "_components/map.html" with {
+      "mapSrc": [
+        {
+          "location": "Cherry Hall",
+          "id": "cherry-hall",
+          "lat": "39.0937734",
+          "lng": "-94.5794099",
+          "icon": "star"
+        },
+        {
+          "location": "Crossroads Hotel",
+          "id": "crossroads",
+          "lat": "39.088146",
+          "lng": "-94.589402",
+          "icon": "hotel"
+        }
+      ]
+    } %}
+
+    {# Modal in _partials/modals.html #}
+    {% include "_components/modal.html" with {
+      "id": "crossroads",
+      "imgFileName": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/maps/locations/crossroads.jpg",
+      "locName": "Crossroads Hotel",
+      "excerpt": "Baldwin Denim, by Matt Baldwin, is a Kansas City based brand that focuses on Made in U.S.A. production and high quality fabrics and designs for its jeans.",
+      "details": [
+        {
+          "title": "Directions",
+          "icon": "directions",
+          "url": "https://goo.gl/maps/ZQGthe7wnWv"
+        },
+        {
+          "title": "Phone",
+          "text" : "+1 (866) 531-2400",
+          "icon": "phone",
+          "url": "tel:8665312400"
+        },
+        {
+          "title": "Homepage",
+          "text" : "www.crossroadshotelkc.com",
+          "icon": "",
+          "url": "http://www.crossroadshotelkc.com"
+        },
+        {
+          "title": "Address",
+          "text" : "2101 Central St, <br> Kansas City, MO 64108 <br> United States",
+          "icon": "",
+          "url": ""
+        }
+      ]
+    } %}
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

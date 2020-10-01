@@ -1,0 +1,147 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'figure' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Figure</h1>
+      <ul>
+        <li>Use the Twig <code>{% verbatim %}{% include{% endverbatim %}</code> to show the figure component, <code>components/figure.html</code>.</li>
+        <li>Rely on Contentful media assets or self hosted image.</li>
+        <li>Combine with grid and other layout utility classes to create ideal design.</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">Where do I find the Contentful asset id?</h2>
+      <ul>
+        <li>Login to <a href="https://www.contentful.com" target="_blank">contentful.com</a>.</li>
+        <li>Navigate to "Media" located in the header navigation.</li>
+        <li>Search or look through the list of "Published" assets. Once desired asset is selected, click it for additional details.</li>
+        <li>On the asset detail page, find the "Info" button on the top right corner of the page to retrieve the asset ID.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container-xl">
+    <div class="sg-comments">
+      <h2 class="type-h4">Parameters</h2>
+      <table class="sg-table">
+        <thead>
+          <tr>
+            <th>Key</th>
+            <th>Description</th>
+            <th>Contentful only?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>altText</code></td>
+            <td>Set the picture alternative text.</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>class</code></td>
+            <td>Add a class to the figure img tag.</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td><code>srcPath</code></td>
+            <td>Instead of using a Contentful asset, rely on self hosted or CDN source.</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td><code>id</code></td>
+            <td>Contentful media asset id.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td><code>height</code></td>
+            <td>Set picture height. If left empty, will default to image source height.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td><code>width</code></td>
+            <td>Set picture width. If left empty, will default to image source width.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td><code>placeholderSize</code></td>
+            <td>Define placeholder dimension for lazy loading. Default: <code>10 10</code>. The values should be unitless.</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container-xl">
+    <div class="sg-example">
+      <div class="row justify-center">
+        <div class="col-6 md:col-4">
+          {% include "_components/figure.html" with {
+            "picture": {
+              "altText": "This is alt text",
+              "id": "4cUKj3Wi5y2iusuY4SwOyQ",
+              "width": "400",
+              "height": "400",
+              "placeholderSize": "400 400"
+            }
+          } %}
+        </div>
+        <div class="col-6 md:col-4">
+          {% include "_components/figure.html" with {
+            "picture": {
+              "altText": "This is alt text",
+              "srcPath": "https://images.unsplash.com/photo-1497968021412-a86898ccbc4a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=90b6703869dd7a2bbe4175ba166de99a&dpr=1&auto=format&fit=crop&w=400&h=400&q=80",
+            }
+          } %}
+        </div>
+      </div>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# Contentful: Relying on asset source width and height #}
+    {% include "_components/figure.html" with {
+      "picture": {
+        "altText": "This is alt text",
+        "id": "4cUKj3Wi5y2iusuY4SwOyQ"
+      }
+    } %}
+
+    {# Contentful: Relying on custom width and height #}
+    {% include "_components/figure.html" with {
+      "picture": {
+        "altText": "This is alt text",
+        "id": "4cUKj3Wi5y2iusuY4SwOyQ",
+        "width": "400",
+        "height": "400",
+        "placeholderSize": "400 400"
+      }
+    } %}
+
+    {# Non-Contentful: Image is self hosted or on a CDN #}
+    {% include "_components/figure.html" with {
+      "picture": {
+        "altText": "This is alt text",
+        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/project/image.jpg",
+        "placeholderSize": "100 100",
+        "class": "className"
+      }
+    } %}
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

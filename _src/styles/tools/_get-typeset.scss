@@ -1,0 +1,28 @@
+// ================================
+// Tools: Get typeset
+// ================================
+
+// Returns a color with an optional tone from the map
+// * @param {string}  $typeSet The name of set being pulled
+
+@mixin get-typeset($typeSet) {
+  @if map-has-key($type-sets, $typeSet) {
+    $typeSetName: map-get($type-sets, $typeSet);
+
+    @each $breakpoint, $options in $typeSetName {
+      @if $breakpoint == 'base' {
+        @each $attr, $value in $options {
+          #{$attr}: $value;
+        }
+      } @else {
+        @include media('>#{$breakpoint}') {
+          @each $attr, $value in $options {
+            #{$attr}: $value;
+          }
+        }
+      }
+    }
+  } @else {
+    @warn "Couldn't find a typeset named `#{$typeSet}`.";
+  }
+}

@@ -1,0 +1,33 @@
+
+    <div class="silo mb-2 bg-center bg-cover bg-no-repeat"{% if bgImg %} style="background-image: url({{bgImg}})"{% endif %}>
+      {% if url or modal.id %}
+        <a href="{% if url %}{{url}}{% endif %}{% if modal.id %}#{{modal.id}}{% endif %}" class="silo__link{% if url or modal.id %} silo__hover{% endif %} {% if modal.id %}js-modal-inline{% endif %}"{% if url %} target="_blank"{% endif %}>
+      {% else %}
+        <div class="silo__link">
+      {% endif %}
+        <div class="px-2 pt-3">
+          <div class="silo__top">
+            <h3 class="type-lg font-light silo__title align-center mb-1">{{title}}</h3>
+            <p class="type-xs silo__text align-center">{{text}}</p>
+          </div>
+          {% if url or modal.id %}
+            <div class="silo__bottom">
+              <hr class="silo__hr mb-1">
+              <p class="type-sm silo__link--light align-center mb-1">{{linkText}}</p>
+              <div class="silo__iconLink align-center">{{ icon(icons.name, icons.color, icons.size|default('xs')) }}</div>
+            </div>
+          {% endif %}
+        </div>
+      {% if url or modal.id %}
+        </a>
+      {% else %}
+        </div>
+      {% endif %}
+    </div>
+    {% if modal.id %}
+      <div id="{{modal.id}}" class="team-modal mfp-hide wysiwyg">
+        <h2 class="type-h3">{{title}}</h2>
+          <p>{{modal.copy}}</p>
+      </div>
+    {% endif %}
+

@@ -1,0 +1,61 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'font-weight' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Font Weight</h1>
+      <p>Utility classes for controlling the text weight of an element.</p>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <table class="sg-table mb-2">
+      <thead>
+        <th>Weight</th>
+        <th>Class</th>
+        <th>Font</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="font-light">300</td>
+          <td><code>.font-light</code></td>
+          <td>YRThree</td>
+        </tr>
+        <tr>
+          <td class="font-normal">400</td>
+          <td><code>.font-normal</code></td>
+          <td>Avenir</td>
+        </tr>
+        <tr>
+          <td class="font-bold">700</td>
+          <td><code>.font-bold</code></td>
+          <td>Avenir</td>
+        </tr>
+        <tr>
+          <td class="font-black">800</td>
+          <td><code>.font-black</code></td>
+          <td>YRThree</td>
+        </tr>
+      </tbody>
+    </table>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    <p class="font-light"></p>
+    <p class="font-normal"></p>
+    <p class="font-bold"></p>
+    <p class="font-black"></p>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

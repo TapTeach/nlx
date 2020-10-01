@@ -1,0 +1,104 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'text-style' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Style & Decoration</h1>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <h2 class="type-h4 mb-1">Font Style</h2>
+
+    <div class="sg-example">
+      <div class="mb-3">
+        <code>.italic</code>
+        <p class="italic">The quick brown fox jumps over the lazy dog</p>
+      </div>
+      <div>
+        <code>.roman</code>
+        <p class="roman">The quick brown fox jumps over the lazy dog</p>
+      </div>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    <p class="italic"></p>
+    <p class="roman"></p>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+  <section class="container-xl">
+    <h2 class="type-h4 mb-1">Text Decoration</h2>
+
+    <div class="sg-example">
+      <div class="mb-3">
+        <code>.line-through</code>
+        <p class="line-through">The quick brown fox jumps over the lazy dog</p>
+      </div>
+      <div class="mb-3">
+        <code>.underline</code>
+        <p class="underline">The quick brown fox jumps over the lazy dog</p>
+      </div>
+      <div>
+        <code>.underline-none</code>
+        <p class="underline-none">The quick brown fox jumps over the lazy dog</p>
+      </div>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    <p class="line-throught"></p>
+    <p class="underline"></p>
+    <p class="underline-none"></p>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+  <section class="container-xl">
+    <h2 class="type-h4 mb-1">Text Transform</h2>
+
+    <div class="sg-example">
+      <div class="mb-3">
+        <code>.capitalize</code>
+        <p class="capitalize">The quick brown fox jumps over the lazy dog</p>
+      </div>
+      <div class="mb-3">
+        <code>.lowercase</code>
+        <p class="lowercase">The quick brown fox jumps over the lazy dog</p>
+      </div>
+      <div class="mb-3">
+        <code>.uppercase</code>
+        <p class="uppercase">The quick brown fox jumps over the lazy dog</p>
+      </div>
+      <div>
+        <code>.normal-case</code>
+        <p class="normal-case">The quick brown fox jumps over the lazy dog</p>
+      </div>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    <p class="capitalize"></p>
+    <p class="lowercase"></p>
+    <p class="uppercase"></p>
+    <p class="normal-case"></p>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

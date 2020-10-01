@@ -1,0 +1,45 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'hr' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Horizontal Rule</h1>
+    </div>
+  </header>
+
+  <section class="container-xl">
+    <div class="sg-example">
+      <div class="row">
+        <div class="col-12 mb-2"><hr></div>
+        <div class="col-12 mb-2"><hr class="hr__2"></div>
+        <div class="col-12 mb-2"><hr class="hr__cyan"></div>
+        <div class="col-12 mb-2"><hr class="hr__2 hr__cyan"></div>
+        <div class="col-12 mb-2"><hr class="hr__black"></div>
+        <div class="col-12"><hr class="hr__dashed"></div>
+      </div>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+
+    <hr>
+    <hr class="hr__2">
+    <hr class="hr__cyan">
+    <hr class="hr__2 hr__cyan">
+    <hr class="hr__black">
+    <hr class="hr__white">
+    <hr class="hr__dashed">
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

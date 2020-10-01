@@ -1,0 +1,37 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'vertical-alignment' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Vertical Alignment</h1>
+      <ul>
+        <li>Class: <code>va-[position]</code></li>
+        <li>Responsive: <code>[breakpoint]:va-[position]</code></li>
+        <li>Available positions: <code>-baseline</code>, <code>-top</code>, <code>-middle</code>, <code>-bottom</code>, <code>-text-top</code>, and <code>-text-bottom</code></li>
+        <li>Note: Vertical align only works on inline-level elements: <code>display: inline</code> and <code>display: inline-block</code></li>
+      </ul>
+  </header>
+
+  <section class="container-xl">
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    <span class="va-baseline"></span>
+    <span class="va-top"></span>
+    <span class="va-middle"></span>
+    <span class="va-bottom"></span>
+    <span class="va-text-top"></span>
+    <span class="va-text-bottom"></span>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </section>
+
+{% endblock %}

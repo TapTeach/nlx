@@ -1,0 +1,216 @@
+// ================================
+// Base: Default
+// ================================
+
+@at-root {
+  @viewport {
+    width: device-width;
+  }
+}
+
+// CSS variables add color vars to files starting with layoutheaderbg
+:root {
+  --outlineColor: #5db7a5;
+  --bodyFontColor: #07002d;
+  --bodyLinkColor: #00aeef;
+  --bodyLinkHoverColor: #07002d;
+  --bodyLinkColorLight: #00aeef;
+  --bodyLinkColorWhite: #fff;
+  --bodyLinkHoverColorLight: #fff;
+  --hotspotGradientColor1: #240b36;
+  --hotspotGradientColor2: #00aeef;
+  --carouselBtnColor: transparent;
+  --carouselBtnActiveColor: transparent;
+  --carouselBtnDisabledColor: transparent;
+  --teamNameColor: #00aeef;
+  --teamTitleColor: #fff;
+  --teamBgColor: #212430;
+  --teamBgColorNohover: #07002d;
+  --contactNameColor: #00aeef;
+  --contactTitleColor: #07002d;
+  --contactLinkColor: #00aeef;
+  --contactLinkHoverColor: #07002d;
+  --modalCloseBtnBgColor: #00aeef;
+  --layoutHeaderBg: #07002d;
+  --hamburgerMenu: #fff;
+  --menuClose: #fff;
+  --headerNavBg: #07002d;
+  --headerNavBg2: 0, 178, 237;
+  --menuInlineTextColor: #fff;
+  --menuInlineTextColorHvr: #00aeef;
+  --buttonLtBg: transparent;
+  --buttonLtOutline: #fff;
+  --buttonLtFont: #fff;
+  --buttonLtHvrBg: #fff;
+  --buttonLtHvrFont: #07002d;
+  --buttonDrkBg: transparent;
+  --buttonDrkOutline: #07002d;
+  --buttonDrkFont: #07002d;
+  --buttonDrkHvrBg: #07002d;
+  --buttonDrkHvrFont: #fff;
+  --buttonlessHvr: #07002d;
+  --buttonlessHvrLight: #fff;
+  --siloTitleColor: #fff;
+  --siloTextColor: #fff;
+  --siloHr: #00aeef;
+  --siloLinkColor: #00aeef;
+  --siloHover: 0, 174, 239;
+  --socialHover: #00aeef;
+  --socialFill: #fff;
+  --speedBumpBg: #07002d;
+  --speedBumpBorderLft: 255, 255, 255;
+  --speedBumpBorderRght: 255, 255, 255;
+  --speedBumpLtBg: #3fc2f3, #0db2f0;
+  --speedBumpDkBg: #005392, #013270;
+  --footerBg: #07002d;
+  --footerBgRecognition: #353939;
+  --footerCopyColor: #fff;
+}
+
+// A subtle focus style for keyboard-input elements
+.text-input:focus {
+  outline: 1px solid var(--outlineColor);
+}
+
+// No outline for non-keyboard-inputs elements
+button:focus,
+select:focus {
+  outline: none;
+}
+
+// When user is tabbing, add focus outline
+html.user-is-tabbing *:focus {
+  outline: 2px solid var(--outlineColor) !important;
+  outline: 5px auto -webkit-focus-ring-color !important;
+}
+
+// --------------------------------
+// Pseudo
+// --------------------------------
+
+::selection {
+  background: #777;
+  color: #fff;
+  text-shadow: none;
+}
+
+// --------------------------------
+// Body
+// --------------------------------
+
+html {
+  font-size: 62.5%;
+  font-size: 2.5vw;
+
+  @include media('>=420px') {
+    font-size: 2vw;
+  }
+  @include media('>=sm') {
+    font-size: 1.7vw;
+  }
+  @include media('>=md') {
+    font-size: 1.1vw;
+  }
+  @include media('>=lg') {
+    font-size: 0.9vw;
+  }
+  @include media('>=xl') {
+    font-size: 0.8vw;
+  }
+}
+
+body {
+  background-color: setcolor(white);
+  @include setfont(default);
+  font-size: rem(15px);
+  line-height: 1.6;
+  color: var(--bodyFontColor);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+h1 {
+  @include get-typeset('h1');
+}
+
+h2 {
+  @include get-typeset('h2');
+}
+
+h3 {
+  @include get-typeset('h3');
+}
+
+h4 {
+  @include get-typeset('h4');
+}
+
+h5 {
+  @include get-typeset('h5');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include setfont(primary, $font-900);
+}
+
+a {
+  color: var(--bodyLinkColor);
+
+  &:hover {
+    color: var(--bodyLinkHoverColor);
+  }
+}
+
+.link--light {
+  color: var(--bodyLinkColorLight);
+
+  &:hover {
+    color: var(--bodyLinkHoverColorLight);
+  }
+}
+
+.link--white {
+  color: var(--bodyLinkColorWhite);
+
+  &:hover {
+    color: var(--bodyLinkHoverColor);
+  }
+}
+
+.hr {
+  height: 1px;
+  border-top: 1px solid #8c8b8b;
+}
+
+.hr__dashed {
+  border-style: dashed;
+}
+
+.hr__2 {
+  height: 2px;
+  border-width: 2px;
+}
+
+.hr__cyan {
+  border-color: setcolor(cyan);
+}
+
+.hr__black {
+  border-color: setcolor(black);
+}
+
+.hr__blue {
+  border-color: setcolor(blue);
+}
+
+.hr__white {
+  border-color: setcolor(white);
+}

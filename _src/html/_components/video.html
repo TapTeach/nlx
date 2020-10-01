@@ -1,0 +1,28 @@
+{% if background %}
+  <video
+    src="{{background.source}}"
+    {{background.attributes}}
+    class="videoBlock__video"
+    data-video-bgfile>
+  </video>
+    <div class="videoBlock__content">
+      {% block content %}{% endblock %}
+    </div>
+{% else %}
+  <div class="video-player {{class}}">
+    {% if html5 %}
+      {% if embed %}
+      <video data-video-player poster="{{embed.poster}}" data-plyr-config='{{options|json_encode()}}' playsinline data-video>
+        {% if embed.mp4 %}
+          <source src="{{embed.mp4}}" type="video/mp4">
+        {% endif %}
+        {% if embed.webm %}
+          <source src="{{embed.webm}}" type="video/webm">
+        {% endif %}
+      </video>
+      {% endif %}
+    {% else %}
+        <div data-plyr-provider="{{embed.provider|default('vimeo')}}" data-plyr-embed-id="{{embed.id}}" poster="{{embed.poster}}" data-plyr-config='{{options|json_encode()}}' data-video></div>
+    {% endif %}
+  </div>
+{% endif %}

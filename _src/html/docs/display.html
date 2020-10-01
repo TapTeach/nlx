@@ -1,0 +1,39 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc/2.x/
+#}
+
+{% extends '_layouts/docs.html' %}
+{% set pageActiveTest = 'display' %}
+
+{% block content %}
+  <header class="container-xl">
+    <div class="sg-comments">
+      <h1 class="type-h3">Display</h1>
+      <ul>
+        <li>Utility class to define display property of element.</li>
+        <li>Base class: <code>[property]</code></li>
+        <li>Responsive class: <code>[breakpoint]:[property]</code></li>
+        <li>Available properties: <code>inline</code>, <code>inline-block</code>, <code>block</code>, <code>inline-flex</code> and <code>flex</code></li>
+      </ul>
+    </div>
+
+    {% markdown %}
+    ```twig.line-numbers
+    {% verbatim %}
+    {# Default #}
+    <div class="inline"></div>
+    <div class="inline-block"></div>
+    <div class="block"></div>
+    <div class="inline-flex"></div>
+    <div class="flex"></div>
+
+    {# Responsive Example #}
+    <div class="flex md:block"></div>
+    {% endverbatim %}
+    ```
+    {% endmarkdown %}
+  </header>
+
+{% endblock %}

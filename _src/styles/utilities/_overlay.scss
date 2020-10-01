@@ -1,0 +1,48 @@
+// ================================
+// Utilities: Overlay
+// ================================
+
+%overlay {
+  &::before,
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &::before {
+    opacity: 0.9;
+    mix-blend-mode: color;
+  }
+
+  &::after {
+    opacity: 0.4;
+    mix-blend-mode: multiply;
+  }
+}
+
+.overlay-1 {
+  @extend %overlay;
+
+  &::before {
+    background: #c31432;
+    background: linear-gradient(45deg, #240b36, #c31432);
+
+    background: #c33764;
+    background: linear-gradient(45deg, #1d2671, #c33764);
+
+    background: #aa4b6b;
+    background: linear-gradient(45deg, #3b8d99, #6b6b83, #aa4b6b);
+
+    background: #fc466b;
+    background: linear-gradient(45deg, #3f5efb, #fc466b);
+
+    background: #360033;
+    background: linear-gradient(12deg, #0b8793, #360033);
+
+    background: linear-gradient(45deg, #240b36, setcolor(cyan));
+  }
+}

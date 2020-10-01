@@ -1,0 +1,82 @@
+// ================================
+// Utilities: Background
+// ================================
+
+$bgPosition: (
+  bottom: bottom,
+  center: center,
+  left: left,
+  left-bottom: left bottom,
+  left-top: left top,
+  right: right,
+  right-bottom: right bottom,
+  right-top: right top,
+  top: top
+);
+
+$bgRepeat: (
+  repeat: repeat,
+  no-repeat: no-repeat,
+  repeat-x: repeat-x,
+  repeat-y: repeat-y
+);
+
+$bgSize: (
+  auto: auto,
+  cover: cover,
+  contain: contain,
+  contain-x: 100% auto,
+  contain-y: auto 100%
+);
+
+@each $label, $value in $bgPosition {
+  .bg-#{$label} {
+    background-position: $value;
+  }
+}
+
+@each $label, $value in $bgRepeat {
+  .bg-#{$label} {
+    background-repeat: $value;
+  }
+}
+
+@each $label, $value in $bgSize {
+  .bg-#{$label} {
+    background-size: $value;
+  }
+}
+
+// --------------------------------
+// Responsive Backgrounds
+// --------------------------------
+
+@each $breakpoint in map-keys($breakpoints) {
+  @include media(#{'>=' + $breakpoint}) {
+    @each $label, $value in $bgPosition {
+      .#{$breakpoint}\:bg-#{$label} {
+        background-position: $value;
+      }
+    }
+  }
+}
+
+@each $breakpoint in map-keys($breakpoints) {
+  @include media(#{'>=' + $breakpoint}) {
+    @each $label, $value in $bgRepeat {
+      .#{$breakpoint}\:bg-#{$label} {
+        background-repeat: $value;
+      }
+    }
+  }
+}
+
+@each $breakpoint in map-keys($breakpoints) {
+  @include media(#{'>=' + $breakpoint}) {
+    @each $label, $value in $bgSize {
+      .#{$breakpoint}\:bg-#{$label} {
+        background-size: $value;
+      }
+    }
+  }
+}
