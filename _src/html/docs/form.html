@@ -446,6 +446,14 @@
     {% markdown %}
     ```twig.line-numbers
     {% verbatim %}
+    {# 
+      Form opening for Netlify with honey pot spam bot field. Create a /success/index.html page for successful submission 
+    #}
+
+    <form name="formName" class="form__styled bg-white pb-3" method="POST" action="/success" netlify-honeypot="bot-field" data-netlify="true" id="form">
+      <input name="bot-field" style="display:none" />
+    </form>
+
     {#
       Form
     #}
