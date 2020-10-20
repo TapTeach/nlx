@@ -13,7 +13,7 @@
 {% set recognition = true %}
 {% set headerMenu = global.menu.page %}
 {% set headerLogo = 'logo.png' %}
-{% set title = "VMLY&R | Style Guide" %}
+{% set title = "VMLY&R | Mobile Apps &amp; Emerging Technology" %}
 
 {% block content %}
   <article class="landing-home" id="top">
@@ -72,7 +72,7 @@
 	<!-- Intro -->
 	<div class="row row--gutter-wide-lg mx-0 px-1 py-3">
 	  <div class="col-12 md:col-7">
-	  	<h3 class="type-headlineSection mb-2">Overview Headline Here</h3>
+	  	<h3 class="type-headlineSection mb-2">Global Capabilties</h3>
 	  	<p class="font-bold mb-2">[NEW COPY NEEDED]Our team has a unique blend of industry- recognized knowledge driven by a combined 100+ years of experience in mobile apps and emerging technology.</p>
 		<p>[NEW COPY NEEDED]Our group has launched apps like The WSJ, London Evening Standard, The Atlantic, Tetris, MedHost, and Wheel of Fortune, while consulting on early developed apps like Pandora, eBay, and more. Furthermore, we have not only built cellular networks, but also strong middleware platforms for rapid app development, have a patent on the creation and development of mobile hotspots, as well as being an early innovator in Natural Language Processing (NLP), well before the surge of today’s in-home hubs and assistants.</p>
 	  </div>
@@ -89,8 +89,56 @@
   		<p>[ico] Games</p>
 	  </div>
 	</div>
-	<!-- Work -->
-	<div class="row mx-0 px-1 py-2">
+	<!-- MAP -->
+	{% include "_components/map.html" with {
+	  "mapSrc": [
+	    {
+	      "location": "Kansas City, USA",
+	      "id": "kcmo",
+	      "lat": "39.0937734",
+	      "lng": "-94.5794099",
+	      "icon": "vmlyr"
+	    },
+	    {
+	      "location": "Kraków, Poland",
+	      "id": "krakow",
+	      "lat": "50.0647",
+	      "lng": "19.9450",
+	      "icon": "vmlyr"
+	    },
+	    {
+	      "location": "Sydney, Australia",
+	      "id": "sydney",
+	      "lat": "-33.8370",
+	      "lng": "151.2080",
+	      "icon": "vmlyr"
+	    }
+	  ]
+	} %}
+	<!--KC-->
+	{% include "_components/modal.html" with {
+	  "id": "kcmo",
+	  "imgFileName": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/maps/locations/crossroads.jpg",
+	  "locName": "VMLY&amp;R Kansas City",
+	  "excerpt": "Specialities of Office here as tags..."
+	} %}
+	<!--Krakow-->
+	{% include "_components/modal.html" with {
+	  "id": "krakow",
+	  "imgFileName": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/maps/locations/crossroads.jpg",
+	  "locName": "VMLY&amp;R Kraków",
+	  "excerpt": "Specialities of Office here as tags..."
+	} %}
+	<!--Sydney-->
+	{% include "_components/modal.html" with {
+	  "id": "sydney",
+	  "imgFileName": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/maps/locations/crossroads.jpg",
+	  "locName": "VMLY&amp;R Sydney",
+	  "excerpt": "Specialities of Office here as tags..."
+	} %}
+
+	<!-- WORK -->
+	<div class="row mx-0 px-1 pt-3">
 	  <div class="col-12">
 	  	<h3 class="type-headlineSection mb-2">Our Recent Work</h3>
 	  </div>
