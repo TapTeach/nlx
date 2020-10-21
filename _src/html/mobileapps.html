@@ -100,7 +100,7 @@
 	  				<div class="col-2">
 	  					{% include "_components/figure.html" with {
 						  "picture": {
-						    "altText": "This is alt text",
+						    "altText": "Strategy PDF",
 						    "srcPath": "assets/images/practice/img_strategy_pdf.jpg"						  }
 						} %}
 						<p class="mt-1">
@@ -115,8 +115,8 @@
 	  				<div class="col-10">
 	  				<h5 class="color-purple-medium">DEEP RESEARCH & INSIGHTS</h5>
 	  				<p class="my-1">Knowing what direction a product takes requires countless hours of competitive analysis and deep-dive research into both the industry and the methodology of a solution.</p>
-	  				<p class="my-1">In this section we will address:</p>
-	  				<div>
+	  				<p class="my-1">In this PDF we will address:</p>
+	  				<div class="pl-2">
 		  				<p class="uppercase font-bold color-purple-medium">CUSTOMER EXPERIENCE STACK</p>
 		  				<p class="type-sm">The customer is always right, we provide a direct map to how that happens</p>
 		  				<hr class="my-1">
@@ -146,9 +146,43 @@
 					<p class="uppercase type-sm color-onyx-60">Organized Priorities</p>
 				</div>
 				{% endblock %}
-
 				{% block content %}
-				<p>layout here</p>
+				<div class="row row--gutter-wide-lg">
+	  				<div class="col-2">
+	  					{% include "_components/figure.html" with {
+						  "picture": {
+						    "altText": "Program Management PDF",
+						    "srcPath": "assets/images/practice/img_programmgmt_pdf.jpg"						  }
+						} %}
+						<p class="mt-1">
+							<a href="#">Download PDF</a>
+						</p>
+	  				</div>
+	  				<div class="col-10">
+	  				<h5 class="color-purple-medium">PROCESS WITHOUT PAIN</h5>
+	  				<p class="my-1">Creating a culture of collaboration means breaking down silos among development, operations and quality teams.</p>
+	  				<p class="my-1">In this PDF we will address:</p>
+	  				<div class="pl-2">
+		  				<p class="uppercase font-bold color-purple-medium">SOLUTION DELIVERY FRAMEWORK</p>
+		  				<p class="type-sm">Prioritize and evaluate a project using a consistent framework across all teams involved.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">PRODUCT OWNER DELIVERY ELEMENTS</p>
+		  				<p class="type-sm">Regular reviews and stand-ups to ensure deadlines are met and the team remains productive.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">ONE TEAM</p>
+		  				<p class="type-sm">Put everyone working on the project on the same page. No waiting for your turn to take action. We are all in this together.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">OUR TOOLS ACROSS THE FRAMEWORK</p>
+		  				<p class="type-sm">Our toolset aims for the greatest collaboration and efficiency standards around.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">DESIGN SPRINT</p>
+		  				<p class="type-sm">Quick and efficient design sessions help identify holes and strengthen the workflow</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">GETTING GOING</p>
+		  				<p class="type-sm">Our process as we move from ideation to live and iteration.</p>
+	  				</div>
+	  				</div>
+	  			</div>
 				{% endblock %}
 				{% endembed %}
 
