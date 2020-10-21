@@ -2,28 +2,28 @@
   "menu": {
     "page": [
       {
-        "title": "Link One",
-        "permalink": "/test",
+        "title": "Home",
+        "permalink": "#",
         "activeTest": "",
         "permalinkIsScroll": false,
         "isVideo": false
       },
       {
-        "title": "Link Two",
+        "title": "Mobile Apps",
         "permalink": "#",
         "activeTest": "",
         "permalinkIsScroll": true,
         "isVideo": false
       },
       {
-        "title": "Link Three",
+        "title": "Emerging Tech",
         "permalink": "#",
         "activeTest": "",
         "permalinkIsScroll": true,
         "isVideo": false
       },
       {
-        "title": "Industry Recognition",
+        "title": "Partners",
         "permalink": "#recognition",
         "activeTest": "",
         "permalinkIsScroll": true,
