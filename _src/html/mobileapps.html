@@ -84,11 +84,11 @@
 	  </div>
 	</div>
 	<!-- Our Practice -->
-	<div class="container px-2">
+	<div class="container px-2 py-3 bg-onyx-10">
 		<h3 class="type-headlineSection mb-2">Our Practice</h3>
 		<dl class="faq__list">
 			<div class="faq__row">
-				{% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-gray' } %}
+				{% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-white' } %}
 				{% block label %}
 				<div class="col-12">
 					<h5 class="uppercase font-bold">Strategy</h5> 
@@ -97,12 +97,8 @@
 				{% endblock %}
 				{% block content %}
 				<div class="row row--gutter-wide-lg">
-	  				<div class="col-2">
-	  					{% include "_components/figure.html" with {
-						  "picture": {
-						    "altText": "Strategy PDF",
-						    "srcPath": "assets/images/practice/img_strategy_pdf.jpg"						  }
-						} %}
+	  				<div class="col-12 md:col-2">
+						<img src="assets/images/practice/img_strategy_pdf.jpg" style="box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.2);">
 						<p class="mt-1">
 							<a href="#">Download PDF</a>
 						</p>
@@ -112,7 +108,7 @@
 						<a href="#" class="block">Design Sprint</a>
 						<a href="#" class="block">Roadmap</a>
 	  				</div>
-	  				<div class="col-10">
+	  				<div class="col-12 md:col-10">
 	  				<h5 class="color-purple-medium">DEEP RESEARCH & INSIGHTS</h5>
 	  				<p class="my-1">Knowing what direction a product takes requires countless hours of competitive analysis and deep-dive research into both the industry and the methodology of a solution.</p>
 	  				<p class="my-1">In this PDF we will address:</p>
@@ -139,7 +135,7 @@
 	  			</div>
 				{% endblock %}
 				{% endembed %}
-				{% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-gray' } %}
+				{% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-white' } %}
 				{% block label %}
 				<div class="col-12">
 					<h5 class="uppercase font-bold">Program Management</h5> 
@@ -148,17 +144,15 @@
 				{% endblock %}
 				{% block content %}
 				<div class="row row--gutter-wide-lg">
-	  				<div class="col-2">
-	  					{% include "_components/figure.html" with {
-						  "picture": {
-						    "altText": "Program Management PDF",
-						    "srcPath": "assets/images/practice/img_programmgmt_pdf.jpg"						  }
-						} %}
+	  				<div class="col-12 md:col-2">
+						<img src="assets/images/practice/img_programmgmt_pdf.jpg" style="box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.2);">
 						<p class="mt-1">
 							<a href="#">Download PDF</a>
 						</p>
+						<p class="mt-2">PDF Examples of...</p>
+						<a href="#" class="block">The Next 30,60 & 90 Days</a>
 	  				</div>
-	  				<div class="col-10">
+	  				<div class="col-12 md:col-10">
 	  				<h5 class="color-purple-medium">PROCESS WITHOUT PAIN</h5>
 	  				<p class="my-1">Creating a culture of collaboration means breaking down silos among development, operations and quality teams.</p>
 	  				<p class="my-1">In this PDF we will address:</p>
@@ -186,7 +180,7 @@
 				{% endblock %}
 				{% endembed %}
 
-				{% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-gray' } %}
+				{% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-white' } %}
 				{% block label %}
 				<div class="col-12">
 					<h5 class="uppercase font-bold">XD &amp; Design</h5> 
@@ -195,11 +189,38 @@
 				{% endblock %}
 
 				{% block content %}
-				<p>layout here</p>
+				<div class="row row--gutter-wide-lg">
+	  				<div class="col-12 md:col-2">
+						<img src="assets/images/practice/img_xd_pdf.jpg" style="box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.2);">
+						<p class="mt-1">
+							<a href="#">Download PDF</a>
+						</p>
+						<p class="mt-2">PDF Examples of...</p>
+						<a href="#" class="block">HIG Assessment</a>
+	  				</div>
+	  				<div class="col-12 md:col-10">
+	  				<h5 class="color-purple-medium">NATIVE-FIRST EXPERIENCES</h5>
+	  				<p class="my-1">By leveraging the latest in mobile and web design theory, we set the foundations for leading edge development while adhering to the needs of the consumer.</p>
+	  				<p class="my-1">In this PDF we will address:</p>
+	  				<div class="pl-2">
+		  				<p class="uppercase font-bold color-purple-medium">PLATFORM GUIDANCE</p>
+		  				<p class="type-sm">Education and Thought Leadership on the best approach to platform usage on a project level.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">HIG Reviews</p>
+		  				<p class="type-sm">Ensure all standards are being followed based on the Human Interface Guidelines set forth by Apple and Google.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">CRUX</p>
+		  				<p class="type-sm">Blended teams when both Creative and User Experience teams created a streamlined design process.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">ADA COMPLIANCE</p>
+		  				<p class="type-sm">Following the modern standards of ADA allows all of our work to be accessible from initial launch to a project’s sunset.</p>
+	  				</div>
+	  				</div>
+	  			</div>
 				{% endblock %}
 				{% endembed %}
 
-				{% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-gray' } %}
+				{% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-white' } %}
 				{% block label %}
 				<div class="col-12">
 					<h5 class="uppercase font-bold">Development</h5> 
@@ -208,11 +229,38 @@
 				{% endblock %}
 
 				{% block content %}
-				<p>layout here</p>
+				<div class="row row--gutter-wide-lg">
+	  				<div class="col-12 md:col-2">
+						<img src="assets/images/practice/img_development_pdf.jpg" style="box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.2);">
+						<p class="mt-1">
+							<a href="#">Download PDF</a>
+						</p>
+						<p class="mt-2">PDF Examples of...</p>
+						<a href="#" class="block">Native or Hybrid POV</a>
+	  				</div>
+	  				<div class="col-12 md:col-10">
+	  				<h5 class="color-purple-medium">JOURNEY DRIVEN DEVELOPMENT</h5>
+	  				<p class="my-1">Creating a culture of collaboration means breaking down silos among development, operations and quality teams.</p>
+	  				<p class="my-1">In this PDF we will address:</p>
+	  				<div class="pl-2">
+		  				<p class="uppercase font-bold color-purple-medium">ENGINEERING WORKFLOW</p>
+		  				<p class="type-sm">Constant communication and collaboration with surrounding workflows from Ops to Design to Testing.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">API Forward</p>
+		  				<p class="type-sm">Build when it makes sense and integrate often to allow for growth and fresh data.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">APPLICATION ARCHITECTURE</p>
+		  				<p class="type-sm">Precision development requires a strong plan. Architecting that factors all the idiosyncrasies of a project plan.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">HOW WE BUILD</p>
+		  				<p class="type-sm">Consistent development leads to the ability to reflect and reuse both talent and elements of code.</p>
+	  				</div>
+	  				</div>
+	  			</div>
 				{% endblock %}
 				{% endembed %}
 
-				{% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-gray' } %}
+				{% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-white' } %}
 				{% block label %}
 				<div class="col-12">
 					<h5 class="uppercase font-bold">Testing</h5> 
@@ -221,11 +269,32 @@
 				{% endblock %}
 
 				{% block content %}
-				<p>layout here</p>
+				<div class="row row--gutter-wide-lg">
+	  				<div class="col-12 md:col-2">
+						<img src="assets/images/practice/img_testing_pdf.jpg" style="box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.2);">
+						<p class="mt-1">
+							<a href="#">Download PDF</a>
+						</p>
+						<p class="mt-2">PDF Examples of...</p>
+						<a href="#" class="block">Beta Testing Plan</a>
+	  				</div>
+	  				<div class="col-12 md:col-10">
+	  				<h5 class="color-purple-medium">FROM DEVELOPMENT INTO THE HANDS OF USERS</h5>
+	  				<p class="my-1">The VMLY&R AQ team leaves no stone unturned. Through automated test scripts and complex user stories, we work with development and creative to identify gaps and modify to increase performance and usability.</p>
+	  				<p class="my-1">In this PDF we will address:</p>
+	  				<div class="pl-2">
+		  				<p class="uppercase font-bold color-purple-medium">HOW WE TEST</p>
+		  				<p class="type-sm">Development driven testing guides applications through a multi-tiered approach.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">VALIDATION METHODS</p>
+		  				<p class="type-sm">Relying on platform standards and real-user responses allow us to maintain quality practices that fit every mold.</p>
+	  				</div>
+	  				</div>
+	  			</div>
 				{% endblock %}
 				{% endembed %}
 
-				{% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-gray' } %}
+				{% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-white' } %}
 				{% block label %}
 				<div class="col-12">
 					<h5 class="uppercase font-bold">Product Life-Cycle</h5> 
@@ -234,7 +303,37 @@
 				{% endblock %}
 
 				{% block content %}
-				<p>layout here</p>
+				<div class="row row--gutter-wide-lg">
+	  				<div class="col-12 md:col-2">
+						<img src="assets/images/practice/img_lifecycle_pdf.jpg" style="box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.2);">
+						<p class="mt-1">
+							<a href="#">Download PDF</a>
+						</p>
+						<p class="mt-2">PDF Examples of...</p>
+						<a href="#" class="block">ASO Plan</a>
+						<a href="#" class="block">Sample Acquisition Plan</a>
+						<a href="#" class="block">Sample Messaging Playbook</a>
+						<a href="#" class="block">Sample Monthly Report</a>
+	  				</div>
+	  				<div class="col-12 md:col-10">
+	  				<h5 class="color-purple-medium">BUILDING AN EXPERIENCE IS LESS THAN 50% OF THE WORK.</h5>
+	  				<p class="my-1">Once the product is live, the work isn’t over. Finding and maintaining a user base is all part of the strategy of lifecycle management.</p>
+	  				<p class="my-1">In this PDF we will address:</p>
+	  				<div class="pl-2">
+		  				<p class="uppercase font-bold color-purple-medium">OWNERSHIP</p>
+		  				<p class="type-sm">Getting to market is easy, knowing how to adjust to what you thought was right is an always-on job.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">ACQUISITION</p>
+		  				<p class="type-sm">Find the right way to get the user that will receive the most value from the experience.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">ENGAGEMENT</p>
+		  				<p class="type-sm">Create the appropriate level of engagement to talk with users at the right time for the right reasons.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">STORY-TELLING</p>
+		  				<p class="type-sm">Determine how to relay the success and opportunities to the multiple organizational layers that need to know that information.</p>
+	  				</div>
+	  				</div>
+	  			</div>
 				{% endblock %}
 				{% endembed %}
 			</div>
@@ -242,14 +341,14 @@
 	</div>
 
 	<!--Partners -->
-	<div class="container mx-0 px-2 pt-3 pb-0">
-	<h3 class="type-headlineSection mb-2">Our Experiences</h3>
+	<div class="container mx-0 px-2 py-3">
+	<h3 class="type-headlineSection mb-2">App Experiences</h3>
 	<ul class="logoWall logoWall--wide">
 	  <li class="logoWall__col">
 	    {% include "_components/figure.html" with {
 	      "picture": {
-	        "altText": "Ford logo",
-	        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/logos/partners/ford.png",
+	        "altText": "FordPass",
+	        "srcPath": "assets/images/appicons/img_app_ford.png",
 	        "placeholderSize": "128 48",
 	        "class": "logoWall__logo"
 	      }
@@ -258,8 +357,8 @@
 	  <li class="logoWall__col">
 	    {% include "_components/figure.html" with {
 	      "picture": {
-	        "altText": "Ford logo",
-	        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/logos/partners/ford.png",
+	        "altText": "United Rentals",
+	        "srcPath": "assets/images/appicons/img_app_ur.png",
 	        "placeholderSize": "128 48",
 	        "class": "logoWall__logo"
 	      }
@@ -268,8 +367,8 @@
 	  <li class="logoWall__col">
 	    {% include "_components/figure.html" with {
 	      "picture": {
-	        "altText": "Ford logo",
-	        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/logos/partners/ford.png",
+	        "altText": "Sherwin-Williams Pro",
+	        "srcPath": "assets/images/appicons/img_app_swpro.png",
 	        "placeholderSize": "128 48",
 	        "class": "logoWall__logo"
 	      }
@@ -278,8 +377,8 @@
 	  <li class="logoWall__col">
 	    {% include "_components/figure.html" with {
 	      "picture": {
-	        "altText": "Ford logo",
-	        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/logos/partners/ford.png",
+	        "altText": "Color Snap",
+	        "srcPath": "assets/images/appicons/img_app_colorsnap.png",
 	        "placeholderSize": "128 48",
 	        "class": "logoWall__logo"
 	      }
@@ -288,8 +387,8 @@
 	  <li class="logoWall__col">
 	    {% include "_components/figure.html" with {
 	      "picture": {
-	        "altText": "Ford logo",
-	        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/logos/partners/ford.png",
+	        "altText": "Banfield",
+	        "srcPath": "assets/images/appicons/img_app_bf.png",
 	        "placeholderSize": "128 48",
 	        "class": "logoWall__logo"
 	      }
@@ -298,8 +397,8 @@
 	  <li class="logoWall__col">
 	    {% include "_components/figure.html" with {
 	      "picture": {
-	        "altText": "Ford logo",
-	        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/logos/partners/ford.png",
+	        "altText": "Bridgestone Fleet",
+	        "srcPath": "assets/images/appicons/img_app_bs.png",
 	        "placeholderSize": "128 48",
 	        "class": "logoWall__logo"
 	      }
@@ -308,8 +407,8 @@
 	  <li class="logoWall__col">
 	    {% include "_components/figure.html" with {
 	      "picture": {
-	        "altText": "Ford logo",
-	        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/logos/partners/ford.png",
+	        "altText": "Ford Credit",
+	        "srcPath": "assets/images/appicons/img_app_credit.png",
 	        "placeholderSize": "128 48",
 	        "class": "logoWall__logo"
 	      }
@@ -318,8 +417,8 @@
 	  <li class="logoWall__col">
 	    {% include "_components/figure.html" with {
 	      "picture": {
-	        "altText": "Ford logo",
-	        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/logos/partners/ford.png",
+	        "altText": "Dell",
+	        "srcPath": "assets/images/appicons/img_app_dell.png",
 	        "placeholderSize": "128 48",
 	        "class": "logoWall__logo"
 	      }
@@ -328,8 +427,8 @@
 	  <li class="logoWall__col">
 	    {% include "_components/figure.html" with {
 	      "picture": {
-	        "altText": "Ford logo",
-	        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/logos/partners/ford.png",
+	        "altText": "DSG",
+	        "srcPath": "assets/images/appicons/img_app_dicks.png",
 	        "placeholderSize": "128 48",
 	        "class": "logoWall__logo"
 	      }
@@ -338,8 +437,58 @@
 	  <li class="logoWall__col">
 	    {% include "_components/figure.html" with {
 	      "picture": {
-	        "altText": "Ford logo",
-	        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/logos/partners/ford.png",
+	        "altText": "Gatorade",
+	        "srcPath": "assets/images/appicons/img_app_gatorade.png",
+	        "placeholderSize": "128 48",
+	        "class": "logoWall__logo"
+	      }
+	    } %}
+	  </li>
+	  <li class="logoWall__col">
+	    {% include "_components/figure.html" with {
+	      "picture": {
+	        "altText": "QuikTrip",
+	        "srcPath": "assets/images/appicons/img_app_qt.png",
+	        "placeholderSize": "128 48",
+	        "class": "logoWall__logo"
+	      }
+	    } %}
+	  </li>
+	  <li class="logoWall__col">
+	    {% include "_components/figure.html" with {
+	      "picture": {
+	        "altText": "MedHost",
+	        "srcPath": "assets/images/appicons/img_app_mh.png",
+	        "placeholderSize": "128 48",
+	        "class": "logoWall__logo"
+	      }
+	    } %}
+	  </li>
+	  <li class="logoWall__col">
+	    {% include "_components/figure.html" with {
+	      "picture": {
+	        "altText": "NBC Sports",
+	        "srcPath": "assets/images/appicons/img_app_nbc.png",
+	        "placeholderSize": "128 48",
+	        "class": "logoWall__logo"
+	      }
+	    } %}
+	  </li>
+	  <li class="logoWall__col">
+	    {% include "_components/figure.html" with {
+	      "picture": {
+	        "altText": "Rip Curl",
+	        "srcPath": "assets/images/appicons/img_app_ripcurl.png",
+	        "placeholderSize": "128 48",
+	        "class": "logoWall__logo"
+	      }
+	    } %}
+	  </li>
+	  <li class="logoWall__col">
+	    {% include "_components/figure.html" with {
+	      "picture": {
+	        "altText": "Sprint",
+	        "srcPath": "assets/images/appicons/img_app_sprint.png",
 	        "placeholderSize": "128 48",
 	        "class": "logoWall__logo"
 	      }
@@ -348,140 +497,317 @@
 	</ul>
 	</div>
 	<!-- WORK -->
-	<div class="row mx-0 px-1 py-3">
+	<div class="row mx-0 px-2 py-3 bg-onyx-10">
 	  <div class="col-12">
 	  	<h3 class="type-headlineSection mb-2">Case Studies</h3>
 	  </div>
-	  <div class="col-12 md:col-auto"> 
-	  {% include "_components/spotlight.html" with {
-		  "title": {
-		    "primary": "Rebrand Case Study",
-		    "sub": "New Balance"
+
+	  {% embed "_components/carousel.html" with {
+		  "tnsOptions": {
+		    items: 1,
+		    autoHeight: true,
+		    speed: 500,
+		    gutter: 20,
+		    loop: false,
+		    nav: true,
+		    responsive: {
+		      768: {
+		        items: 3,
+		        slideBy: 3
+		      },
+		      980: {
+		        items: 5,
+		        slideBy: 5
+		      }
+		    }
 		  },
-		  "hotspot": {
-		    "url": "https://vimeo.com/272846703",
-		    "icon": 'video',
-		    "isVideo": true,
+		  "counter": {
+		    "backdrop": true,
+		    "inverted": false
 		  },
-		  "picture": {
-		    "altText": "New Balance Case Study",
-		    "id": "4cUKj3Wi5y2iusuY4SwOyQ",
-		    "placeholderSize": "600 600",
-		    "width": "600",
-		    "height": "600"
+		  "controls": {
+		    "fixed": true
 		  },
-		  "extras": [
-			    {
-			      "url": "#",
-			      "title": "PDF Case Study"
-			    }
-			  ]
+		  "iconLeft": {
+		    "name": "caret-left",
+		    "color": "cyan",
+		    "size": "sm"
+		  },
+		  "iconRight": {
+		    "name": "caret-right",
+		    "color": "cyan",
+		    "size": "sm"
+		  }
 		} %}
-	  </div>
-	  <div class="col-12 md:col-auto"> 
-	  {% include "_components/spotlight.html" with {
-		  "title": {
-		    "primary": "Rebrand Case Study",
-		    "sub": "New Balance"
-		  },
-		  "hotspot": {
-		    "url": "https://vimeo.com/272846703",
-		    "icon": 'video',
-		    "isVideo": true,
-		  },
-		  "picture": {
-		    "altText": "New Balance Case Study",
-		    "id": "4cUKj3Wi5y2iusuY4SwOyQ",
-		    "placeholderSize": "600 600",
-		    "width": "600",
-		    "height": "600"
-		  },
-		  "extras": [
-			    {
-			      "url": "#",
-			      "title": "PDF Case Study"
-			    }
-			  ]
-		} %}
-	  </div>
-	  <div class="col-12 md:col-auto"> 
-	  {% include "_components/spotlight.html" with {
-		  "title": {
-		    "primary": "Rebrand Case Study",
-		    "sub": "New Balance"
-		  },
-		  "hotspot": {
-		    "url": "https://vimeo.com/272846703",
-		    "icon": 'video',
-		    "isVideo": true,
-		  },
-		  "picture": {
-		    "altText": "New Balance Case Study",
-		    "id": "4cUKj3Wi5y2iusuY4SwOyQ",
-		    "placeholderSize": "600 600",
-		    "width": "600",
-		    "height": "600"
-		  },
-		  "extras": [
-			    {
-			      "url": "#",
-			      "title": "PDF Case Study"
-			    }
-			  ]
-		} %}
-	  </div>
-	  <div class="col-12 md:col-auto"> 
-	  {% include "_components/spotlight.html" with {
-		  "title": {
-		    "primary": "Rebrand Case Study",
-		    "sub": "New Balance"
-		  },
-		  "hotspot": {
-		    "url": "https://vimeo.com/272846703",
-		    "icon": 'video',
-		    "isVideo": true,
-		  },
-		  "picture": {
-		    "altText": "New Balance Case Study",
-		    "id": "4cUKj3Wi5y2iusuY4SwOyQ",
-		    "placeholderSize": "600 600",
-		    "width": "600",
-		    "height": "600"
-		  },
-		  "extras": [
-			    {
-			      "url": "#",
-			      "title": "PDF Case Study"
-			    }
-			  ]
-		} %}
-	  </div>
-	  <div class="col-12 md:col-auto"> 
-	  {% include "_components/spotlight.html" with {
-		  "title": {
-		    "primary": "Rebrand Case Study",
-		    "sub": "New Balance"
-		  },
-		  "hotspot": {
-		    "url": "https://vimeo.com/272846703",
-		    "icon": 'video',
-		    "isVideo": true,
-		  },
-		  "picture": {
-		    "altText": "New Balance Case Study",
-		    "id": "4cUKj3Wi5y2iusuY4SwOyQ",
-		    "placeholderSize": "600 600",
-		    "width": "600",
-		    "height": "600"
-		  },
-		  "extras": [
-			    {
-			      "url": "#",
-			      "title": "PDF Case Study"
-			    }
-			  ]
-		} %}
-	  </div>
+		  {% block carousel %}
+		  <div class="carousel__slide">
+		      {% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "United Rentals",
+				    "sub": "Construction"
+				  },
+				  "hotspot": {
+				    "url": "https://vimeo.com/272846703",
+				    "icon": 'video',
+				    "isVideo": true,
+				  },
+				  "picture": {
+				    "altText": "New Balance Case Study",
+				    "id": "4cUKj3Wi5y2iusuY4SwOyQ",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  },
+				  "extras": [
+					    {
+					      "url": "#",
+					      "title": "PDF Case Study"
+					    }
+					  ]
+				} %}
+		    </div>
+		    <div class="carousel__slide">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "FordPass",
+				    "sub": "Automotive"
+				  },
+				  "hotspot": {
+				    "url": "https://vimeo.com/272846703",
+				    "icon": 'video',
+				    "isVideo": true,
+				  },
+				  "picture": {
+				    "altText": "FordPass Case Study",
+				    "id": "4cUKj3Wi5y2iusuY4SwOyQ",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  },
+				  "extras": [
+					    {
+					      "url": "#",
+					      "title": "PDF Case Study"
+					    }
+					  ]
+				} %}
+		    </div>
+		    <div class="carousel__slide">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Bridgestone Fleet",
+				    "sub": "Transportation"
+				  },
+				  "hotspot": {
+				    "url": "https://vimeo.com/272846703",
+				    "icon": 'video',
+				    "isVideo": true,
+				  },
+				  "picture": {
+				    "altText": "New Balance Case Study",
+				    "id": "4cUKj3Wi5y2iusuY4SwOyQ",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  },
+				  "extras": [
+					    {
+					      "url": "#",
+					      "title": "PDF Case Study"
+					    }
+					  ]
+				} %}
+		    </div>
+		    <div class="carousel__slide">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "AAFP",
+				    "sub": "Medical"
+				  },
+				  "hotspot": {
+				    "url": "https://vimeo.com/272846703",
+				    "icon": 'video',
+				    "isVideo": true,
+				  },
+				  "picture": {
+				    "altText": "New Balance Case Study",
+				    "id": "4cUKj3Wi5y2iusuY4SwOyQ",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  },
+				  "extras": [
+					    {
+					      "url": "#",
+					      "title": "PDF Case Study"
+					    }
+					  ]
+				} %}
+		    </div>
+		    <div class="carousel__slide">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "QuikTrip",
+				    "sub": "Food"
+				  },
+				  "hotspot": {
+				    "url": "https://vimeo.com/272846703",
+				    "icon": 'video',
+				    "isVideo": true,
+				  },
+				  "picture": {
+				    "altText": "New Balance Case Study",
+				    "id": "4cUKj3Wi5y2iusuY4SwOyQ",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  },
+				  "extras": [
+					    {
+					      "url": "#",
+					      "title": "PDF Case Study"
+					    }
+					  ]
+				} %}
+		    </div>
+		    <div class="carousel__slide">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Banfield",
+				    "sub": "Pet Care"
+				  },
+				  "hotspot": {
+				    "url": "https://vimeo.com/272846703",
+				    "icon": 'video',
+				    "isVideo": true,
+				  },
+				  "picture": {
+				    "altText": "New Balance Case Study",
+				    "id": "4cUKj3Wi5y2iusuY4SwOyQ",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  },
+				  "extras": [
+					    {
+					      "url": "#",
+					      "title": "PDF Case Study"
+					    }
+					  ]
+				} %}
+		    </div>
+		    <div class="carousel__slide">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "NBC Sports",
+				    "sub": "Entertainment"
+				  },
+				  "hotspot": {
+				    "url": "https://vimeo.com/272846703",
+				    "icon": 'video',
+				    "isVideo": true,
+				  },
+				  "picture": {
+				    "altText": "New Balance Case Study",
+				    "id": "4cUKj3Wi5y2iusuY4SwOyQ",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  },
+				  "extras": [
+					    {
+					      "url": "#",
+					      "title": "PDF Case Study"
+					    }
+					  ]
+				} %}
+		    </div>
+		    <div class="carousel__slide">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Living History",
+				    "sub": "AR"
+				  },
+				  "hotspot": {
+				    "url": "https://vimeo.com/272846703",
+				    "icon": 'video',
+				    "isVideo": true,
+				  },
+				  "picture": {
+				    "altText": "New Balance Case Study",
+				    "id": "4cUKj3Wi5y2iusuY4SwOyQ",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  },
+				  "extras": [
+					    {
+					      "url": "#",
+					      "title": "PDF Case Study"
+					    }
+					  ]
+				} %}
+		    </div>
+		    <div class="carousel__slide">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Rip Curl",
+				    "sub": "Sports"
+				  },
+				  "hotspot": {
+				    "url": "https://vimeo.com/272846703",
+				    "icon": 'video',
+				    "isVideo": true,
+				  },
+				  "picture": {
+				    "altText": "New Balance Case Study",
+				    "id": "4cUKj3Wi5y2iusuY4SwOyQ",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  },
+				  "extras": [
+					    {
+					      "url": "#",
+					      "title": "PDF Case Study"
+					    }
+					  ]
+				} %}
+		    </div>
+		    <div class="carousel__slide">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Mobile Medic",
+				    "sub": "AR"
+				  },
+				  "hotspot": {
+				    "url": "https://vimeo.com/272846703",
+				    "icon": 'video',
+				    "isVideo": true,
+				  },
+				  "picture": {
+				    "altText": "New Balance Case Study",
+				    "id": "4cUKj3Wi5y2iusuY4SwOyQ",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  },
+				  "extras": [
+					    {
+					      "url": "#",
+					      "title": "PDF Case Study"
+					    }
+					  ]
+				} %}
+		    </div>
+		  {% endblock %}
+		{% endembed %}
+
+
+
+
+	  
+	  
 	</div>
 
     
