@@ -3,8 +3,7 @@ import { magnificPopup } from '../libs/magnific';
 
 document.addEventListener('DOMContentLoaded', () => {
   const options = {};
-  const loader = new Loader('AIzaSyDoDHFTRtthKKK-Yz61qtlVCeV4VtZFoWc', options);
-  const MarkerClusterer = require('@google/markerclusterer');
+  const loader = new Loader('AIzaSyBQLDZJiQA8SU8vtBN75PsRtbyu3hwWNes', options);
   const mapContainers = document.querySelectorAll('.googleMap');
 
   if (mapContainers) {
@@ -36,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
           streetViewControl: false,
           mapTypeControl: false,
           scrollwheel: false,
+          zoomControl: true,
           fullscreenControl: false,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           styles: [
@@ -254,52 +254,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // marker clustering
-        const markerCluster = new MarkerClusterer(map, map.markers, {
-          imagePath:
-            'https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/maps/google-map-cluster/m',
-          styles: [
-            {
-              url:
-                'https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/maps/google-map-cluster/m1.png',
-              width: 44,
-              height: 43,
-              textSize: 14,
-              textColor: '#ffffff'
-            },
-            {
-              url:
-                'https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/maps/google-map-cluster/m2.png',
-              width: 54,
-              height: 53,
-              textSize: 14,
-              textColor: '#ffffff'
-            },
-            {
-              url:
-                'https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/maps/google-map-cluster/m3.png',
-              width: 44,
-              height: 43,
-              textSize: 14,
-              textColor: '#ffffff'
-            },
-            {
-              url:
-                'https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/maps/google-map-cluster/m4.png',
-              width: 44,
-              height: 43,
-              textSize: 14,
-              textColor: '#ffffff'
-            },
-            {
-              url:
-                'https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/maps/google-map-cluster/m5.png',
-              width: 44,
-              height: 43,
-              textSize: 14,
-              textColor: '#ffffff'
-            }
-          ]
-        });
 
         centerMap(map);
 

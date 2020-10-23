@@ -30,11 +30,11 @@
 	  	{% include "_components/silo.html" with {
 		  "title": "Mobile Apps",
 		  "text": "A completely in-house mobile app strategy, design and development team with experience bringing some of the most popular apps to the market, including retail, social, media, automotive, shopping and gaming. More than a quarter of a billion downloads to date.",
-		  "bgImg": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/silo-mobile.jpg",
+		  "bgImg": "assets/images/silos/img_silo_apps.png",
 		  "url": "mobileapps.html",
 		  "linkText": "Learn More",
 		  "icons": {
-		    "name": "info-fill",
+		    "name": "chevron-right",
 		    "color": "white",
 		    "size": "xs"
 		  }
@@ -44,11 +44,11 @@
 	  	{% include "_components/silo.html" with {
 		  "title": "Emerging Technology",
 		  "text": "Full-service social media offering from content strategy to community management to analytics.",
-		  "bgImg": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/silo-mobile.jpg",
+		  "bgImg": "assets/images/silos/img_silo_tech.png",
 		  "url": "https://www.vmlyr.com",
 		  "linkText": "Learn More",
 		  "icons": {
-		    "name": "info-fill",
+		    "name": "chevron-right",
 		    "color": "white",
 		    "size": "xs"
 		  }
@@ -58,11 +58,11 @@
 	  	{% include "_components/silo.html" with {
 		  "title": "Partnerships",
 		  "text": "[not sure what the third section is but I know Eric mentioned some wants from BY on additional intel]",
-		  "bgImg": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/silo-mobile.jpg",
+		  "bgImg": "assets/images/silos/img_silo_data.png",
 		  "url": "https://www.vmlyr.com",
 		  "linkText": "Learn More",
 		  "icons": {
-		    "name": "info-fill",
+		    "name": "chevron-right",
 		    "color": "white",
 		    "size": "xs"
 		  }
@@ -77,16 +77,8 @@
 		<p>[NEW COPY NEEDED]Our group has launched apps like The WSJ, London Evening Standard, The Atlantic, Tetris, MedHost, and Wheel of Fortune, while consulting on early developed apps like Pandora, eBay, and more. Furthermore, we have not only built cellular networks, but also strong middleware platforms for rapid app development, have a patent on the creation and development of mobile hotspots, as well as being an early innovator in Natural Language Processing (NLP), well before the surge of today’s in-home hubs and assistants.</p>
 	  </div>
 	  <div class="col-12 md:col-4 md:col-offset-1">
-	  	<p class="uppercase mb-1 font-bold">Our Expereinces by Category</p>
-  		<p class="pb-1"><img src="assets/images/categories/ico.food.png" class="va-bottom"> Food &amp; Drink</p>
-  		<p class="pb-1"><img src="assets/images/categories/ico.medical.png" class="va-bottom"> Medical</p>
-  		<p class="pb-1"><img src="assets/images/categories/ico.lifestyle.png" class="va-bottom"> Lifestyle</p>
-  		<p class="pb-1"><img src="assets/images/categories/ico.business.png" class="va-bottom"> Business</p>
-  		<p class="pb-1"><img src="assets/images/categories/ico.entertainment.png" class="va-bottom"> Entertainment</p>
-  		<p class="pb-1"><img src="assets/images/categories/ico.ar.png" class="va-bottom"> AR</p>
-  		<p class="pb-1"><img src="assets/images/categories/ico.health.png" class="va-bottom"> Health & Fitness</p>
-  		<p class="pb-1"><img src="assets/images/categories/ico.sports.png" class="va-bottom"> Sports</p>
-  		<p class="pb-1"><img src="assets/images/categories/ico.games.png" class="va-bottom"> Games</p>
+	  	<p class="uppercase mb-1 font-bold">Side Bar Quick Hits</p>
+  		<p class="pb-1">Add some highlights about global efforts</p>
 	  </div>
 	</div>
 	<!-- MAP -->
@@ -112,30 +104,69 @@
 	      "lat": "-33.8370",
 	      "lng": "151.2080",
 	      "icon": "vmlyr"
+	    },
+	    {
+	      "location": "Mexico City, Mexico",
+	      "id": "mexicocity",
+	      "lat": "19.4326",
+	      "lng": "-99.1332",
+	      "icon": "vmlyr"
+	    },
+	    {
+	      "location": "London, England",
+	      "id": "london",
+	      "lat": "51.5074",
+	      "lng": "0.1278",
+	      "icon": "vmlyr"
 	    }
 	  ]
 	} %}
 	<!--KC-->
 	{% include "_components/modal.html" with {
 	  "id": "kcmo",
-	  "imgFileName": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/maps/locations/crossroads.jpg",
+	  "imgFileName": "https://images.unsplash.com/photo-1572764861775-3fc7fe6a76f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=80",
 	  "locName": "VMLY&amp;R Kansas City",
-	  "excerpt": "Specialities of Office here as tags..."
+	  "excerpt": "Our Kansas City office has the abiltiy to...",
+	  "details": [
+    {
+      "title": "Contact",
+      "text" : "Eric Pfiefer",
+      "icon": "email",
+      "url": "mailto:eric.pfiefer@vmlyr.com"
+    }
+  ]
 	} %}
 	<!--Krakow-->
 	{% include "_components/modal.html" with {
 	  "id": "krakow",
-	  "imgFileName": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/maps/locations/crossroads.jpg",
+	  "imgFileName": "https://images.unsplash.com/photo-1495181941197-70a606546974?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
 	  "locName": "VMLY&amp;R Kraków",
 	  "excerpt": "Specialities of Office here as tags..."
 	} %}
 	<!--Sydney-->
 	{% include "_components/modal.html" with {
 	  "id": "sydney",
-	  "imgFileName": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/maps/locations/crossroads.jpg",
+	  "imgFileName": "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=80",
 	  "locName": "VMLY&amp;R Sydney",
 	  "excerpt": "Specialities of Office here as tags..."
 	} %}
+	<!--Mexico City-->
+	{% include "_components/modal.html" with {
+	  "id": "mexicocity",
+	  "imgFileName": "https://images.unsplash.com/photo-1524158637050-36b68ca9a5ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
+	  "locName": "VMLY&amp;R Mexico City",
+	  "excerpt": "Specialities of Office here as tags..."
+	} %}
+	<!--London-->
+	{% include "_components/modal.html" with {
+	  "id": "london",
+	  "imgFileName": "https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
+	  "locName": "VMLY&amp;R London",
+	  "excerpt": "Specialities of Office here as tags..."
+	} %}
+
+
+
 	<!--Partners -->
 	<div class="container mx-0 px-2 py-3">
 	<h3 class="type-headlineSection mb-2">Partners Around the World</h3>
@@ -154,7 +185,7 @@
 	    {% include "_components/figure.html" with {
 	      "picture": {
 	        "altText": "Ford logo",
-	        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/logos/partners/ford.png",
+	        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/logos/partners/pfizer.png",
 	        "placeholderSize": "128 48",
 	        "class": "logoWall__logo"
 	      }
@@ -164,7 +195,7 @@
 	    {% include "_components/figure.html" with {
 	      "picture": {
 	        "altText": "Ford logo",
-	        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/logos/partners/ford.png",
+	        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/logos/partners/united-rentals.png",
 	        "placeholderSize": "128 48",
 	        "class": "logoWall__logo"
 	      }
@@ -174,7 +205,7 @@
 	    {% include "_components/figure.html" with {
 	      "picture": {
 	        "altText": "Ford logo",
-	        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/logos/partners/ford.png",
+	        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/logos/partners/bridgestone.png",
 	        "placeholderSize": "128 48",
 	        "class": "logoWall__logo"
 	      }
@@ -184,7 +215,7 @@
 	    {% include "_components/figure.html" with {
 	      "picture": {
 	        "altText": "Ford logo",
-	        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/logos/partners/ford.png",
+	        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/logos/partners/wendys.png",
 	        "placeholderSize": "128 48",
 	        "class": "logoWall__logo"
 	      }
@@ -194,7 +225,7 @@
 	    {% include "_components/figure.html" with {
 	      "picture": {
 	        "altText": "Ford logo",
-	        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/logos/partners/ford.png",
+	        "srcPath": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/logos/partners/navy.png",
 	        "placeholderSize": "128 48",
 	        "class": "logoWall__logo"
 	      }

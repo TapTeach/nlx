@@ -153,6 +153,7 @@ $carouselButtonSize: rem(45px);
 
   &.tns-slide-active {
     opacity: 1;
+    pointer-events: auto;
     transition-delay: 0;
     z-index: 1;
   }
@@ -214,6 +215,7 @@ $carouselButtonSize: rem(45px);
 
     &.tns-slide-active {
       opacity: 1;
+      pointer-events: auto;
       transition-delay: 0;
       z-index: 1;
     }
@@ -258,7 +260,7 @@ $carouselButtonSize: rem(45px);
     color: setcolor(white);
     max-height: rem(250px);
     width: 100%;
-    padding: rem(25px 50px);
+    padding: rem(25px 25px);
     z-index: 10;
 
     @include media('>=lg') {
@@ -276,9 +278,12 @@ $carouselButtonSize: rem(45px);
   }
 
   .carousel__slideBoxText {
-    font-size: rem(22px);
     font-weight: 400;
     text-transform: uppercase;
+  }
+
+  .carousel__slideBoxText .iconography {
+    top: 3px;
   }
 
   .carousel .tns-outer {

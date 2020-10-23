@@ -30,6 +30,8 @@
 .tns-horizontal.tns-subpixel>.tns-item {
   display: inline-block;
   vertical-align: top;
+  opacity: .25;
+  pointer-events: none;
   white-space: normal
 }
 
