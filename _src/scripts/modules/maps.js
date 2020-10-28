@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
           map.setCenter(bounds.getCenter());
           map.setZoom(15);
         } else {
-          map.fitBounds(bounds);
+          map.setCenter(bounds.getCenter());
+          map.setZoom(2.5);
         }
       }
 
