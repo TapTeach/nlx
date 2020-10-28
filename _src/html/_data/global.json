@@ -3,14 +3,14 @@
     "page": [
       {
         "title": "Home",
-        "permalink": "#",
+        "permalink": "/index.html",
         "activeTest": "",
         "permalinkIsScroll": false,
         "isVideo": false
       },
       {
         "title": "Mobile Apps",
-        "permalink": "#",
+        "permalink": "/mobileapps.html",
         "activeTest": "",
         "permalinkIsScroll": true,
         "isVideo": false
@@ -18,13 +18,6 @@
       {
         "title": "Emerging Tech",
         "permalink": "#",
-        "activeTest": "",
-        "permalinkIsScroll": true,
-        "isVideo": false
-      },
-      {
-        "title": "Partners",
-        "permalink": "#recognition",
         "activeTest": "",
         "permalinkIsScroll": true,
         "isVideo": false
