@@ -11,7 +11,7 @@
 {% set noMenu = false %}
 {% set noLogo = false %}
 {% set recognition = true %}
-{% set headerMenu = global.menu.page %}
+{% set headerMenu = global.menu.mobility %}
 {% set headerLogo = 'logo.png' %}
 {% set title = "VMLY&R | Mobile Apps &amp; Emerging Technology" %}
 
@@ -70,7 +70,7 @@
 	  </div> -->
 	</div>
 	<!-- Intro -->
-	<div class="row row--gutter-wide-lg mx-0 px-1 py-3">
+	<div id="globalCapabilties" class="row row--gutter-wide-lg mx-0 px-1 py-3">
 	  <div class="col-12 md:col-7 pb-2">
 	  	<h3 class="type-headlineSection mb-2">Global Capabilties</h3>
 	  	<p class="font-bold mb-2">[NEW COPY NEEDED]Our team has a unique blend of industry- recognized knowledge driven by a combined 100+ years of experience in mobile apps and emerging technology.</p>
@@ -81,6 +81,7 @@
   		<p class="pb-1">Add some highlights about global efforts</p>
 	  </div>
 	</div>
+	<span id="locations"></span>
 	<!-- MAP -->
 	{% include "_components/map.html" with {
 	  "mapSrc": [
@@ -186,7 +187,7 @@
 
 
 	<!--Partners -->
-	<div class="container mx-0 px-2 py-3">
+	<div id="globalPartners" class="container mx-0 px-2 py-3">
 	<h3 class="type-headlineSection mb-2">Partners Around the World</h3>
 	<ul class="logoWall logoWall--wide">
 	  <li class="logoWall__col">
@@ -292,7 +293,7 @@
 	</ul>
 	</div>
 	<!-- WORK -->
-	<div class="row mx-0 px-2 py-3 bg-onyx-10">
+	<div id="globalwork" class="row mx-0 px-2 py-3 bg-onyx-10">
 	  <div class="col-12">
 	  	<h3 class="type-headlineSection mb-2">Our Recent Work</h3>
 	  </div>

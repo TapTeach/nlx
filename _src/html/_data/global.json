@@ -23,6 +23,92 @@
         "isVideo": false
       }
     ],
+    "mobility": [
+      {
+        "group": "Mobility @ VMLYR",
+        "sub": [
+          {
+            "title": "Global Capabilities",
+            "permalink": "/index.html#globalCapabilties",
+            "activeTest": "container",
+            "permalinkIsScroll": false,
+            "isVideo": false
+          },
+          {
+            "title": "Locations",
+            "permalink": "/index.html#locations",
+            "activeTest": "container",
+            "permalinkIsScroll": false,
+            "isVideo": false
+          },
+          {
+            "title": "Partners",
+            "permalink": "/index.html#globalPartners",
+            "activeTest": "container",
+            "permalinkIsScroll": false,
+            "isVideo": false
+          },
+          {
+            "title": "Recent Work",
+            "permalink": "/index.html#globalwork",
+            "activeTest": "container",
+            "permalinkIsScroll": false,
+            "isVideo": false
+          }
+        ]
+      },
+      {
+        "group": "Mobile Apps",
+        "sub": [
+          {
+            "title": "Downloads",
+            "permalink": "/mobileapps.html#intro",
+            "activeTest": "container",
+            "permalinkIsScroll": false,
+            "isVideo": false
+          },
+          {
+            "title": "Expertise",
+            "permalink": "/mobileapps.html#appExpertise",
+            "activeTest": "container",
+            "permalinkIsScroll": false,
+            "isVideo": false
+          },
+          {
+            "title": "Our Practice",
+            "permalink": "/mobileapps.html#appPractice",
+            "activeTest": "appPractice",
+            "permalinkIsScroll": false,
+            "isVideo": false
+          },
+          {
+            "title": "Case Studies ",
+            "permalink": "/mobileapps.html#appWork",
+            "activeTest": "container",
+            "permalinkIsScroll": false,
+            "isVideo": false
+          },
+          {
+            "title": "Our Partners ",
+            "permalink": "/mobileapps.html#appPartners",
+            "activeTest": "container",
+            "permalinkIsScroll": false,
+            "isVideo": false
+          },
+          {
+            "title": "Team Contacts",
+            "permalink": "/mobileapps.html#appContacts",
+            "activeTest": "container",
+            "permalinkIsScroll": false,
+            "isVideo": false
+          }
+        ]
+      },
+      {
+        "group": "Emerging Technology",
+        "sub": []
+      }
+    ],
     "docs": [
       {
         "group": "Layout",

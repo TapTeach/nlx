@@ -11,13 +11,13 @@
 {% set noMenu = false %}
 {% set noLogo = false %}
 {% set recognition = true %}
-{% set headerMenu = global.menu.page %}
+{% set headerMenu = global.menu.mobility %}
 {% set headerLogo = 'logo.png' %}
 {% set title = "VMLY&R | Mobile Apps &amp; Emerging Technology" %}
 {% set enableLibraryMasonry = true %}
 
 {% block content %}
-  <article class="landing-home" id="top">
+  <article id="intro" class="landing-home" id="top">
   	{% include "_components/intro.html" with {
   	"title": "Mobile Apps",
   	"titleAbove": "",
@@ -76,7 +76,7 @@
   			</div>
   		</div>
 	  </div>
-	  <div class="col-12 md:col-8">
+	  <div id="appExpertise" class="col-12 md:col-8">
 	  	<h3 class="type-headlineSection mb-2">BEST-IN-CLASS APP EXPERTISE</h3>
 	  	<p class="font-bold mb-2">Our team has a unique blend of industry- recognized knowledge driven by a combined 100+ years of experience in mobile apps</p>
 		<p>Our group has launched apps like The WSJ, London Evening Standard, The Atlantic, Tetris, MedHost, and Wheel of Fortune, while consulting on early developed apps like Pandora, eBay, and more. Furthermore, we have not only built cellular networks, but also strong middleware platforms for rapid app development, have a patent on the creation and development of mobile hotspots, as well as being an early innovator in Natural Language Processing (NLP), well before the surge of today’s in-home hubs and assistants.</p>
@@ -85,7 +85,7 @@
 	  </div>
 	</div>
 	<!-- Our Practice -->
-	<div class="container px-2 py-3 bg-onyx-10">
+	<div id="appPractice" class="container px-2 py-3 bg-onyx-10">
 		<h3 class="type-headlineSection mb-2">Our Practice</h3>
 		<dl class="faq__list">
 			<div class="faq__row">
@@ -340,66 +340,9 @@
 			</div>
 		</dl>
 	</div>
-	<!-- -->
-	<div class="row mx-0 px-2 py-3">
-		<div class="col-12">
-	  		<h3 class="type-headlineSection mb-2">Tailored Services</h3>
-	  		<div class="row">
-		  		<div class="col-6">
-		  			Regardless of the project size or need, our team has the capabiltiy to build a tailored engagement for partners. [insert more copy to explain?]
-		  		</div>
-		  		<div class="col-3">
-		  			{% include "_components/silo.html" with {
-					  "title": "HIG Review",
-					  "text": "Interested in how your partner's current expience measures up against Google and Apple's design guidelines and ADA standards?",
-					  "linkText": "View Information",
-					  "image": "assets/images/silos/ic_silo_tune.svg",
-					  "icons": {
-					    "name": "info-fill",
-					    "color": "cyan",
-					    "size": "xs"
-					  },
-					  "modal": {
-					    "id": "hig",
-					    "copy": "
-					      <p>This assessment looks at the current client experiences through the lens of best practices from Apple and Google and ensures ADA standards for accessible design are met. Recommendations are then formed on how best to approach and remedy the newly designed experiences.</p>
-					      <p>Expected outcomes from this functional audit:
-					      	<ul>
-					      		<li>Explore and propose enhancements or modifications to the experience</li>
-					      		<li>Understand how current design approach impacts experience</li>
-					      		<li>Better Align to Android and iOS platform standards</li>
-					      		<li>Focus on potential key next steps for remediation</li>
-					      	</ul>
-					      </p>"
-					  }
-					} %}
-		  		</div>
-		  		<div class="col-3">
-		  			{% include "_components/silo.html" with {
-					  "title": "Life-Cycle",
-					  "text": "Teaser copy here for service(s)",
-					  "linkText": "View Information",
-					  "image": "assets/images/silos/ic_silo_map.svg",
-					  "icons": {
-					    "name": "info-fill",
-					    "color": "cyan",
-					    "size": "xs"
-					  },
-					  "modal": {
-					    "id": "lifecycle",
-					    "copy": "
-					      <p>Copy!</p>
-					      <p>Copy!</p>
-					    "
-					  }
-					} %}
-		  		</div>
-	  		</div>
-	  	</div>
-	</div>
 
 	<!-- WORK -->
-	<div class="row mx-0 px-2 py-3 bg-blue">
+	<div id="appWork" class="row mx-0 px-2 py-3 bg-blue">
 	  <div class="col-12">
 	  	<h3 class="type-headlineSection mb-2 color-white">Case Studies</h3>
 	  </div>
@@ -566,7 +509,7 @@
     </div>
 	</div>
 	<!--Partners -->
-	<div class="container mx-0 px-2 py-3">
+	<div id="appPartners" class="container mx-0 px-2 py-3">
 	<h3 class="type-headlineSection mb-2">Our Partners</h3>
 	<div class="row">
 		<div class="col-12">
@@ -867,7 +810,109 @@
 	  </div> -->
 	</div>
 	</div>
-	
+	<div id="appContacts" class="container mx-0 px-2 py-3 bg-blue">
+		<h3 class="type-headlineSection mb-2 color-white">Team Contacts</h3>
+		<div class="row">
+			<div class="col-auto">
+				{% include "_components/team.html" with {
+			      "name": "Eric Pfeifer",
+			      "title": "Strategy",
+			      "bio": "",
+			      "picture": {
+			        "altText": "Pfeifer",
+			        "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/large/public/user-photo/ericpfeifer.jpg?itok=eQu0m3kF",
+			        "placeholderSize": "500 330"
+			      }
+			    } %}
+			</div>
+			<div class="col-auto">
+				{% include "_components/team.html" with {
+			      "name": "Mike Whaley",
+			      "title": "Life-Cycle",
+			      "bio": "",
+			      "picture": {
+			        "altText": "Whaley",
+			        "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/large/public/user-photo/os0c8559.jpg?itok=gnZOjBFh",
+			        "placeholderSize": "500 330"
+			      }
+			    } %}
+			</div>
+			<div class="col-auto">
+				{% include "_components/team.html" with {
+			      "name": "Adam Jones",
+			      "title": "Design & Development",
+			      "bio": "",
+			      "picture": {
+			        "altText": "Jones ",
+			        "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/large/public/user-photo/adamjonesheadshot.jpeg?itok=oqdCqTju",
+			        "placeholderSize": "500 330"
+			      }
+			    } %}
+			</div>
+			<div class="col-auto">
+				{% include "_components/team.html" with {
+			      "name": "Scott Gibson",
+			      "title": "Design",
+			      "bio": "",
+			      "picture": {
+			        "altText": "Gibson",
+			        "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/large/public/user-photo/scott_gibson.jpg?itok=06f9VP8K",
+			        "placeholderSize": "500 330"
+			      }
+			    } %}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-auto">
+				{% include "_components/team.html" with {
+			      "name": "Lauren Hensley",
+			      "title": "Life-Cycle",
+			      "bio": "",
+			      "picture": {
+			        "altText": "Hensley",
+			        "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/large/public/user-photo/laurenwells_2_0.jpg?itok=l6vJfgcl",
+			        "placeholderSize": "500 330"
+			      }
+			    } %}
+			</div>
+			<div class="col-auto">
+				{% include "_components/team.html" with {
+			      "name": "Emily Alford",
+			      "title": "Program Management",
+			      "bio": "",
+			      "picture": {
+			        "altText": "Alfod",
+			        "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/large/public/user-photo/os0c0338.jpg?itok=wCEeCI_y",
+			        "placeholderSize": "500 330"
+			      }
+			    } %}
+			</div>
+			<div class="col-auto">
+				{% include "_components/team.html" with {
+			      "name": "John Heryer",
+			      "title": "Development",
+			      "bio": "",
+			      "picture": {
+			        "altText": "Heryer",
+			        "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/large/public/user-photo/os0c9968.jpg?itok=cXOX07M7",
+			        "placeholderSize": "500 330"
+			      }
+			    } %}
+			</div>
+			<div class="col-auto">
+				{% include "_components/team.html" with {
+			      "name": "Ian Cahill",
+			      "title": "Prototypes",
+			      "bio": "",
+			      "picture": {
+			        "altText": "Cahill",
+			        "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/large/public/user-photo/os0c3056.jpg?itok=N066u-SI",
+			        "placeholderSize": "500 330"
+			      }
+			    } %}
+			</div>
+		</div>
+	</div>
 
     
   </article>
