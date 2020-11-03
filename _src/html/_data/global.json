@@ -61,15 +61,8 @@
         "group": "Mobile Apps",
         "sub": [
           {
-            "title": "Downloads",
+            "title": "Introduction",
             "permalink": "/mobileapps.html#intro",
-            "activeTest": "container",
-            "permalinkIsScroll": false,
-            "isVideo": false
-          },
-          {
-            "title": "Expertise",
-            "permalink": "/mobileapps.html#appExpertise",
             "activeTest": "container",
             "permalinkIsScroll": false,
             "isVideo": false
@@ -106,6 +99,10 @@
       },
       {
         "group": "Emerging Technology",
+        "sub": []
+      },
+      {
+        "group": "Thought Leadership",
         "sub": []
       }
     ],
