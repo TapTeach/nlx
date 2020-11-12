@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
           streetViewControl: false,
           mapTypeControl: false,
           scrollwheel: false,
-          zoomControl: true,
+          zoomControl: false,
+          gestureHandling: 'none',
           fullscreenControl: false,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           styles: [
