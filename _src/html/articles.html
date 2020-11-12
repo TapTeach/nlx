@@ -1,0 +1,403 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc
+#}
+
+{% extends '_layouts/page.html' %}
+{% set noHeader = false %}
+{% set menuOnly = false %}
+{% set menuInlineText = false %}
+{% set noMenu = false %}
+{% set noLogo = false %}
+{% set recognition = true %}
+{% set headerMenu = global.menu.mobility %}
+{% set headerLogo = 'logo.png' %}
+{% set title = "VMLY&R | Mobile Apps &amp; Emerging Technology" %}
+{% set enableLibraryMasonry = true %}
+
+{% block content %}
+  <article id="intro" class="landing-home" id="top">
+  	{% include "_components/intro.html" with {
+  	"title": "Thought Leadership",
+  	"titleAbove": "",
+  	"titleBelow": "Mobile Apps &amp; Emerging Technology",
+  	"bgFileName": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/constellation.jpg",
+  	"classes": "vg-4 color-white"
+  } %}
+	<!-- Intro -->
+
+	<div id="appPractice" class="container px-2 py-3 bg-onyx-10">
+		<h3 class="type-headlineSection mb-2">Articles</h3>
+		{% set masonryFilters = [
+		  {
+		    "value": ".filter--categoryApps",
+		    "label": "Mobile Apps"
+		  },
+		  {
+		    "value": ".filter--categoryET",
+		    "label": "Emerging Technology"
+		  },
+		  {
+		    "value": ".filter--categoryDesign",
+		    "label": "Design"
+		  },
+		  {
+		    "value": ".filter--categoryiOS",
+		    "label": "iOS"
+		  },
+		  {
+		    "value": ".filter--categoryAndroid",
+		    "label": "Android"
+		  },
+		  {
+		    "value": ".filter--categoryVR",
+		    "label": "VR"
+		  },
+		  {
+		    "value": ".filter--categoryVoice",
+		    "label": "Voice"
+		  },
+		  {
+		    "value": ".filter--categoryCrypto",
+		    "label": "Cryptocurrency"
+		  },
+		  {
+		    "value": ".filter--categoryGame",
+		    "label": "Gaming"
+		  },
+		  {
+		    "value": ".filter--categoryClient",
+		    "label": "Client-focused"
+		  }
+		] %}
+		{% embed "_components/masonry/content.html" with { "shuffle": false, "filters": masonryFilters } %}
+		  {% block list %}
+		    <div class="masonry__item filter--categoryGame">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Extra Life 24-Hr",
+				    "sub": "Gaming Marathon"
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/vmlyr-gtb-participate-extra-life-24-hr-gaming-marathon",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/extra-life-banner-e1405726479104_0.png?itok=zPzz459C&sc=9feb65c099d96128227bb9e65cc2a01f",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryET">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Welcome to 5G",
+				    "sub": "Why is 5G a big deal?"
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/welcome-5g",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/5g_0.jpg?itok=KyQpmdCL&sc=1a6bf4d26eb5c13f9b02245196904cc8",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryAndroid filter--categoryApps">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "MVP or MVVM?",
+				    "sub": "Android POV"
+				  },
+				  "hotspot": {
+				    "url": "https://prinzly.medium.com/mvp-or-mvvm-be84bd29c2af",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://miro.medium.com/max/1400/1*3PcfOLa0GlLpy2JM1olyUw.png",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryVR filter--categoryET">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "New Experience Opportunities",
+				    "sub": "in VR"
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/new-experience-opportunities-vr",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/facebook_horizon_vr.jpg?itok=WsLXoeVw&sc=a2ef9402ab7e4f5a8e1bc540b1bbb087",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryET">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Birth of a Patent",
+				    "sub": ""
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/birth-patent",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/us07376091-20080520-d00001.png?itok=roYrAG5w&sc=22aefe0691c9005b009afad1dd0d2807",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryApps filter--categoryDesign">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "10 Do's and Don't",
+				    "sub": "of Mobile App Design"
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/10-dos-and-donts-mobile-app-design-adobe-united-rentals",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/screen_shot_2020-04-03_at_10.58.04_am_0.png?itok=DeX73x3o&sc=042b2d4c0c531db3412c64d298b49b1a",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryApps filter--categoryDesign">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Give Voice a Change",
+				    "sub": ""
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/give-voice-chance",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://images.unsplash.com/photo-1512446816042-444d641267d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryApps">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "How to increase app store ratings",
+				    "sub": ""
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/how-increase-app-store-ratings-case-study",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/screen_shot_2020-04-24_at_3.54.51_pm_1.png?itok=ATY5ben_&sc=444d7c04f1f69e9d8ea7346f9fb91a0c",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryGame">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Gaming & eSports Update",
+				    "sub": "@ VMLY&R"
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/vmlyr-gaming-esports-update",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/gamingsplash_0.jpeg?itok=drDP5K85&sc=4c758c6a0963cd2eedd9d631f4aa441b",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryApps filter--categoryiOS">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "What's an App Clip?",
+				    "sub": "iOS14"
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/wwdc20-what-app-clip",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/screen_shot_2020-06-26_at_9.22.18_am_2.png?itok=ibW-izgS&sc=bd6c2ea9028d713e983440a4fb1d80f8",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryApps filter--categoryiOS">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "What's new in Permissions",
+				    "sub": "iOS14"
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/wwdc20-permission-prompts-attribution",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/img_1687.png?itok=auDQTMjZ&sc=57ff450815f6885eb0f068511950f8e1",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryAndroid filter--categoryApps">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Android Unit Testing",
+				    "sub": "with Mockito and Kluent"
+				  },
+				  "hotspot": {
+				    "url": "https://medium.com/@prinzly/android-unit-testing-with-mockito-and-kluent-2919613b3f64",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryApps filter--categoryiOS filter--categoryClient">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "How We Accidentally* Built an iPad App",
+				    "sub": "United Rentals"
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/how-we-accidentally-built-ipad-app",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://images.unsplash.com/photo-1588985719185-4b612a405cd1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryApps">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Share artifacts with an orphan branch",
+				    "sub": "Development"
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/share-artifacts-orphan-branch",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryiOS filter--categoryApps">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "WWDC20",
+				    "sub": "What Designers Should Know"
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/wwdc20-what-designers-should-know",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/screen_shot_2020-06-24_at_9.44.08_am_0.png?itok=EYWvWyj5&sc=2f170b036e1b3bfd3c7d1f02ed336af2",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryiOS filter--categoryApps">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "WWDC20",
+				    "sub": "Day 1"
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/apples-wwdc-2020-day-one-takeaways",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/ios-14-default-apps_0.jpg?itok=oDtzBvlq&sc=ef8abba08d8894568dc8aefc9e0ef35b",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+
+		  {% endblock %}
+		{% endembed %}
+	</div>
+
+    
+  </article>
+{% endblock %}

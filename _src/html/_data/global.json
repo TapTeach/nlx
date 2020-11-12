@@ -99,11 +99,27 @@
       },
       {
         "group": "Emerging Technology",
-        "sub": []
+        "sub": [
+          {
+            "title": "Introduction",
+            "permalink": "/emergingtech.html",
+            "activeTest": "container",
+            "permalinkIsScroll": false,
+            "isVideo": false
+          }
+        ]
       },
       {
         "group": "Thought Leadership",
-        "sub": []
+        "sub": [
+          {
+            "title": "Articles",
+            "permalink": "/articles.html",
+            "activeTest": "container",
+            "permalinkIsScroll": false,
+            "isVideo": false
+          }
+        ]
       }
     ],
     "docs": [
