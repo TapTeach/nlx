@@ -73,6 +73,46 @@
 		] %}
 		{% embed "_components/masonry/content.html" with { "shuffle": false, "filters": masonryFilters } %}
 		  {% block list %}
+		    <div class="masonry__item filter--categoryApps filter--categoryiOS">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Safari is Dead. Long Live Safari(ViewController)",
+				    "sub": ""
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/safari-dead.-long-live-safariviewcontroller",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/original_0.jpg?itok=-ohBcNuh&sc=68a17bed40e28000b5b31af95359b591",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryApps filter--categoryiOS">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "A More Transparent App Store",
+				    "sub": ""
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/more-transparent-app-store",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/screen_shot_2020-11-13_at_10.39.51_am.png?itok=eZExuyji&sc=544d5778c50bb0bd13e004a80616ec4c",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
 		    <div class="masonry__item filter--categoryGame">
 		    	{% include "_components/spotlight.html" with {
 				  "title": {
