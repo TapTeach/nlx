@@ -106,6 +106,13 @@
             "activeTest": "container",
             "permalinkIsScroll": false,
             "isVideo": false
+          },
+          {
+            "title": "Startups",
+            "permalink": "/emergingtech.html#startups",
+            "activeTest": "container",
+            "permalinkIsScroll": false,
+            "isVideo": false
           }
         ]
       },
