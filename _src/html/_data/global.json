@@ -106,21 +106,14 @@
             "activeTest": "container",
             "permalinkIsScroll": false,
             "isVideo": false
-          },
-          {
-            "title": "Startups",
-            "permalink": "/emergingtech.html#startups",
-            "activeTest": "container",
-            "permalinkIsScroll": false,
-            "isVideo": false
           }
         ]
       },
       {
-        "group": "Thought Leadership",
+        "group": "Document Library",
         "sub": [
           {
-            "title": "Articles",
+            "title": "Library",
             "permalink": "/articles.html",
             "activeTest": "container",
             "permalinkIsScroll": false,
