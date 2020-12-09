@@ -404,60 +404,154 @@
       {% endembed %}
     </div>
 	</div>
-	<div id="appContacts" class="container mx-0 px-2 py-3 bg-blue">
-		<h3 class="type-headlineSection mb-2 color-white">Team Contacts</h3>
-		<div class="row">
-			<div class="col-auto">
-				{% include "_components/team.html" with {
-			      "name": "Brian Yamada",
-			      "title": "Chief Innovation Officer",
-			      "bio": "",
-			      "picture": {
-			        "altText": "Yamada",
-			        "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/large/public/user-photo/brian_yamada_2.jpg?itok=eOi_Lm2n",
-			        "placeholderSize": "500 330"
-			      }
-			    } %}
-			</div>
-			<div class="col-auto">
-				{% include "_components/team.html" with {
-			      "name": "Eric Pfeifer",
-			      "title": "Strategy",
-			      "bio": "",
-			      "picture": {
-			        "altText": "Pfeifer",
-			        "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/large/public/user-photo/ericpfeifer.jpg?itok=eQu0m3kF",
-			        "placeholderSize": "500 330"
-			      }
-			    } %}
-			</div>
-			<div class="col-auto">
-				{% include "_components/team.html" with {
-			      "name": "Jeff Danley",
-			      "title": "Gaming & Cryptocurrency",
-			      "bio": "",
-			      "picture": {
-			        "altText": "Danley",
-			        "srcPath": "assets/images/profiles/img_profile_danley.png",
-			        "placeholderSize": "500 330"
-			      }
-			    } %}
-			</div>
-			<div class="col-auto">
-				{% include "_components/team.html" with {
-			      "name": "Ian Cahill",
-			      "title": "Voice & Prototyping",
-			      "bio": "",
-			      "picture": {
-			        "altText": "Cahill",
-			        "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/large/public/user-photo/os0c3056.jpg?itok=N066u-SI",
-			        "placeholderSize": "500 330"
-			      }
-			    } %}
-			</div>
-		</div>
+	<!-- Thought Leadership-->
+	<div id="et-articles" class="container px-2 py-3 bg-onyx-10">
+		<h3 class="type-headlineSection mb-2">Thought Leadership</h3>
+		{% set masonryFilters = [
+		  {
+		    "value": ".filter--categoryVR",
+		    "label": "VR"
+		  },
+		  {
+		    "value": ".filter--categoryVoice",
+		    "label": "Voice"
+		  },
+		  {
+		    "value": ".filter--categoryCrypto",
+		    "label": "Cryptocurrency"
+		  },
+		  {
+		    "value": ".filter--categoryGame",
+		    "label": "Gaming"
+		  }
+		] %}
+		{% embed "_components/masonry/content.html" with { "shuffle": false, "filters": masonryFilters } %}
+		  {% block list %}
+		    <div class="masonry__item filter--categoryGame">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Extra Life 24-Hr",
+				    "sub": "Gaming Marathon"
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/vmlyr-gtb-participate-extra-life-24-hr-gaming-marathon",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/extra-life-banner-e1405726479104_0.png?itok=zPzz459C&sc=9feb65c099d96128227bb9e65cc2a01f",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryET">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Welcome to 5G",
+				    "sub": "Why is 5G a big deal?"
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/welcome-5g",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/5g_0.jpg?itok=KyQpmdCL&sc=1a6bf4d26eb5c13f9b02245196904cc8",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryVR filter--categoryET">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "New Experience Opportunities",
+				    "sub": "in VR"
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/new-experience-opportunities-vr",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/facebook_horizon_vr.jpg?itok=WsLXoeVw&sc=a2ef9402ab7e4f5a8e1bc540b1bbb087",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryET">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Birth of a Patent",
+				    "sub": ""
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/birth-patent",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/us07376091-20080520-d00001.png?itok=roYrAG5w&sc=22aefe0691c9005b009afad1dd0d2807",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryVoice">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Give Voice a Change",
+				    "sub": ""
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/give-voice-chance",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://images.unsplash.com/photo-1512446816042-444d641267d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryGame">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Gaming & eSports Update",
+				    "sub": "@ VMLY&R"
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/vmlyr-gaming-esports-update",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/gamingsplash_0.jpeg?itok=drDP5K85&sc=4c758c6a0963cd2eedd9d631f4aa441b",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		  {% endblock %}
+		{% endembed %}
 	</div>
-	<div id="startups" class="container px-2 py-3 bg-white">
+
+	<!-- <div id="startups" class="container px-2 py-3 bg-white">
 		<h3 class="type-headlineSection mb-2">Startup One-Sheeters</h3>
 		<ul class="logoWall logoWall--wide">
 			<li class="logoWall__col">
@@ -580,6 +674,59 @@
 				} %}
 		  	</li>
 		</ul>
+	</div> -->
+	<div id="appContacts" class="container mx-0 px-2 py-3 bg-blue">
+		<h3 class="type-headlineSection mb-2 color-white">Team Contacts</h3>
+		<div class="row">
+			<div class="col-auto">
+				{% include "_components/team.html" with {
+			      "name": "Brian Yamada",
+			      "title": "Chief Innovation Officer",
+			      "bio": "",
+			      "picture": {
+			        "altText": "Yamada",
+			        "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/large/public/user-photo/brian_yamada_2.jpg?itok=eOi_Lm2n",
+			        "placeholderSize": "500 330"
+			      }
+			    } %}
+			</div>
+			<div class="col-auto">
+				{% include "_components/team.html" with {
+			      "name": "Eric Pfeifer",
+			      "title": "Strategy",
+			      "bio": "",
+			      "picture": {
+			        "altText": "Pfeifer",
+			        "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/large/public/user-photo/ericpfeifer.jpg?itok=eQu0m3kF",
+			        "placeholderSize": "500 330"
+			      }
+			    } %}
+			</div>
+			<div class="col-auto">
+				{% include "_components/team.html" with {
+			      "name": "Jeff Danley",
+			      "title": "Gaming & Cryptocurrency",
+			      "bio": "",
+			      "picture": {
+			        "altText": "Danley",
+			        "srcPath": "assets/images/profiles/img_profile_danley.png",
+			        "placeholderSize": "500 330"
+			      }
+			    } %}
+			</div>
+			<div class="col-auto">
+				{% include "_components/team.html" with {
+			      "name": "Ian Cahill",
+			      "title": "Voice & Prototyping",
+			      "bio": "",
+			      "picture": {
+			        "altText": "Cahill",
+			        "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/large/public/user-photo/os0c3056.jpg?itok=N066u-SI",
+			        "placeholderSize": "500 330"
+			      }
+			    } %}
+			</div>
+		</div>
 	</div>
 
     
