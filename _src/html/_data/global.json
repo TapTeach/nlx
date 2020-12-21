@@ -106,6 +106,27 @@
             "activeTest": "container",
             "permalinkIsScroll": false,
             "isVideo": false
+          },
+          {
+            "title": "Focused Emerging Tech",
+            "permalink": "/emergingtech.html#focused",
+            "activeTest": "container",
+            "permalinkIsScroll": false,
+            "isVideo": false
+          },
+          {
+            "title": "Case Studies",
+            "permalink": "/emergingtech.html#etWork",
+            "activeTest": "container",
+            "permalinkIsScroll": false,
+            "isVideo": false
+          },
+          {
+            "title": "Team Contacts",
+            "permalink": "/emergingtech.html#etContacts",
+            "activeTest": "container",
+            "permalinkIsScroll": false,
+            "isVideo": false
           }
         ]
       },
