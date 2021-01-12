@@ -1,0 +1,43 @@
+{#
+  Twig Templating!
+  Homepage: https://twig.symfony.com/
+  Docs: https://twig.symfony.com/doc
+#}
+
+{% extends '_layouts/page.html' %}
+{% set noHeader = false %}
+{% set menuOnly = false %}
+{% set menuInlineText = false %}
+{% set noMenu = false %}
+{% set noLogo = false %}
+{% set recognition = true %}
+{% set headerMenu = global.menu.mobility %}
+{% set headerLogo = 'logo.png' %}
+{% set title = "VMLY&R | Prototype Submission" %}
+
+{% block content %}
+  <article class="landing-home" id="top">
+  	{% include "_components/intro.html" with {
+  	"title": "Prototype Submission",
+  	"titleAbove": "Have an idea?",
+  	"titleBelow": "",
+  	"bgFileName": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/constellation.jpg",
+  	"classes": "vg-4 color-white",
+  	"buttons": []
+  } %}
+  	<div id="form" class="row row--gutter-wide-lg mx-0 px-1 py-3">
+  		<div class="col-12 md:col-7 pb-2">
+  			<h3 class="type-headlineSection mb-2">VMLY&R Lost Concept Collection</h3>
+  			<p class="mb-1">A part of VMLY&R’s growing effort to enrich the client base and bring tangible examples of innovation to the forefront, the Mobile Apps and Emerging Tech group will be offering a second chance to ideas and concepts from all teams. </p>
+  			<p>We understand clients ask a lot of us and sometimes we work hard to present a myriad of concepts for a project, knowing that only one will ultimately be chosen. In an effort to take advantage of this great thinking that would otherwise be lost, we would like to bring one or more of these ideas to life each quarter through a Proof of Concept or Prototype.</p>
+  			<p>Selections for Projects will be made once per quarter using all submissions available. February 15, May 15, July 15, and Oct 15.</p>
+  			<iframe width="100%" height="1500" src="https://app.smartsheet.com/b/form/3976d3ba22c2498a9c8d3792f90ce592"></iframe>
+  		</div>
+	</div>
+
+
+
+
+    
+  </article>
+{% endblock %}
