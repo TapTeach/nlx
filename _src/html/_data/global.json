@@ -147,7 +147,7 @@
         "sub": [
           {
             "title": "Submit an Idea",
-            "permalink": "/form.html",
+            "permalink": "/toys.html",
             "activeTest": "container",
             "permalinkIsScroll": false,
             "isVideo": false
