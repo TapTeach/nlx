@@ -141,6 +141,18 @@
             "isVideo": false
           }
         ]
+      },
+      {
+        "group": "Lost Concept Collection",
+        "sub": [
+          {
+            "title": "Submit an Idea",
+            "permalink": "/toys.html",
+            "activeTest": "container",
+            "permalinkIsScroll": false,
+            "isVideo": false
+          }
+        ]
       }
     ],
     "docs": [
