@@ -124,6 +124,31 @@
 
     gtag('config', 'UA-35522787-23');
   </script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyA2b1Mb0SW12nkVGwqULb6GcLX3tS7ireY",
+      authDomain: "mobility-426be.firebaseapp.com",
+      databaseURL: "https://mobility-426be.firebaseio.com",
+      projectId: "mobility-426be",
+      storageBucket: "mobility-426be.appspot.com",
+      messagingSenderId: "668999618946",
+      appId: "1:668999618946:web:7a69cf20d56ba20edcff9b",
+      measurementId: "G-PJ85G98FZF"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
   <!-- <script src="//static.vidy.com/embed.min.js" data-appid="f0b2ccdb-bd70-4c63-b62e-17edc09dcbd1"></script> -->
   <script src="//static.vidy.com/embed.min.js" data-appid="80434d52-64ad-451d-90ac-8b16ac6b1ed9"></script>
   {% endif %}
