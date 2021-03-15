@@ -14,334 +14,688 @@
 {% set headerMenu = global.menu.mobility %}
 {% set headerLogo = 'logo.png' %}
 {% set title = "VMLY&R | Mobile Apps &amp; Emerging Technology" %}
+{% set enableLibraryMasonry = true %}
 
 {% block content %}
-  <article class="landing-home" id="top">
+  <article id="intro" class="landing-home" id="top">
   	{% include "_components/intro.html" with {
-  	"title": "Mobile Apps </br> &amp; Emerging Technology",
-  	"titleAbove": "Explore",
+  	"title": "Emerging Technology",
+  	"titleAbove": "",
   	"titleBelow": "@ VMLY&amp;R",
-  	"bgFileName": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/x-bold.jpg",
+  	"bgFileName": "https://vmlyr-projects.s3.us-east-2.amazonaws.com/style-guide-template-site/images/hero/constellation.jpg",
   	"classes": "vg-4 color-white",
-  	"buttons": []
-  } %}
-  	<div id="globalCapabilties" class="row row--gutter-wide-lg mx-0 px-1 py-3">
-	  <div class="col-12 md:col-7 pb-2">
-	  	<h3 class="type-headlineSection mb-2">Global Capabilties</h3>
-	  	<p class="font-bold mb-2">VMLY&R maintains centers of excellence across the global specializing in practices around technology, design, strategy and prototyping labs. With the ability to extend our thought leadership and execution from the known to the future beyond, every client can take advantage of our expertise.</p>
-		<p>No matter what office you seek guidance from, we are unified under a common process and a desire to deliver leading edge concepts that will push brands above the competition. We are always learning and striving to be one step ahead of current trends, while deploying solutions befitting consumer needs.</p>
-	  </div>
-	  <div class="col-12 md:col-4 md:col-offset-1">
-	  	<p class="uppercase mb-1 font-bold">We deliver best in class products and solutions.</p>
-	  	<ul class="pl-2 type-s color-onyx">
-	  		<li>Future-casting through international research and exploration</li>
-	  		<li>Building habitual native apps with true utility</li>
-	  		<li>Guiding product launch and life-cycle</li>
-	  		<li>Connecting with huge brands to reshape innovation and emerging tech</li>
-	  	</ul>
-	  </div>
-	</div>
-
-  	<div class="row pt-2 mx-0 px-1">
-	  <div class="col-12 md:col-3">
-	  	{% include "_components/silo.html" with {
-		  "title": "Mobile Apps",
-		  "text": "A completely in-house mobile app strategy, design and development team with experience bringing some of the most popular apps to the market, including retail, social, media, automotive, shopping and gaming. ",
-		  "url": "mobileapps.html",
-		  "image": "assets/images/silos/ic_silo_mobileapps.svg",
-		  "linkText": "Learn More",
-		  "icons": {
-		    "name": "chevron-right",
-		    "color": "white",
-		    "size": "xs"
-		  }
-		} %}
-	  </div>
-	  <div class="col-12 md:col-3">
-	  	{% include "_components/silo.html" with {
-		  "title": "Emerging Technology",
-		  "text": "In order to stay ahead of the ever changing world of technology, VMLY&R leverages our expertise in insights and creativity within our Lab environment to acquaint ourselves with the coming trends and start-ups.",
-		  "url": "emergingtech.html",
-		  "image": "assets/images/silos/ic_silo_et.svg",
-		  "linkText": "Learn More",
-		  "icons": {
-		    "name": "chevron-right",
-		    "color": "white",
-		    "size": "xs"
-		  }
-		} %}
-	  </div>
-	  <div class="col-12 md:col-3">
-	  	{% include "_components/silo.html" with {
-		  "title": "Document Library",
-		  "text": "Explore content ranging from Thought Leadership pieces, Emerging Tech Point of View and Process definition. This ever-growing section will be a great resource for all.",
-		  "url": "articles.html",
-		  "image": "assets/images/silos/ic_silo_news.svg",
-		  "linkText": "Learn More",
-		  "icons": {
-		    "name": "chevron-right",
-		    "color": "white",
-		    "size": "xs"
-		  }
-		} %}
-	  </div>
-	  <div class="col-12 md:col-3">
-	  	{% include "_components/silo.html" with {
-		  "title": "Misfit Concepts",
-		  "text": "Be heard. Do you have a passion project or a client concept looking for a home? Submit your ideas today.",
-		  "url": "toys.html",
-		  "image": "assets/images/silos/ic_silo_ideas.svg",
-		  "linkText": "Learn More",
-		  "icons": {
-		    "name": "chevron-right",
-		    "color": "white",
-		    "size": "xs"
-		  }
-		} %}
-	  </div>
-	</div>
-	<!-- Intro -->
-	<span id="locations"></span>
-	<!-- MAP -->
-	{% include "_components/map.html" with {
-	  "mapSrc": [
-	    {
-	      "location": "Kansas City, USA",
-	      "id": "kcmo",
-	      "lat": "39.0937734",
-	      "lng": "-94.5794099",
-	      "icon": "vmlyr"
-	    },
-	    {
-	      "location": "Kraków, Poland",
-	      "id": "krakow",
-	      "lat": "50.0647",
-	      "lng": "19.9450",
-	      "icon": "vmlyr"
-	    },
-	    {
-	      "location": "Sydney, Australia",
-	      "id": "sydney",
-	      "lat": "-33.8370",
-	      "lng": "151.2080",
-	      "icon": "vmlyr"
-	    },
-	    {
-	      "location": "Mexico City, Mexico",
-	      "id": "mexicocity",
-	      "lat": "19.4326",
-	      "lng": "-99.1332",
-	      "icon": "vmlyr"
-	    },
-	    {
-	      "location": "London, England",
-	      "id": "london",
-	      "lat": "51.5074",
-	      "lng": "0.1278",
-	      "icon": "vmlyr"
-	    },
-	    {
-	      "location": "Detroit, USA",
-	      "id": "detroit",
-	      "lat": "42.3314",
-	      "lng": "-83.0458",
-	      "icon": "vmlyr"
-	    },
-	    {
-	      "location": "Singapore",
-	      "id": "singapore",
-	      "lat": "1.311805",
-	      "lng": "103.837099",
-	      "icon": "vmlyr"
-	    }
-	    ,
-	    {
-	      "location": "Peru",
-	      "id": "peru",
-	      "lat": "-12.114330",
-	      "lng": "-77.040080",
-	      "icon": "vmlyr"
-	    },
-	    {
-	      "location": "Spain",
-	      "id": "spain",
-	      "lat": "41.385063",
-	      "lng": "2.173404",
-	      "icon": "vmlyr"
-	    }
-
-	  ]
-	} %}
-	<!--KC-->
-	{% include "_components/modal.html" with {
-	  "id": "kcmo",
-	  "imgFileName": "https://images.unsplash.com/photo-1572764861775-3fc7fe6a76f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=80",
-	  "locName": "VMLY&amp;R Kansas City",
-	  "details": [
-    {
-      "title": "Innovation",
-      "text" : "Brian Yamada",
-      "icon": "email",
-      "url": "mailto:brian.yamada@vmlyr.com"
+  	"buttons": [
+  	{
+      "title": "Download PDF",
+      "url": "https://vmlyr.docsend.com/view/e4e283zpnzishh42",
+      "icon": "dl",
+      "size": "xs",
+      "newWindow": true,
+      "class": "button--white",
+      "heading": ""
     },
     {
-      "title": "Mobile Apps",
-      "text" : "Eric Pfiefer",
-      "icon": "email",
-      "url": "mailto:eric.pfiefer@vmlyr.com"
-    },
-    {
-      "title": "Voice",
-      "text" : "Ian Cahill",
-      "icon": "email",
-      "url": "mailto:ian.cahill@vmlyr.com"
-    },
-    {
-      "title": "Gaming",
-      "text" : "Jeff Danley",
-      "icon": "email",
-      "url": "mailto:jeff.danley@vmlyr.com"
+      "title": "Download Keynote",
+      "url": "https://vmlyr.docsend.com/view/6uqzckr3vmjdmia7",
+      "icon": "dl",
+      "size": "xs",
+      "newWindow": true,
+      "class": "button--white",
+      "heading": ""
     }
-  ]
-	} %}
-	<!--Krakow-->
-	{% include "_components/modal.html" with {
-	  "id": "krakow",
-	  "imgFileName": "https://images.unsplash.com/photo-1495181941197-70a606546974?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
-	  "locName": "VMLY&amp;R Kraków",
-	  "details": [
-		{
-		"title": "Business Technology",
-		"text" : "Jakub Czaplicki",
-		"icon": "email",
-		"url": "mailto:jakub.czaplicki@vmlyr.com"
-		},
-		{
-		"title": "Mobile Apps",
-		"text" : "Mateusz Zajac",
-		"icon": "email",
-		"url": "mailto:mateusz.zajac@vmlyr.com"
-		}
-	  ]
-	} %}
-	<!--Sydney-->
-	{% include "_components/modal.html" with {
-	  "id": "sydney",
-	  "imgFileName": "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=80",
-	  "locName": "VMLY&amp;R Sydney",
-	  "details": [
-		{
-		"title": "Experience Design",
-		"text" : "Glenn Veugen",
-		"icon": "email",
-		"url": "mailto:Glenn.Veugen@vmlyr.com"
-		},
-		{
-		"title": "Technical Director",
-		"text" : "Jacky Lau",
-		"icon": "email",
-		"url": "mailto:Jacky.Lau@vmlyr.com"
-		}
-	  ]
-	} %}
-	<!--Mexico City-->
-	{% include "_components/modal.html" with {
-	  "id": "mexicocity",
-	  "imgFileName": "https://images.unsplash.com/photo-1524158637050-36b68ca9a5ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
-	  "locName": "VMLY&amp;R Mexico City",
-	  "details": [
-	  {
-		"title": "President",
-		"text" : "Andres Sanchez",
-		"icon": "email",
-		"url": "mailto:Andres.Sanchez@vmlyr.com"
-		}
-	  ]
-	} %}
-	<!--London-->
-	{% include "_components/modal.html" with {
-	  "id": "london",
-	  "imgFileName": "https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
-	  "locName": "VMLY&amp;R London",
-	  "details": [
-	  {
-		"title": "Emerging Technology",
-		"text" : "Gracie Page",
-		"icon": "email",
-		"url": "mailto:gracie.page@vmlyr.com"
-		}
-	  ]
-	} %}
-	<!--Detroit-->
-	{% include "_components/modal.html" with {
-	  "id": "detroit",
-	  "imgFileName": "https://images.unsplash.com/photo-1472262808738-234c7a128280?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60",
-	  "locName": "VMLY&amp;R Detroit",
-	  "details": [
-	  {
-		"title": "Innovation & Data",
-		"text" : "Wojtek Szumowski",
-		"icon": "email",
-		"url": "mailto:Wojtek.Szumowski@vmlyr.com"
-		},
-		{
-		"title": "Innovation & Data",
-		"text" : "Shabnam Hosseini",
-		"icon": "email",
-		"url": "mailto:Shabnam.Hosseini@vmlyr.com"
-		}
-	  ]
-	} %}
-	<!--Singapore-->
-	{% include "_components/modal.html" with {
-	  "id": "singapore",
-	  "imgFileName": "https://images.unsplash.com/photo-1565967511849-76a60a516170?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
-	  "locName": "VMLY&amp;R Singapore",
-	  "details": [
-	  {
-		"title": "Chief Innovation Officer",
-		"text" : "Keith Timimi",
-		"icon": "email",
-		"url": "mailto:keith.timimi@vmlyr.com"
-		}
-	  ]
-	} %}
-	<!--Spain-->
-	{% include "_components/modal.html" with {
-	  "id": "spain",
-	  "imgFileName": "https://images.unsplash.com/photo-1564221710304-0b37c8b9d729?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
-	  "locName": "VMLY&amp;R Spain (Barcelona)",
-	  "details": [
-	  {
-		"title": "Innovation & Technology",
-		"text" : "Ignacio Dejuan Creix",
-		"icon": "email",
-		"url": "mailto:Ignacio.dejuan.creix@vmlyr.com"
-		},
-		{
-		"title": "Creative",
-		"text" : "Muntsa Dachs",
-		"icon": "email",
-		"url": "mailto:muntsa.dachs@vmlyr.com"
-		}
-	  ]
-	} %}
-	<!--Peru-->
-	{% include "_components/modal.html" with {
-	  "id": "peru",
-	  "imgFileName": "https://images.unsplash.com/photo-1533655481656-8f79f05f04e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
-	  "locName": "VMLY&amp;R Peru",
-	  "details": [
-	  {
-		"title": "Creative",
-		"text" : "Ernesto Jara",
-		"icon": "email",
-		"url": "mailto:Ernesto.Jara@vmlyr.com"
-		}
-	  ]
-	} %}
+    ]
+  } %}
+	<!-- Intro -->
 
+	<!-- Our Practice -->
+	<div id="focused" class="container px-2 py-3 bg-onyx-10">
+		<h3 class="type-headlineSection mb-2">Focused Emerging Tech</h3>
+		<dl class="faq__list">
+			<div class="faq__row">
+				{% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-white' } %}
+				{% block label %}
+				<div class="col-12">
+					<h5 class="uppercase font-bold">AR/VR</h5> 
+					<p class="uppercase type-sm color-onyx-60">Augmented Reality and Virtual Reality</p>
+				</div>
+				{% endblock %}
+				{% block content %}
+				<div class="row row--gutter-wide-lg">
+	  				<div class="col-12 md:col-2">
+						<img src="assets/images/practice/img_ar_pdf.png" style="box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.2);">
+						<p class="mt-1">
+							<a href="https://vmlyr.docsend.com/view/zn8jnbbsgitaybee" target="_blank">Download PDF</a>
+						</p>
+						<p class="mt-2">Partnerships</p>
+						<a href="https://vmlyr.docsend.com/view/wd4888jibeqxpxgb" target="_blank" class="block">VMLY&R and SubVRsive XR studio</a>
+	  				</div>
+	  				<div class="col-12 md:col-10">
+	  				<h5 class="color-purple-medium">A NEW REALITY</h5>
+	  				<p class="my-1">The digital world meets the real world in more than just a wave of gaming applications. We take the core aspects of mixed reality and drive real solutions to tactical problems. </p>
+	  				<p class="my-1">In this PDF we will address:</p>
+	  				<div class="pl-2">
+		  				<p class="uppercase font-bold color-purple-medium">WHAT IS AR?</p>
+		  				<p class="type-sm">Where does AR make a difference in the life of a consumer?</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">DRIVERS OF AR</p>
+		  				<p class="type-sm">Companies that supply or enhance AR experiences.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">ARKIT AND AR CORE</p>
+		  				<p class="type-sm">Leveraging the latest from Apple and Google to build world-class experiences.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">VIRTUAL REALITY</p>
+		  				<p class="type-sm">Endless applications with VR headsets going wireless.</p>
+		  				</div>
+	  				</div>
+	  			</div>
+				{% endblock %}
+				{% endembed %}
+				{% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-white' } %}
+				{% block label %}
+				<div class="col-12">
+					<h5 class="uppercase font-bold">Voice</h5> 
+					<p class="uppercase type-sm color-onyx-60">Meaningful handsfree interactions</p>
+				</div>
+				{% endblock %}
+				{% block content %}
+				<div class="row row--gutter-wide-lg">
+	  				<div class="col-12 md:col-2">
+						<img src="assets/images/practice/img_voice_pdf.png" style="box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.2);">
+						<p class="mt-1">
+							<a href="https://vmlyr.docsend.com/view/dhtpt6dmftcg8ecq" target="_blank">Download PDF</a>
+						</p>
+						<p class="mt-2">Assistants</p>
+						<a href="https://vmlyr.docsend.com/view/gaj4r5duxirwd3fq" target="_blank" class="block">Home Assistants</a>
+						<a href="https://vmlyr.docsend.com/view/giajcgu28mv6p36x" target="_blank" class="block">Conversational AI</a>
+	  				</div>
+	  				<div class="col-12 md:col-10">
+	  				<h5 class="color-purple-medium">CONVERSATIONAL AI</h5>
+	  				<p class="my-1">Voice experiences are appearing everywhere. Smart speakers in the home, in your car, on your phone or at a kiosk in the store gives consumers the opportunity to interact in a personalized way with brands and products.</p>
+	  				<p class="my-1">In this PDF we will address:</p>
+	  				<div class="pl-2">
+		  				<p class="uppercase font-bold color-purple-medium">Virtual Assistants</p>
+		  				<p class="type-sm">Voice devices in the home account for the majority of experiences ranging from Smart Home to Kitchen Assistance.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">ZERO UI</p>
+		  				<p class="type-sm">Assistants are built on speech recognition, so instead of swiping and typing, you can stay heads-up and hands-free while you multitask around the house. </p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">BRAND VOICE</p>
+		  				<p class="type-sm">Using various tips and tricks brands can overcome the robotic feeling of a voice assistant and discover their own voice.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">DEVELOPMENT</p>
+		  				<p class="type-sm">With a variety of native and platform solutions for voice and chat, VMLY&R can accommodate many sets of requirements and cross channel asks.</p>
+	  				</div>
+	  				</div>
+	  			</div>
+				{% endblock %}
+				{% endembed %}
 
+				{% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-white' } %}
+				{% block label %}
+				<div class="col-12">
+					<h5 class="uppercase font-bold">GAMING</h5> 
+					<p class="uppercase type-sm color-onyx-60">A new way to message</p>
+				</div>
+				{% endblock %}
+
+				{% block content %}
+				<div class="row row--gutter-wide-lg">
+	  				<div class="col-12 md:col-2">
+						<img src="assets/images/practice/img_gaming_pdf.png" style="box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.2);">
+						<p class="mt-1">
+							<a href="https://vmlyr.docsend.com/view/8hs8ifdfwca38869" target="_blank">Download PDF</a>
+						</p>
+	  				</div>
+	  				<div class="col-12 md:col-10">
+	  				<h5 class="color-purple-medium">A GROWING AUDIENCE</h5>
+	  				<p class="my-1">The world of gaming and esports has grown significantly in recent years. Brands and their ability to contribute and highlight the space often find themselves with a loyal demographic and endless options to drive revenue.</p>
+	  				<div class="pl-2">
+		  				<p class="uppercase font-bold color-purple-medium">ESPORTS</p>
+		  				<p class="type-sm">Explore the growing world of competitive gaming. From league sponsorship to product placement on an athlete’s instagram, the sky is the limit.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">MOBILE GAMING</p>
+		  				<p class="type-sm">Gaming on the go is more popular than ever. Look at ways to take advantage of the space.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">TYPES OF GAMERS</p>
+		  				<p class="type-sm">Know the audience that drives gaming and how to talk to them. </p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">WAYS IN FOR BRANDS</p>
+		  				<p class="type-sm">Gaming is a complex space that has many avenues for success.</p>
+	  				</div>
+	  				</div>
+	  			</div>
+				{% endblock %}
+				{% endembed %}
+
+				{% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-white' } %}
+				{% block label %}
+				<div class="col-12">
+					<h5 class="uppercase font-bold">IOT</h5> 
+					<p class="uppercase type-sm color-onyx-60">The Internet of Things</p>
+				</div>
+				{% endblock %}
+
+				{% block content %}
+				<div class="row row--gutter-wide-lg">
+	  				<div class="col-12 md:col-2">
+						<img src="assets/images/practice/img_iot_pdf.png" style="box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.2);">
+						<p class="mt-1">
+							<a href="https://vmlyr.docsend.com/view/2tjjtqvqq9fw4tkg" target="_blank">Download PDF</a>
+						</p>
+						<p class="mt-2">POV</p>
+						<a href="https://vmlyr.docsend.com/view/xgmf8chmfqbshmg6" target="_blank" class="block">IoT POV</a>
+	  				</div>
+	  				<div class="col-12 md:col-10">
+	  				<h5 class="color-purple-medium">POWERING THE WORLD</h5>
+	  				<p class="my-1">Brands can benefit from the growing world of automation and smart devices in many ways. The internet of things (IOT) can power workflows that lead consumers on a journey that satisfies their needs in the moment. </p>
+	  				<p class="my-1">In this PDF we will address:</p>
+	  				<div class="pl-2">
+		  				<p class="uppercase font-bold color-purple-medium">SMART HOMES</p>
+		  				<p class="type-sm">Gather, measure and automate electronic device data to learn and enhance daily life.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">PUBLIC SPACES</p>
+		  				<p class="type-sm">Build when it makes sense and integrate often to allow for growth and fresh data.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">BEACONS</p>
+		  				<p class="type-sm">Precision development requires a strong plan. Architecting that factors all the idiosyncrasies of a project plan. </p>
+		  				
+	  				</div>
+	  				</div>
+	  			</div>
+				{% endblock %}
+				{% endembed %}
+
+				{% embed "_components/accordion.html" with { "contentColor": 'color-blue bg-white' } %}
+				{% block label %}
+				<div class="col-12">
+					<h5 class="uppercase font-bold">WEARABLES</h5> 
+					<p class="uppercase type-sm color-onyx-60">Sensors and Tracking</p>
+				</div>
+				{% endblock %}
+
+				{% block content %}
+				<div class="row row--gutter-wide-lg">
+	  				<div class="col-12 md:col-2">
+						<img src="assets/images/practice/img_wearables_pdf.png" style="box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.2);">
+						<p class="mt-1">
+							<a href="https://vmlyr.docsend.com/view/zac5c9feq8cjnq4d" target="_blank">Download PDF</a>
+						</p>
+	  				</div>
+	  				<div class="col-12 md:col-10">
+	  				<h5 class="color-purple-medium">CONSTANT BIOMETRIC FEEDBACK</h5>
+	  				<p class="my-1">Wearables have expended past the wrist and represent a growing market in the health and beauty space. But biometrics has the ability to move beyond simply tracking and compiling. We can crunch the data to deliver amazing experiences </p>
+	  				<p class="my-1">In this PDF we will address:</p>
+	  				<div class="pl-2">
+		  				<p class="uppercase font-bold color-purple-medium">WRIST WEARABLES</p>
+		  				<p class="type-sm">Watches are the main consumer wearables and allow for application development.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">HEARABLES</p>
+		  				<p class="type-sm">New advances in headphones allow us to track heart rate and other data as well as share content like SMS and Voice Assistants in ear.</p>
+		  				<hr class="my-1">
+		  				<p class="uppercase font-bold color-purple-medium">PHARMA NEEDS</p>
+		  				<p class="type-sm">Heart rate and other health data can be captured and shared from a series of wearables devices on the market.</p>
+	  				</div>
+	  				</div>
+	  			</div>
+				{% endblock %}
+				{% endembed %}
+			</div>
+		</dl>
+	</div>
+
+	<!-- WORK -->
+	<div id="etWork" class="row mx-0 px-2 py-3 bg-blue">
+	  <div class="col-12">
+	  	<h3 class="type-headlineSection mb-2 color-white">Case Studies</h3>
+	  </div>
+	  <div class="container py-2 carousel__hero px-0">
+      {% embed "_components/carousel.html" with {
+        "tnsOptions": {
+          autoHeight: true,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          nav: true,
+          responsive: {
+            '1024': {
+              edgePadding: 200,
+              rewind: false
+            }
+          }
+        },
+        "counter": {
+          "hide": true,
+          "backdrop": false,
+          "inverted": false
+        },
+        "controls": {
+          "fixed": false
+        },
+        "iconLeft": {
+          "name": "return-left",
+          "color": "color-gray",
+          "size": "xl"
+        },
+        "iconRight": {
+          "name": "return-right",
+          "color": "color-gray",
+          "size": "xl"
+        }
+      } %}
+        {% block carousel %}
+          <div class="carousel__slide intro">
+            <a href="https://vmlyr.docsend.com/view/5n94zhscx8ms898h" target="_blank"><img src="assets/images/casestudies/img/img_cs_wwe.png" alt=""></a>
+            <div class="carousel__slideBox">
+                <div class="row carousel__slideBoxText type-base">
+	                <div class="col-6">
+	                	<a href="https://vmlyr.docsend.com/view/5n94zhscx8ms898h" class="color-white underline-none">{{ icon('doc-pdf', 'white', 'xs') }} PDF</a>
+	                </div>
+            	</div>
+            </div>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://vmlyr.docsend.com/view/xrfn3rg2qut6nxun" target="_blank"><img src="assets/images/casestudies/img/img_cs_burgertime.png" alt=""></a>
+            <div class="carousel__slideBox">
+              <div class="row carousel__slideBoxText type-base">
+	                <div class="col-6">
+	                	<a href="https://vmlyr.docsend.com/view/xrfn3rg2qut6nxun" class="color-white underline-none">{{ icon('doc-pdf', 'white', 'xs') }} PDF</a>
+	                </div>
+            	</div>
+            </div>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://vmlyr.docsend.com/view/d52izctbahbkfss5" target="_blank"><img src="assets/images/casestudies/img/img_cs_measure.png" alt=""></a>
+            <div class="carousel__slideBox">
+              <div class="row carousel__slideBoxText type-base">
+	                <div class="col-6">
+	                	<a href="https://vmlyr.docsend.com/view/d52izctbahbkfss5" class="color-white underline-none">{{ icon('doc-pdf', 'white', 'xs') }} PDF</a>
+	                </div>
+            	</div>
+            </div>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://vmlyr.docsend.com/view/jtvnzivimyheewiu" target="_blank"><img src="assets/images/casestudies/img/img_cs_easybutton.png" alt=""></a>
+            <div class="carousel__slideBox">
+              <div class="row carousel__slideBoxText type-base">
+	                <div class="col-6">
+	                	<a href="https://vmlyr.docsend.com/view/jtvnzivimyheewiu" class="color-white underline-none">{{ icon('doc-pdf', 'white', 'xs') }} PDF</a>
+	                </div>
+            	</div>
+            </div>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://vmlyr.docsend.com/view/fymz4c7rd8uetah2" target="_blank"><img src="assets/images/casestudies/img/img_cs_medtranslate.png" alt=""></a>
+            <div class="carousel__slideBox">
+              <div class="row carousel__slideBoxText type-base">
+	                <div class="col-6">
+	                	<a href="https://vmlyr.docsend.com/view/fymz4c7rd8uetah2" class="color-white underline-none">{{ icon('doc-pdf', 'white', 'xs') }} PDF</a>
+	                </div>
+            	</div>
+            </div>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://vmlyr.docsend.com/view/put3tdfxqdxwwynk" target="_blank"><img src="assets/images/casestudies/img/img_cs_ fpwrist.png" alt=""></a>
+            <div class="carousel__slideBox">
+              <div class="row carousel__slideBoxText type-base">
+	                <div class="col-6">
+	                	<a href="https://vmlyr.docsend.com/view/put3tdfxqdxwwynk" class="color-white underline-none">{{ icon('doc-pdf', 'white', 'xs') }} PDF</a>
+	                </div>
+            	</div>
+            </div>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://vimeo.com/375767133" class="js-modal-video" data-effect="mfp-zoom-in"><img src="assets/images/casestudies/img/img_cs_tenn.png" alt=""></a>
+            <div class="carousel__slideBox">
+              <div class="row carousel__slideBoxText type-base">
+	                <div class="col-6">
+	                	<a href="https://vimeo.com/375767133" class="color-white underline-none js-modal-video" data-effect="mfp-zoom-in">{{ icon('video', 'white', 'xs') }} Watch Video</a>
+	                </div>
+	                <div class="col-6">
+	                	<a href="https://vmlyr.docsend.com/view/cgmbheas2v49hsd8" class="color-white underline-none">{{ icon('doc-pdf', 'white', 'xs') }} PDF</a>
+	                </div>
+            	</div>
+            </div>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.youtube.com/watch?time_continue=57&v=YgnTsf_z0G0&feature=emb_logo" class="js-modal-video" data-effect="mfp-zoom-in"><img src="assets/images/casestudies/img/img_cs_rc.png" alt=""></a>
+            <div class="carousel__slideBox">
+              <div class="row carousel__slideBoxText type-base">
+	                <div class="col-6">
+	                	<a href="https://www.youtube.com/watch?time_continue=57&v=YgnTsf_z0G0&feature=emb_logo" class="color-white underline-none js-modal-video" data-effect="mfp-zoom-in">{{ icon('video', 'white', 'xs') }} Watch Video</a>
+	                </div>
+	                <div class="col-6">
+	                	<a href="https://vmlyr.docsend.com/view/f5x7qun325akazuw" class="color-white underline-none">{{ icon('doc-pdf', 'white', 'xs') }} PDF</a>
+	                </div>
+            	</div>
+            </div>
+          </div>
+        {% endblock %}
+      {% endembed %}
+    </div>
+	</div>
+	<!-- Thought Leadership-->
+	<div id="et-articles" class="container px-2 py-3 bg-onyx-10">
+		<h3 class="type-headlineSection mb-2">Thought Leadership</h3>
+		{% set masonryFilters = [
+		  {
+		    "value": ".filter--categoryVR",
+		    "label": "VR"
+		  },
+		  {
+		    "value": ".filter--categoryVoice",
+		    "label": "Voice"
+		  },
+		  {
+		    "value": ".filter--categoryCrypto",
+		    "label": "Cryptocurrency"
+		  },
+		  {
+		    "value": ".filter--categoryGame",
+		    "label": "Gaming"
+		  }
+		] %}
+		{% embed "_components/masonry/content.html" with { "shuffle": false, "filters": masonryFilters } %}
+		  {% block list %}
+		    <div class="masonry__item filter--categoryGame">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Extra Life 24-Hr",
+				    "sub": "Gaming Marathon"
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/vmlyr-gtb-participate-extra-life-24-hr-gaming-marathon",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/extra-life-banner-e1405726479104_0.png?itok=zPzz459C&sc=9feb65c099d96128227bb9e65cc2a01f",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryET">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Welcome to 5G",
+				    "sub": "Why is 5G a big deal?"
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/welcome-5g",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/5g_0.jpg?itok=KyQpmdCL&sc=1a6bf4d26eb5c13f9b02245196904cc8",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryVR filter--categoryET">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "New Experience Opportunities",
+				    "sub": "in VR"
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/new-experience-opportunities-vr",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/facebook_horizon_vr.jpg?itok=WsLXoeVw&sc=a2ef9402ab7e4f5a8e1bc540b1bbb087",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryET">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Birth of a Patent",
+				    "sub": ""
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/birth-patent",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/us07376091-20080520-d00001.png?itok=roYrAG5w&sc=22aefe0691c9005b009afad1dd0d2807",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryVoice">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Give Voice a Change",
+				    "sub": ""
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/give-voice-chance",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://images.unsplash.com/photo-1512446816042-444d641267d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		    <div class="masonry__item filter--categoryGame">
+		    	{% include "_components/spotlight.html" with {
+				  "title": {
+				    "primary": "Gaming & eSports Update",
+				    "sub": "@ VMLY&R"
+				  },
+				  "hotspot": {
+				    "url": "https://passport.vmlyr.com/post/vmlyr-gaming-esports-update",
+				    "icon": 'link',
+				    "newWindow": true,
+				  },
+				  "picture": {
+				    "altText": "article",
+				    "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/simplecrop/public/gamingsplash_0.jpeg?itok=drDP5K85&sc=4c758c6a0963cd2eedd9d631f4aa441b",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		    </div>
+		  {% endblock %}
+		{% endembed %}
+	</div>
+
+	<!-- <div id="startups" class="container px-2 py-3 bg-white">
+		<h3 class="type-headlineSection mb-2">Startup One-Sheeters</h3>
+		<ul class="logoWall logoWall--wide">
+			<li class="logoWall__col">
+			    {% include "_components/spotlight.html" with {
+				  "title": {},
+				  "hotspot": {
+				    "url": "https://firebasestorage.googleapis.com/v0/b/mobility-426be.appspot.com/o/startups%2Fstartup_subversive.pdf?alt=media&token=f528956e-5bfb-49c2-95c7-754590452785",
+				    "icon": 'doc-pdf',
+				    "isVideo": true,
+				  },
+				  "picture": {
+				    "altText": "Subvsive",
+				    "srcPath": "assets/images/startups/startup_subvrsive.png",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+			</li>
+			<li class="logoWall__col">
+				{% include "_components/spotlight.html" with {
+				  "title": {},
+				  "hotspot": {
+				    "url": "https://firebasestorage.googleapis.com/v0/b/mobility-426be.appspot.com/o/startups%2Fstartup_nextnav.pdf?alt=media&token=2654c49f-0765-4dfd-ba3f-e6067b31274e",
+				    "icon": 'doc-pdf',
+				    "isVideo": true,
+				  },
+				  "picture": {
+				    "altText": "NextNav",
+				    "srcPath": "assets/images/startups/startup_nextnav.png",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		  	</li>
+		  	<li class="logoWall__col">
+				{% include "_components/spotlight.html" with {
+				  "title": {},
+				  "hotspot": {
+				    "url": "https://firebasestorage.googleapis.com/v0/b/mobility-426be.appspot.com/o/startups%2Fstartup_radaro.pdf?alt=media&token=8847787c-2843-4fca-a64e-43c3fa2e4033",
+				    "icon": 'doc-pdf',
+				    "isVideo": true,
+				  },
+				  "picture": {
+				    "altText": "Radaro",
+				    "srcPath": "assets/images/startups/startup_radaro.png",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		  	</li>
+		  	<li class="logoWall__col">
+				{% include "_components/spotlight.html" with {
+				  "title": {},
+				  "hotspot": {
+				    "url": "https://firebasestorage.googleapis.com/v0/b/mobility-426be.appspot.com/o/startups%2Fstartup_soulmachines.pdf?alt=media&token=862b8d88-e040-4769-bb56-b9d518c58cac",
+				    "icon": 'doc-pdf',
+				    "isVideo": true,
+				  },
+				  "picture": {
+				    "altText": "Soul Machines",
+				    "srcPath": "assets/images/startups/startup_soulmachines.png",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		  	</li>
+		  	<li class="logoWall__col">
+				{% include "_components/spotlight.html" with {
+				  "title": {},
+				  "hotspot": {
+				    "url": "https://firebasestorage.googleapis.com/v0/b/mobility-426be.appspot.com/o/startups%2Fstartup_unsupervised.pdf?alt=media&token=5c1e11c2-7807-4ab5-9ea1-1619f33899e8",
+				    "icon": 'doc-pdf',
+				    "isVideo": true,
+				  },
+				  "picture": {
+				    "altText": "Unsupervised",
+				    "srcPath": "assets/images/startups/startup_unsupervised.png",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		  	</li>
+		  	<li class="logoWall__col">
+				{% include "_components/spotlight.html" with {
+				  "title": {},
+				  "hotspot": {
+				    "url": "https://firebasestorage.googleapis.com/v0/b/mobility-426be.appspot.com/o/startups%2Fstartup_vntana.pdf?alt=media&token=a12b5205-35b8-4a0e-b75c-50b208605d0f",
+				    "icon": 'doc-pdf',
+				    "isVideo": true,
+				  },
+				  "picture": {
+				    "altText": "Vntana",
+				    "srcPath": "assets/images/startups/startup_vntana.png",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		  	</li>
+		  	<li class="logoWall__col">
+				{% include "_components/spotlight.html" with {
+				  "title": {},
+				  "hotspot": {
+				    "url": "https://firebasestorage.googleapis.com/v0/b/mobility-426be.appspot.com/o/startups%2Fstartup_wiliot.pdf?alt=media&token=94a85d78-2dff-4bc3-8851-2d284e485153",
+				    "icon": 'doc-pdf',
+				    "isVideo": true,
+				  },
+				  "picture": {
+				    "altText": "Wiliot",
+				    "srcPath": "assets/images/startups/startup_wiliot.png",
+				    "placeholderSize": "600 600",
+				    "width": "600",
+				    "height": "600"
+				  }
+				} %}
+		  	</li>
+		</ul>
+	</div> -->
+	<div id="etContacts" class="container mx-0 px-2 py-3 bg-blue">
+		<h3 class="type-headlineSection mb-2 color-white">Team Contacts</h3>
+		<div class="row">
+			<div class="col-auto">
+				{% include "_components/team.html" with {
+			      "name": "Brian Yamada",
+			      "title": "Chief Innovation Officer",
+			      "bio": "",
+			      "picture": {
+			        "altText": "Yamada",
+			        "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/large/public/user-photo/brian_yamada_2.jpg?itok=eOi_Lm2n",
+			        "placeholderSize": "500 330"
+			      }
+			    } %}
+			</div>
+			<div class="col-auto">
+				{% include "_components/team.html" with {
+			      "name": "Eric Pfeifer",
+			      "title": "Strategy",
+			      "bio": "",
+			      "picture": {
+			        "altText": "Pfeifer",
+			        "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/large/public/user-photo/ericpfeifer.jpg?itok=eQu0m3kF",
+			        "placeholderSize": "500 330"
+			      }
+			    } %}
+			</div>
+			<div class="col-auto">
+				{% include "_components/team.html" with {
+			      "name": "Jeff Danley",
+			      "title": "Gaming & Cryptocurrency",
+			      "bio": "",
+			      "picture": {
+			        "altText": "Danley",
+			        "srcPath": "assets/images/profiles/img_profile_danley.png",
+			        "placeholderSize": "500 330"
+			      }
+			    } %}
+			</div>
+			<div class="col-auto">
+				{% include "_components/team.html" with {
+			      "name": "Ian Cahill",
+			      "title": "Voice & Prototyping",
+			      "bio": "",
+			      "picture": {
+			        "altText": "Cahill",
+			        "srcPath": "https://passport.vmlyr.com/sites/default/files/styles/large/public/user-photo/os0c3056.jpg?itok=N066u-SI",
+			        "placeholderSize": "500 330"
+			      }
+			    } %}
+			</div>
+		</div>
+	</div>
 
     
   </article>
